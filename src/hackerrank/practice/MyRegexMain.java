@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 /**
  * The solution is correct. The question was a bit misleading.
  * It mentioned "private class", so I was trying to give the
- * "private" attrubute or an inner class implementation.
+ * "private" attribute or an inner class implementation.
  *
  * The question simply meant was to make a separate class.
  */
