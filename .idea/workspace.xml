@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b475407a-9992-40a2-bdcc-671801b30b66" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Geeksforgeeks/LongestArithmeticProgressionWith2DArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Geeksforgeeks/LongestConsecutiveIntSubsequence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Geeksforgeeks/QueueImplementationWithArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Geeksforgeeks/TestLRUCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hackerrank/practice/SockMerchantWarmUpPractice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerRankPractice/hackerrank/practice/ValidUserNameRegEx.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackerRankPractice/hackerrank/practice/ValidUserNameRegEx.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hackerrank/practice/SockMerchant.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +21,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="QueueImplementationWithArray.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueueImplementationWithArray.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Geeksforgeeks/QueueImplementationWithArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="102">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SockMerchantWarmUpPractice.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/SockMerchantWarmUpPractice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#168#169#0" expanded="true" />
+                <element signature="e#202#203#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReplaceRepeteadWordsWithRegEx.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ReplaceRepeteadWordsWithRegEx.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,6 +95,7 @@
         <option value="$PROJECT_DIR$/src/Geeksforgeeks/QueueImplementionWithArray.java" />
         <option value="$PROJECT_DIR$/src/Geeksforgeeks/LongestArithmeticProgression.java" />
         <option value="$PROJECT_DIR$/src/Geeksforgeeks/QueueImplementationWithArray.java" />
+        <option value="$PROJECT_DIR$/src/hackerrank/practice/SockMerchantWarmUpPractice.java" />
       </list>
     </option>
   </component>
@@ -114,12 +138,6 @@
               <item name="HackerRankPractice" type="b2602c69:ProjectViewProjectNode" />
               <item name="HackerRankPractice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Geeksforgeeks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HackerRankPractice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HackerRankPractice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="practice" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -157,17 +175,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.QueueImplementationWithArray">
-    <configuration name="LongestArithmeticProgression" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Geeksforgeeks.LongestArithmeticProgression" />
-      <module name="HackerRankPractice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Geeksforgeeks.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="Application.SockMerchantWarmUpPractice">
     <configuration name="LongestArithmeticProgressionWith2DArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Geeksforgeeks.LongestArithmeticProgressionWith2DArray" />
       <module name="HackerRankPractice" />
@@ -198,6 +206,16 @@
         </pattern>
       </extension>
     </configuration>
+    <configuration name="SockMerchantWarmUpPractice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hackerrank.practice.SockMerchantWarmUpPractice" />
+      <module name="HackerRankPractice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hackerrank.practice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="TestLRUCache" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Geeksforgeeks.TestLRUCache" />
       <module name="HackerRankPractice" />
@@ -210,19 +228,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.MergeSort" />
-      <item itemvalue="Application.LongestArithmeticProgression" />
       <item itemvalue="Application.LongestConsecutiveIntSubsequence" />
       <item itemvalue="Application.TestLRUCache" />
       <item itemvalue="Application.QueueImplementationWithArray" />
       <item itemvalue="Application.LongestArithmeticProgressionWith2DArray" />
+      <item itemvalue="Application.SockMerchantWarmUpPractice" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SockMerchantWarmUpPractice" />
         <item itemvalue="Application.QueueImplementationWithArray" />
         <item itemvalue="Application.LongestArithmeticProgressionWith2DArray" />
         <item itemvalue="Application.TestLRUCache" />
         <item itemvalue="Application.LongestConsecutiveIntSubsequence" />
-        <item itemvalue="Application.LongestArithmeticProgression" />
       </list>
     </recent_temporary>
   </component>
@@ -254,24 +272,24 @@
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32876712" />
-      <window_info anchor="bottom" id="Messages" order="6" weight="0.32507738" />
+      <window_info anchor="bottom" id="Messages" order="6" weight="0.32352942" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32995737" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2616099" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.31578946" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2616099" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3142415" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6540881" visible="true" weight="0.3192133" />
-      <window_info id="Structure" order="1" sideWeight="0.34591195" side_tool="true" visible="true" weight="0.3192133" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.69977427" visible="true" weight="0.3184569" />
+      <window_info id="Structure" order="1" sideWeight="0.30022573" side_tool="true" weight="0.3192133" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="right" x="378" y="140" width="1477" height="736" id="Debug" order="9" type="WINDOWED" visible="true" weight="0.55417955" />
+      <window_info anchor="right" x="379" y="208" width="1477" height="736" id="Debug" order="9" type="WINDOWED" visible="true" weight="0.55417955" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.32980332" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -359,8 +377,14 @@
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/practice/SockMerchantWarmUpPractice.java</url>
+          <line>8</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="33" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -375,20 +399,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/FindSubStringRegEx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="56" column="60" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#readLineWithBufferedReader#0;class#FindSubStringRegEx#0" />
-            <element signature="method#readLineWithScanner#0;class#FindSubStringRegEx#0" />
-            <element signature="method#checkNumberExists#0;class#FindSubStringRegEx#0" />
-            <element signature="method#checkPalindrome#0;class#FindSubStringRegEx#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../algs4.jar!/edu/princeton/cs/algs4/Alphabet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2176">
@@ -560,13 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/SockMerchant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -745,16 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ReplaceRepeteadWordsWithRegEx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ValidUserNameRegEx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -789,10 +782,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/SockMerchant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ReplaceRepeteadWordsWithRegEx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Geeksforgeeks/QueueImplementationWithArray.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/SockMerchantWarmUpPractice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#168#169#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
