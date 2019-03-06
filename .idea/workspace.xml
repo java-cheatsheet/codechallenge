@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b475407a-9992-40a2-bdcc-671801b30b66" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hackerrank/practice/PickingNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/HackerRankPractice/hackerrank/practice/NewYearChaos.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hackerrank/practice/NewYearChaos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hackerrank/practice/MyLists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HackerRankPractice/hackerrank/practice/PickingNumbers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackerRankPractice/hackerrank/practice/PickingNumbers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hackerrank/practice/PickingNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hackerrank/practice/PickingNumbers.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,32 +22,38 @@
     </SUITE>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PickingNumbers.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/PickingNumbers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WarmUpPractice.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/WarmUpPractice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-578">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.4512195">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="NewYearChaos.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/NewYearChaos.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="NewYearChaos.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/NewYearChaos.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="276">
+                  <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+                  <folding>
+                    <element signature="method#minimumBribes12Less#0;class#NewYearChaos#0" />
+                    <element signature="method#minimumBribesOther#0;class#NewYearChaos#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,6 +103,7 @@
         <option value="$PROJECT_DIR$/src/hackerrank/practice/TwoDArrayDS.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/practice/ArraysLeftRotation.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/practice/PickingNumbers.java" />
+        <option value="$PROJECT_DIR$/src/hackerrank/practice/NewYearChaos.java" />
       </list>
     </option>
   </component>
@@ -105,10 +114,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="283" />
-    <option name="y" value="103" />
-    <option name="width" value="1425" />
-    <option name="height" value="913" />
+    <option name="x" value="172" />
+    <option name="width" value="1536" />
+    <option name="height" value="1087" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -192,7 +200,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PickingNumbers">
+  <component name="RunManager" selected="Application.NewYearChaos">
     <configuration name="ArraysLeftRotation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hackerrank.practice.ArraysLeftRotation" />
       <module name="HackerRankPractice" />
@@ -203,8 +211,8 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="MagicSquareHardCoded" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hackerrank.practice.MagicSquareHardCoded" />
+    <configuration name="NewYearChaos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hackerrank.practice.NewYearChaos" />
       <module name="HackerRankPractice" />
       <extension name="coverage">
         <pattern>
@@ -245,19 +253,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.MergeSort" />
-      <item itemvalue="Application.MagicSquareHardCoded" />
       <item itemvalue="Application.RepeatedString" />
       <item itemvalue="Application.TwoDArrayDS" />
       <item itemvalue="Application.ArraysLeftRotation" />
       <item itemvalue="Application.PickingNumbers" />
+      <item itemvalue="Application.NewYearChaos" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NewYearChaos" />
         <item itemvalue="Application.PickingNumbers" />
         <item itemvalue="Application.ArraysLeftRotation" />
         <item itemvalue="Application.TwoDArrayDS" />
         <item itemvalue="Application.RepeatedString" />
-        <item itemvalue="Application.MagicSquareHardCoded" />
       </list>
     </recent_temporary>
   </component>
@@ -284,30 +292,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="283" y="103" width="1425" height="913" extended-state="0" />
+    <frame x="172" y="0" width="1536" height="1087" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32792583" />
-      <window_info anchor="bottom" id="Messages" order="6" weight="0.23754345" />
+      <window_info anchor="bottom" id="Messages" order="6" weight="0.23752496" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32908458" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32995737" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2789855" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.37891078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27844313" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.37724552" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.69977427" visible="true" weight="0.24175824" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.69977427" weight="0.21318682" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" sideWeight="0.30022573" side_tool="true" weight="0.3192133" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" x="343" y="216" width="1477" height="736" id="Debug" order="10" weight="0.38647342" />
+      <window_info active="true" anchor="bottom" x="343" y="216" width="1477" height="736" id="Debug" order="10" visible="true" weight="0.3782435" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.32980332" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -444,9 +452,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/hackerrank/practice/PickingNumbers.java</url>
-          <line>35</line>
+          <line>37</line>
           <properties />
           <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/practice/NewYearChaos.java</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/practice/NewYearChaos.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/hackerrank/practice/FindSubStringRegEx.java</url>
@@ -457,7 +477,7 @@
           <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="68" />
+      <option name="time" value="73" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -472,17 +492,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PincetonAlgorithms/MergeSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="159" column="33" lean-forward="true" selection-start-line="159" selection-start-column="33" selection-end-line="159" selection-end-column="33" />
-          <folding>
-            <element signature="e#3127#3128#0" expanded="true" />
-            <element signature="e#3168#3169#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/MyLists.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -898,10 +907,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/PickingNumbers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/NewYearChaos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+          <folding>
+            <element signature="method#minimumBribes12Less#0;class#NewYearChaos#0" />
+            <element signature="method#minimumBribesOther#0;class#NewYearChaos#0" />
           </folding>
         </state>
       </provider>
