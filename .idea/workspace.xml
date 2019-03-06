@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b475407a-9992-40a2-bdcc-671801b30b66" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hackerrank/practice/RepeatedString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hackerrank/practice/ArraysLeftRotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hackerrank/practice/TwoDArrayDS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,13 +21,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RepeatedString.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RepeatedString.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/RepeatedString.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="54" column="62" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
+            <state relative-caret-position="239">
+              <caret line="62" column="44" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TwoDArrayDS.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/TwoDArrayDS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1105">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArraysLeftRotation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ArraysLeftRotation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#rotateLeftConditionalAlgorithm#0;class#ArraysLeftRotation#0" />
+                <element signature="method#leftRotateWithGCD#0;class#ArraysLeftRotation#0" />
+                <element signature="method#printArray#0;class#ArraysLeftRotation#0" />
+                <element signature="method#gcd#0;class#ArraysLeftRotation#0" />
               </folding>
             </state>
           </provider>
@@ -47,19 +73,8 @@
       <file leaf-file-name="MagicSquareHardCoded.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/MagicSquareHardCoded.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReplaceRepeteadWordsWithRegEx.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ReplaceRepeteadWordsWithRegEx.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="41" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="19" selection-end-column="41" />
+            <state relative-caret-position="289">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,6 +128,8 @@
         <option value="$PROJECT_DIR$/src/hackerrank/practice/MagicSquare_UNRESOLVED.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/practice/MagicSquareHardCoded.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/practice/RepeatedString.java" />
+        <option value="$PROJECT_DIR$/src/hackerrank/practice/TwoDArrayDS.java" />
+        <option value="$PROJECT_DIR$/src/hackerrank/practice/ArraysLeftRotation.java" />
       </list>
     </option>
   </component>
@@ -123,8 +140,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="288" />
-    <option name="y" value="92" />
+    <option name="x" value="303" />
+    <option name="y" value="109" />
     <option name="width" value="1425" />
     <option name="height" value="948" />
   </component>
@@ -210,7 +227,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.RepeatedString">
+  <component name="RunManager" selected="Application.ArraysLeftRotation">
+    <configuration name="ArraysLeftRotation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hackerrank.practice.ArraysLeftRotation" />
+      <module name="HackerRankPractice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hackerrank.practice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="MagicSquareHardCoded" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hackerrank.practice.MagicSquareHardCoded" />
       <module name="HackerRankPractice" />
@@ -242,18 +269,8 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="SockMerchantWarmUpPractice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hackerrank.practice.SockMerchantWarmUpPractice" />
-      <module name="HackerRankPractice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hackerrank.practice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="WarmUpPractice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hackerrank.practice.WarmUpPractice" />
+    <configuration name="TwoDArrayDS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hackerrank.practice.TwoDArrayDS" />
       <module name="HackerRankPractice" />
       <extension name="coverage">
         <pattern>
@@ -264,19 +281,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.MergeSort" />
-      <item itemvalue="Application.SockMerchantWarmUpPractice" />
-      <item itemvalue="Application.WarmUpPractice" />
       <item itemvalue="Application.MagicSquare_UNRESOLVED" />
       <item itemvalue="Application.MagicSquareHardCoded" />
       <item itemvalue="Application.RepeatedString" />
+      <item itemvalue="Application.TwoDArrayDS" />
+      <item itemvalue="Application.ArraysLeftRotation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArraysLeftRotation" />
+        <item itemvalue="Application.TwoDArrayDS" />
         <item itemvalue="Application.RepeatedString" />
         <item itemvalue="Application.MagicSquareHardCoded" />
         <item itemvalue="Application.MagicSquare_UNRESOLVED" />
-        <item itemvalue="Application.WarmUpPractice" />
-        <item itemvalue="Application.SockMerchantWarmUpPractice" />
       </list>
     </recent_temporary>
   </component>
@@ -303,36 +320,36 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="288" y="92" width="1425" height="948" extended-state="0" />
+    <frame x="303" y="109" width="1425" height="948" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="bottom" id="TODO" order="5" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Messages" order="6" visible="true" weight="0.23754345" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.32792583" />
+      <window_info anchor="bottom" id="Messages" order="6" weight="0.23754345" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32995737" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.14831981" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.37911302" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2792584" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.37891078" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.69977427" visible="true" weight="0.1897436" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" sideWeight="0.30022573" side_tool="true" weight="0.3192133" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" x="343" y="216" width="1477" height="736" id="Debug" order="10" weight="0.38744077" />
+      <window_info active="true" anchor="bottom" x="343" y="216" width="1477" height="736" id="Debug" order="10" visible="true" weight="0.38702202" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.32980332" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -449,6 +466,18 @@
           <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/practice/ArraysLeftRotation.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/practice/ArraysLeftRotation.java</url>
+          <line>11</line>
+          <properties />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/hackerrank/practice/FindSubStringRegEx.java</url>
           <line>97</line>
@@ -458,7 +487,7 @@
           <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="57" />
+      <option name="time" value="67" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -473,23 +502,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/../algs4.jar!/edu/princeton/cs/algs4/MergeX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3859">
-          <caret line="227" column="23" lean-forward="true" selection-start-line="227" selection-start-column="23" selection-end-line="227" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PincetonAlgorithms/BinarySearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="108" column="56" lean-forward="true" selection-start-line="108" selection-start-column="56" selection-end-line="108" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../algs4.jar!/edu/princeton/cs/algs4/BinarySearch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
@@ -869,15 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/MagicSquareHardCoded.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/FindSubStringRegEx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-80">
@@ -886,16 +889,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#checkNumberExists#0;class#FindSubStringRegEx#0" />
             <element signature="method#checkPalindrome#0;class#FindSubStringRegEx#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ReplaceRepeteadWordsWithRegEx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="19" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -910,12 +903,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/RepeatedString.java">
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ReplaceRepeteadWordsWithRegEx.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="54" column="62" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
+        <state relative-caret-position="187">
+          <caret line="11" column="64" lean-forward="true" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/MagicSquareHardCoded.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/RepeatedString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="62" column="44" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/TwoDArrayDS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ArraysLeftRotation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#rotateLeftConditionalAlgorithm#0;class#ArraysLeftRotation#0" />
+            <element signature="method#leftRotateWithGCD#0;class#ArraysLeftRotation#0" />
+            <element signature="method#printArray#0;class#ArraysLeftRotation#0" />
+            <element signature="method#gcd#0;class#ArraysLeftRotation#0" />
           </folding>
         </state>
       </provider>
