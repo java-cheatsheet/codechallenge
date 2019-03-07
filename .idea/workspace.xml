@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b475407a-9992-40a2-bdcc-671801b30b66" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hackerrank/practice/ClimbingTheLeaderboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HackerRankPractice/hackerrank/practice/NewYearChaos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HackerRankPractice/hackerrank/practice/NewYearChaos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hackerrank/practice/NewYearChaos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hackerrank/practice/NewYearChaos.java" afterDir="false" />
-    </list>
+    <list default="true" id="b475407a-9992-40a2-bdcc-671801b30b66" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +20,8 @@
       <file leaf-file-name="ClimbingTheLeaderboard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ClimbingTheLeaderboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="162" column="23" lean-forward="true" selection-start-line="125" selection-start-column="9" selection-end-line="162" selection-end-column="23" />
+            <state relative-caret-position="289">
+              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -278,7 +273,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="166" y="0" width="1477" height="1087" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.3273453" />
@@ -290,7 +284,7 @@
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32995737" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.27844313" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.37724552" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.37724552" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.69977427" visible="true" weight="0.22159491" />
@@ -300,7 +294,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info active="true" anchor="bottom" x="343" y="216" width="1477" height="736" id="Debug" order="10" visible="true" weight="0.33433133" />
+      <window_info anchor="bottom" x="343" y="216" width="1477" height="736" id="Debug" order="10" weight="0.33433133" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.32980332" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -907,8 +901,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hackerrank/practice/ClimbingTheLeaderboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="162" column="23" lean-forward="true" selection-start-line="125" selection-start-column="9" selection-end-line="162" selection-end-column="23" />
+        <state relative-caret-position="289">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
