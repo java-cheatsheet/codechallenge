@@ -68,9 +68,12 @@ public class NewYearChaos {
                 break;
             }
 
-            for (int j = Math.max(0, q[i] - 2); j < i; j++)
+            int j = Math.max(0, q[i] - 2);
+            while ( j < i ) {
                 if (q[j] > q[i])
                     bribe++;
+                j++;
+            }
         }
 
         if(chaotic)
