@@ -1,5 +1,4 @@
-package Geeksforgeeks;
-import java.io.*;
+package geeksforgeeks;
 import java.util.*;
 
 public class LongestConsecutiveIntSubsequence {

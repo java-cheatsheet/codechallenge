@@ -1,4 +1,4 @@
-package PincetonAlgorithms;
+package pincetonalgorithms;
 import edu.princeton.cs.algs4.*;
 
 /******************************************************************************

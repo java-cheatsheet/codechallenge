@@ -1,4 +1,4 @@
-package hackerrank.practice;
+package hackerrank;
 
 import com.sun.jdi.Value;
 import edu.princeton.cs.algs4.In;

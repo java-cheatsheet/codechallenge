@@ -1,4 +1,4 @@
-package hackerrank.practice;
+package hackerrank;
 
 import java.util.HashMap;
 import java.util.HashSet;

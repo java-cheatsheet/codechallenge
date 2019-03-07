@@ -1,4 +1,4 @@
-package hackerrank.practice;
+package hackerrank;
 
 public class TwoDArrayDS {
 

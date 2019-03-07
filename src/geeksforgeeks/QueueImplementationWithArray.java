@@ -1,4 +1,4 @@
-package Geeksforgeeks;
+package geeksforgeeks;
 
 class Queue {
 

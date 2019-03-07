@@ -1,4 +1,4 @@
-package PincetonAlgorithms;
+package pincetonalgorithms;
 
 /******************************************************************************
  *  Compilation:  javac BinarySearch.java

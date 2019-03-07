@@ -1,4 +1,4 @@
-package hackerrank.practice;
+package hackerrank;
 import java.util.ArrayList;
 import java.util.Arrays;
 

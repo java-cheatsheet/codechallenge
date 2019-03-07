@@ -1,12 +1,10 @@
-package hackerrank.practice;
+package hackerrank;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * The solution is correct. The question was a bit misleading.

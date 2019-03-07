@@ -1,4 +1,4 @@
-package Geeksforgeeks;
+package geeksforgeeks;
 
 public class LongestArithmeticProgressionWith2DArray {
     // Returns length of the longest

@@ -1,4 +1,4 @@
-package Geeksforgeeks;
+package geeksforgeeks;
 
 
 import java.util.HashMap;
