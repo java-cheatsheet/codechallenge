@@ -32,9 +32,9 @@ public class ClimbingTheLeaderboard {
         // Expected: 6 4 2 1
 
 //        Test Case 1:
-//        int[] scores = {100, 90, 90, 80, 75, 60};
-//        int[] alice = {50, 65, 77, 90, 102};
-//        int[] expected = {6, 5, 4, 2, 1};
+        int[] scores = {100, 90, 90, 80, 75, 60};
+        int[] alice = {50, 65, 77, 90, 102};
+        int[] expected = {6, 5, 4, 2, 1};
 
         //Modified
 //        int[] scores = {100, 90, 90, 80, 75, 75, 57, 56}; // Ranks 1- 7
