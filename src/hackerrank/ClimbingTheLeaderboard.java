@@ -13,6 +13,13 @@ import java.util.Map;
  *
  * Alternate solution for reference: https://github.com/RyanFehr/HackerRank/blob/master/Algorithms/Implementation/Climbing%20the%20Leaderboard/Solution.java
  *
+ * There are 3 solutions. The ones with HashMap implementation
+ * was giving timeout.
+ *
+ * anotherVersion() is from thirdparty.
+ *
+ * There might be optimization for checking for duplicate
+ * marks in Leaderboard and skip it.
  */
 
 public class ClimbingTheLeaderboard {
