@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d52cc8c1-dfb0-4275-a8a6-bd117d2f2cc1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codechallenge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/codechallenge.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -15,16 +13,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.63762814">
+    <splitter split-orientation="horizontal" split-proportion="0.4407028">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="ClimbingTheLeaderboard.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="33" column="70" lean-forward="true" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
+                <state relative-caret-position="217">
+                  <caret line="22" column="43" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="22" selection-end-column="43" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="method#createRankSystemOptimized#0;class#ClimbingTheLeaderboard#0" />
+                    <element signature="method#createAliceExamRanksOptimized#0;class#ClimbingTheLeaderboard#0" />
+                    <element signature="method#createRankSystem#0;class#ClimbingTheLeaderboard#0" />
+                    <element signature="method#createAliceExamRanks#0;class#ClimbingTheLeaderboard#0" />
                   </folding>
                 </state>
               </provider>
@@ -37,8 +39,8 @@
           <file leaf-file-name="ClimbingTheLeaderboard.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="274">
-                  <caret line="151" column="17" lean-forward="true" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
+                <state relative-caret-position="328">
+                  <caret line="112" column="28" lean-forward="true" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -217,7 +219,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3984375" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38541666" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -234,23 +236,35 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java</url>
-          <line>78</line>
+          <line>158</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java</url>
-          <line>131</line>
+          <line>211</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java</url>
-          <line>165</line>
+          <line>245</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java</url>
+          <line>86</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -283,8 +297,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="33" column="70" lean-forward="true" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
+        <state relative-caret-position="328">
+          <caret line="112" column="28" lean-forward="true" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
