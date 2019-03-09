@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d52cc8c1-dfb0-4275-a8a6-bd117d2f2cc1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/MinimumSwapsTwo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hackerrank/MinimumSwapsTwo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hackerrank/RansomeNote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pincetonalgorithms/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pincetonalgorithms/BinarySearch.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,24 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MinimumSwapsTwo.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hackerrank/MinimumSwapsTwo.java">
+      <file leaf-file-name="RansomeNote.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hackerrank/RansomeNote.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MergeSort.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pincetonalgorithms/MergeSort.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="166" column="6" lean-forward="true" selection-start-line="166" selection-start-column="6" selection-end-line="166" selection-end-column="6" />
-              <folding>
-                <element signature="e#3127#3128#0" expanded="true" />
-                <element signature="e#3168#3169#0" expanded="true" />
-              </folding>
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -64,6 +50,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/MinimumSwapsTwo.java" />
+        <option value="$PROJECT_DIR$/src/hackerrank/RansomeNote.java" />
       </list>
     </option>
   </component>
@@ -98,7 +85,7 @@
               <item name="codechallenge" type="b2602c69:ProjectViewProjectNode" />
               <item name="codechallenge" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pincetonalgorithms" type="462c0819:PsiDirectoryNode" />
+              <item name="hackerrank" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -115,6 +102,11 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -127,11 +119,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MinimumSwapsTwo">
+  <component name="RunManager" selected="Application.RansomeNote">
     <configuration name="ClimbingTheLeaderboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hackerrank.ClimbingTheLeaderboard" />
       <module name="codechallenge" />
       <option name="VM_PARAMETERS" value="ea" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hackerrank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="RansomeNote" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hackerrank.RansomeNote" />
+      <module name="codechallenge" />
+      <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -184,9 +188,11 @@
     <list>
       <item itemvalue="Application.MinimumSwapsTwo" />
       <item itemvalue="Application.ClimbingTheLeaderboard" />
+      <item itemvalue="Application.RansomeNote" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RansomeNote" />
         <item itemvalue="Application.ClimbingTheLeaderboard" />
         <item itemvalue="Application.MinimumSwapsTwo" />
       </list>
@@ -218,8 +224,8 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50064933" side_tool="true" weight="0.32959184" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49935064" weight="0.26174498" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49935064" weight="0.23032904" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49935064" visible="true" weight="0.26174498" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49935064" weight="0.2295302" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18683812" />
@@ -228,7 +234,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3852349" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3852349" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -306,8 +312,20 @@
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/RansomeNote.java</url>
+          <line>17</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/RansomeNote.java</url>
+          <line>7</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="13" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -362,9 +380,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/MinimumSwapsTwo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pincetonalgorithms/MergeSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="254">
           <caret line="166" column="6" lean-forward="true" selection-start-line="166" selection-start-column="6" selection-end-line="166" selection-end-column="6" />
           <folding>
             <element signature="e#3127#3128#0" expanded="true" />
@@ -373,10 +398,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hackerrank/MinimumSwapsTwo.java">
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/RansomeNote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
