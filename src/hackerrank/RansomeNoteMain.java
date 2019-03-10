@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 public class RansomeNoteMain {
 
     public static void main(String args[]) {
-//        Ransome noteObj = new RansomeNotesJava7();
-        Ransome noteObj = new RansomeNoteWithStreams();
+        Ransome noteObj = new RansomeNotesJava7();
+//        Ransome noteObj = new RansomeNoteWithStreams();
 
         ransomeNoteTrue(noteObj);
         maganizeDoesNotContainRepeatedWord(noteObj);

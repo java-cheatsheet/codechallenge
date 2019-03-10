@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d52cc8c1-dfb0-4275-a8a6-bd117d2f2cc1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hackerrank/RansomeNoteMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hackerrank/TwoString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/RansomeNote.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hackerrank/RansomeNote.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/RansomeNoteMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/RansomeNoteMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/RansomeNoteWithStreams.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/RansomeNoteWithStreams.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/RansomeNotesJava7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/RansomeNotesJava7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hackerrank/RansomeNoteMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hackerrank/RansomeNoteMain.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,18 +22,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RansomeNoteMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RansomeNoteMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hackerrank/RansomeNoteMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+            <state relative-caret-position="-509">
+              <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#Ransome#0" />
                 <element signature="class#RansomeNoteWithStreams#0" />
-                <element signature="method#getFrequencyMapFromArray#0;class#RansomeNoteWithStreams#0" />
-                <element signature="class#RansomeNotesJava7#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TwoString.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hackerrank/TwoString.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#307#318#0" expanded="true" />
+                <element signature="method#exampleWithRetainAll#0;class#TwoString#0" />
+                <element signature="e#965#974#0" expanded="true" />
+                <element signature="e#1447#1456#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FindSubStringRegEx.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hackerrank/FindSubStringRegEx.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -42,6 +67,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class With Main" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,7 +85,9 @@
         <option value="$PROJECT_DIR$/src/hackerrank/ClimbingTheLeaderboard.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/MinimumSwapsTwo.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/RansomeNote.java" />
+        <option value="$PROJECT_DIR$/src/hackerrank/PickingNumbers.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/RansomeNoteMain.java" />
+        <option value="$PROJECT_DIR$/src/hackerrank/TwoString.java" />
       </list>
     </option>
   </component>
@@ -128,7 +156,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.RansomeNoteMain">
+  <component name="RunManager" selected="Application.TwoString">
     <configuration name="ClimbingTheLeaderboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hackerrank.ClimbingTheLeaderboard" />
       <module name="codechallenge" />
@@ -155,6 +183,17 @@
     </configuration>
     <configuration name="RansomeNoteMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hackerrank.RansomeNoteMain" />
+      <module name="codechallenge" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hackerrank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="TwoString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hackerrank.TwoString" />
       <module name="codechallenge" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -210,9 +249,11 @@
       <item itemvalue="Application.ClimbingTheLeaderboard" />
       <item itemvalue="Application.RansomeNote" />
       <item itemvalue="Application.RansomeNoteMain" />
+      <item itemvalue="Application.TwoString" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TwoString" />
         <item itemvalue="Application.RansomeNoteMain" />
         <item itemvalue="Application.RansomeNote" />
         <item itemvalue="Application.ClimbingTheLeaderboard" />
@@ -246,11 +287,11 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50064933" side_tool="true" weight="0.32959184" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49935064" weight="0.26174498" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49935064" visible="true" weight="0.2295302" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49935064" visible="true" weight="0.26174498" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49935064" weight="0.2295302" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18683812" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23827533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -366,8 +407,14 @@
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/RansomeNoteMain.java</url>
+          <line>92</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -448,8 +495,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Ransome#0" />
             <element signature="class#RansomeNoteWithStreams#0" />
-            <element signature="method#getFrequencyMapFromArray#0;class#RansomeNoteWithStreams#0" />
-            <element signature="class#RansomeNotesJava7#0" />
           </folding>
         </state>
       </provider>
@@ -519,16 +564,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/PickingNumbers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hackerrank/RansomeNoteMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+        <state relative-caret-position="-509">
+          <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Ransome#0" />
             <element signature="class#RansomeNoteWithStreams#0" />
-            <element signature="method#getFrequencyMapFromArray#0;class#RansomeNoteWithStreams#0" />
-            <element signature="class#RansomeNotesJava7#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/FindSubStringRegEx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/TwoString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#307#318#0" expanded="true" />
+            <element signature="method#exampleWithRetainAll#0;class#TwoString#0" />
+            <element signature="e#965#974#0" expanded="true" />
+            <element signature="e#1447#1456#0" expanded="true" />
           </folding>
         </state>
       </provider>
