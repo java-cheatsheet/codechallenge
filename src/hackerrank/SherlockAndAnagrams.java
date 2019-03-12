@@ -101,10 +101,7 @@ public class SherlockAndAnagrams
         return c;
     }
 
-    /**
-     * The sum of two different characters can be equal.
-     * Hence this solution failed.
-     */
+
     public static int checkAnagram(String s1, String s2) {
         char a[] = s1.toCharArray();
         char b[] = s2.toCharArray();
@@ -124,7 +121,6 @@ public class SherlockAndAnagrams
         }
 
         c = 0;
-        sum = 0;
         while ( c < b.length) {
             sum = b[c] - 'a';
             second[ sum ]++;
@@ -139,6 +135,10 @@ public class SherlockAndAnagrams
         return 1;
     }
 
+    /**
+     * The sum of two different characters can be equal.
+     * The problem does not work.
+     */
     public static int checkAnagramWithSum(String s1, String s2) {
         char a[] = s1.toCharArray();
         char b[] = s2.toCharArray();
