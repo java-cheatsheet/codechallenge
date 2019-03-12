@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  * For example, the note is "Attack at dawn". The magazine contains only "attack at dawn". The magazine has all the right words, but there's a case mismatch. The answer is NO.
  *
  */
-public class RansomeNoteMain {
+public class RansomeNote {
 
     public static void main(String args[]) {
         Ransome noteObj = new RansomeNotesJava7();
@@ -97,7 +97,7 @@ class RansomeNotesJava7 implements Ransome {
 
     private boolean getRansom(String[] magazine, String[] ransom) {
 
-         if( magazine.length >= ransom.length ) {
+        if( magazine.length >= ransom.length ) {
 
             Map<String, Integer> magazineMap = getFrequencyMapFromArray(magazine); //Arrays.stream(magazine).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
             Map<String, Integer> ransomMap = getFrequencyMapFromArray(ransom); //Arrays.stream(ransom).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
