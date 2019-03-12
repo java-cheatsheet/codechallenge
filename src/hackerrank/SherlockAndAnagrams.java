@@ -8,11 +8,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * Problem Definition:
  * https://www.hackerrank.com/challenges/sherlock-and-anagrams/
- *
  * Two strings are anagrams of each other if the letters of one string can be rearranged to form the other string. Given a string, find the number of pairs of substrings of the string that are anagrams of each other.
  *
  * Function Description
- *
  * Complete the function sherlockAndAnagrams in the editor below. It must return an integer that represents the number of anagrammatic pairs of substrings in s.
  *
  * Solutions:
@@ -41,33 +39,33 @@ public class SherlockAndAnagrams
 
 
 //        shouldCount10for4SameChars();
-        shouldCount3();
+//        shouldCount3();
 
-//        testCase2TimedOutComparision();
+        testCase2TimedOut();
     }
 
     public static void testCase2TimedOut() {
         String s = "ifailuhkqqhucpoltgtyovarjsnrbfpvmupwjjjfiwwhrlkpekxxnebfrwibylcvkfealgonjkzwlyfhhkefuvgndgdnbelgruel";
-//        int result = sherlockAndAnagrams(s);
+        int result = sherlockAndAnagrams(s);
 
-        long startTime = System.nanoTime();
-        SolutionNotAccepted notAcceptedOnj =  new SolutionNotAccepted();
-        int result = notAcceptedOnj.sherlockAndAnagrams(s);
-        long endTime   = System.nanoTime();
-        long elapsedTime = endTime - startTime;
+//        long startTime = System.nanoTime();
+//        SolutionNotAccepted notAcceptedOnj =  new SolutionNotAccepted();
+//        int result = notAcceptedOnj.sherlockAndAnagrams(s);
+//        long endTime   = System.nanoTime();
+//        long elapsedTime = endTime - startTime;
+////        TimeUnit seconds = new TimeUnit();
+//        System.out.println(TimeUnit.NANOSECONDS.toSeconds(elapsedTime));
+
+//        startTime = System.nanoTime();
+//        result = sherlockAndAnagrams(s);
+//        endTime   = System.nanoTime();
+//        elapsedTime = endTime - startTime;
 //        TimeUnit seconds = new TimeUnit();
-        System.out.println(TimeUnit.NANOSECONDS.toSeconds(elapsedTime));
-
-        startTime = System.nanoTime();
-        result = sherlockAndAnagrams(s);
-        endTime   = System.nanoTime();
-        elapsedTime = endTime - startTime;
-//        TimeUnit seconds = new TimeUnit();
-        System.out.println(TimeUnit.NANOSECONDS.toSeconds(elapsedTime));
+//        System.out.println(TimeUnit.NANOSECONDS.toSeconds(elapsedTime));
 
 
-//        int expected = 399;
-//        assert (result == expected) : "Result:" + result +" | Expected:" + expected;
+        int expected = 399;
+        assert (result == expected) : "Result:" + result +" | Expected:" + expected;
     }
 
     public static void shouldCount10for4SameChars() {
@@ -94,7 +92,7 @@ public class SherlockAndAnagrams
                 for (int j = i + 1; j < sa.length - index + 1; j++) {
                     String s2 = s.substring(j, index + j);
 //                     System.out.println(s1+"|"+s2);
-                    if (check_anagram(s1, s2) == 1)
+                    if ( checkAnagram(s1, s2) == 1 )
                         c++;
                 }
             }
@@ -103,7 +101,11 @@ public class SherlockAndAnagrams
         return c;
     }
 
-    public static int check_anagram(String s1, String s2) {
+    /**
+     * The sum of two different characters can be equal.
+     * Hence this solution failed.
+     */
+    public static int checkAnagram(String s1, String s2) {
         char a[] = s1.toCharArray();
         char b[] = s2.toCharArray();
         System.out.println(s1+" "+s2);
@@ -137,6 +139,23 @@ public class SherlockAndAnagrams
         return 1;
     }
 
+    public static int checkAnagramWithSum(String s1, String s2) {
+        char a[] = s1.toCharArray();
+        char b[] = s2.toCharArray();
+
+        int sumA = 0;
+        int sumB = 0;
+        int count = 0;
+        int len = a.length;
+
+        while ( count < len ) {
+            sumA += a[count];
+            sumB += b[count];
+            count++;
+        }
+
+        return ( sumA == sumB ) ? 1 : 0;
+    }
 
 }
 
