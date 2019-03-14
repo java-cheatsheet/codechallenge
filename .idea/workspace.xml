@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d52cc8c1-dfb0-4275-a8a6-bd117d2f2cc1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/MarkAndToys.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hackerrank/MarkAndToys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hackerrank/GradingStudents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hackerrank/SherlockAndArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/Pairs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/Pairs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/MarkAndToys.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/MarkAndToys.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +23,8 @@
       <file leaf-file-name="CountTriplets.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hackerrank/CountTriplets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="52" column="84" selection-start-line="47" selection-start-column="8" selection-end-line="52" selection-end-column="84" />
+            <state relative-caret-position="1377">
+              <caret line="81" column="36" lean-forward="true" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,14 +54,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarkAndToys.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MarkAndToys.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hackerrank/MarkAndToys.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="55" column="35" lean-forward="true" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+            <state relative-caret-position="139">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding>
                 <element signature="e#130#131#0" expanded="true" />
                 <element signature="e#157#158#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SherlockAndArray.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hackerrank/SherlockAndArray.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8">
+              <caret line="14" selection-start-line="14" selection-end-line="27" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GradingStudents.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hackerrank/GradingStudents.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,6 +171,8 @@
         <option value="$PROJECT_DIR$/src/hackerrank/BubbleSort.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/Pairs.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/MarkAndToys.java" />
+        <option value="$PROJECT_DIR$/src/hackerrank/SherlockAndArray.java" />
+        <option value="$PROJECT_DIR$/src/hackerrank/GradingStudents.java" />
       </list>
     </option>
   </component>
@@ -220,7 +246,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MarkAndToys">
+  <component name="RunManager" selected="Application.GradingStudents">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hackerrank.BubbleSort" />
       <module name="codechallenge" />
@@ -233,8 +259,8 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="CountTriplets" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hackerrank.CountTriplets" />
+    <configuration name="GradingStudents" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hackerrank.GradingStudents" />
       <module name="codechallenge" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -269,8 +295,8 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="SherlockAndAnagrams" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hackerrank.SherlockAndAnagrams" />
+    <configuration name="SherlockAndArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hackerrank.SherlockAndArray" />
       <module name="codechallenge" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -280,9 +306,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -327,19 +350,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.MinimumSwapsTwo" />
-      <item itemvalue="Application.SherlockAndAnagrams" />
-      <item itemvalue="Application.CountTriplets" />
       <item itemvalue="Application.BubbleSort" />
       <item itemvalue="Application.Pairs" />
       <item itemvalue="Application.MarkAndToys" />
+      <item itemvalue="Application.SherlockAndArray" />
+      <item itemvalue="Application.GradingStudents" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GradingStudents" />
+        <item itemvalue="Application.SherlockAndArray" />
         <item itemvalue="Application.MarkAndToys" />
         <item itemvalue="Application.Pairs" />
         <item itemvalue="Application.BubbleSort" />
-        <item itemvalue="Application.CountTriplets" />
-        <item itemvalue="Application.SherlockAndAnagrams" />
       </list>
     </recent_temporary>
   </component>
@@ -369,8 +392,8 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50064933" side_tool="true" weight="0.32959184" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49935064" weight="0.26174498" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49935064" visible="true" weight="0.2295302" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49935064" visible="true" weight="0.26174498" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49935064" weight="0.2295302" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2526475" />
@@ -511,17 +534,27 @@
           <properties />
           <option name="timeStamp" value="31" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/SherlockAndArray.java</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/SherlockAndArray.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/GradingStudents.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="32" />
+      <option name="time" value="36" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="arrFront" language="JAVA" />
-        <watch expression="fi" language="JAVA" />
-        <watch expression="arrBack" language="JAVA" />
-        <watch expression="bj" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -750,6 +783,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#307#318#0" expanded="true" />
+            <element signature="e#965#974#0" expanded="true" />
+            <element signature="e#1447#1456#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -833,16 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hackerrank/CountTriplets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="52" column="84" selection-start-line="47" selection-start-column="8" selection-end-line="52" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hackerrank/BubbleSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -863,11 +892,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hackerrank/MarkAndToys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="55" column="35" lean-forward="true" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+        <state relative-caret-position="139">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="e#130#131#0" expanded="true" />
             <element signature="e#157#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/CountTriplets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" column="36" lean-forward="true" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/SherlockAndArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="14" selection-start-line="14" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/GradingStudents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
