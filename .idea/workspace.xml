@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d52cc8c1-dfb0-4275-a8a6-bd117d2f2cc1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hackerrank/Pairs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/MarkAndToys.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hackerrank/MarkAndToys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/Pairs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/codechallenge/hackerrank/Pairs.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,11 +45,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pairs.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Pairs.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hackerrank/Pairs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="247">
+              <caret line="58" column="5" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="58" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MarkAndToys.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hackerrank/MarkAndToys.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="55" column="35" lean-forward="true" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+              <folding>
+                <element signature="e#130#131#0" expanded="true" />
+                <element signature="e#157#158#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,6 +146,7 @@
         <option value="$PROJECT_DIR$/src/hackerrank/CountTriplets.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/BubbleSort.java" />
         <option value="$PROJECT_DIR$/src/hackerrank/Pairs.java" />
+        <option value="$PROJECT_DIR$/src/hackerrank/MarkAndToys.java" />
       </list>
     </option>
   </component>
@@ -204,7 +220,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Pairs">
+  <component name="RunManager" selected="Application.MarkAndToys">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hackerrank.BubbleSort" />
       <module name="codechallenge" />
@@ -229,6 +245,18 @@
         </pattern>
       </extension>
     </configuration>
+    <configuration name="MarkAndToys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hackerrank.MarkAndToys" />
+      <module name="codechallenge" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hackerrank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Pairs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hackerrank.Pairs" />
       <module name="codechallenge" />
@@ -240,21 +268,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-    </configuration>
-    <configuration name="RansomeNote" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hackerrank.RansomeNote" />
-      <module name="codechallenge" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hackerrank.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
     </configuration>
     <configuration name="SherlockAndAnagrams" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hackerrank.SherlockAndAnagrams" />
@@ -314,19 +327,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.MinimumSwapsTwo" />
-      <item itemvalue="Application.RansomeNote" />
       <item itemvalue="Application.SherlockAndAnagrams" />
       <item itemvalue="Application.CountTriplets" />
       <item itemvalue="Application.BubbleSort" />
       <item itemvalue="Application.Pairs" />
+      <item itemvalue="Application.MarkAndToys" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MarkAndToys" />
         <item itemvalue="Application.Pairs" />
         <item itemvalue="Application.BubbleSort" />
         <item itemvalue="Application.CountTriplets" />
         <item itemvalue="Application.SherlockAndAnagrams" />
-        <item itemvalue="Application.RansomeNote" />
       </list>
     </recent_temporary>
   </component>
@@ -356,8 +369,8 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50064933" side_tool="true" weight="0.32959184" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49935064" visible="true" weight="0.26174498" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49935064" weight="0.2295302" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49935064" weight="0.26174498" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49935064" visible="true" weight="0.2295302" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2526475" />
@@ -492,9 +505,23 @@
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hackerrank/MarkAndToys.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="32" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="arrFront" language="JAVA" />
+        <watch expression="fi" language="JAVA" />
+        <watch expression="arrBack" language="JAVA" />
+        <watch expression="bj" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -829,8 +856,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hackerrank/Pairs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state relative-caret-position="247">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="58" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hackerrank/MarkAndToys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="55" column="35" lean-forward="true" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+          <folding>
+            <element signature="e#130#131#0" expanded="true" />
+            <element signature="e#157#158#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
