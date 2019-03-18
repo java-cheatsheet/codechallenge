@@ -6,8 +6,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * Probelem:
  * https://www.hackerrank.com/challenges/picking-numbers/
- *
  * Another solution: https://github.com/RyanFehr/HackerRank/blob/master/Algorithms/Implementation/Picking%20Numbers/Solution.java#L26
  */
 public class PickingNumbers {

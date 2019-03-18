@@ -8,10 +8,13 @@ import java.util.concurrent.TimeUnit;
 /**
  * Problem Definition:
  * https://www.hackerrank.com/challenges/sherlock-and-anagrams/
- * Two strings are anagrams of each other if the letters of one string can be rearranged to form the other string. Given a string, find the number of pairs of substrings of the string that are anagrams of each other.
+ * Two strings are anagrams of each other if the letters of one string can
+ * be rearranged to form the other string. Given a string, find the number
+ * of pairs of substrings of the string that are anagrams of each other.
  *
  * Function Description
- * Complete the function sherlockAndAnagrams in the editor below. It must return an integer that represents the number of anagrammatic pairs of substrings in s.
+ * Complete the function sherlockAndAnagrams in the editor below.
+ * It must return an integer that represents the number of anagrammatic pairs of substrings in s.
  *
  * Solutions:
  * The max len is 100. So the max strings to compare could be of len 10
