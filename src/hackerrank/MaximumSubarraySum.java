@@ -43,7 +43,7 @@ public class MaximumSubarraySum {
             Iterator<Long> itr = set.iterator();
 
             if( itr.hasNext() ) {
-                maxSum= Math.max( maxSum, ( currentSum-itr.next() + m ) %m );
+                maxSum = Math.max( maxSum, ( currentSum - itr.next() + m ) %m );
             }
 
             maxSum = Math.max( maxSum, currentSum );
