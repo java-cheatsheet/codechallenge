@@ -27,10 +27,11 @@ I basically did not think of that and had forgotten that it even exist. And now 
 
 The explanation by Jinyao Xu at link below is really very simple.
 https://www.quora.com/What-is-the-logic-used-in-the-HackerRank-Maximise-Sum-problem
+
 As I wanted to learn more I researched on the keywords on that explanation and ended up going through a lot of
 mathematics starting from modular arithmetic from https://en.wikipedia.org/wiki/Modular_arithmetic.
 
 
 Some important notes were also taken from stackoverflow
 https://stackoverflow.com/questions/31113993/maximum-subarray-sum-modulo-m
-n
+

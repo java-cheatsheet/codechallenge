@@ -1,4 +1,4 @@
-package popularalgorithms;
+package basics;
 
 /**
  * https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/

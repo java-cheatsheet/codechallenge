@@ -1,4 +1,4 @@
-package codility.prefixsum;
+package codility;
 
 /**
  * Problem:

@@ -1,7 +1,14 @@
-package codility.prefixsum;
+package codility.DynamicProgramming;
 
 import java.util.Arrays;
 
+/**
+ * Problem:
+ *
+ *
+ * https://stackoverflow.com/questions/19552754/java-codility-training-genomic-range-query
+ *
+ */
 public class GenomicRangeQuery {
 
     public static void main(String[] args) {

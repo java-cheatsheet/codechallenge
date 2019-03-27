@@ -1,4 +1,4 @@
-package hackerrank;
+package basics;
 
 
 import java.util.*;

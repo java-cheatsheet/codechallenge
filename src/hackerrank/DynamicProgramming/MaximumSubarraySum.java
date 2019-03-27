@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.DynamicProgramming;
 
 import java.util.Iterator;
 import java.util.SortedSet;
@@ -7,6 +7,8 @@ import java.util.TreeSet;
 /**
  * Problem:
  * https://www.hackerrank.com/challenges/maximum-subarray-sum/problem
+ *
+ * https://www.quora.com/What-is-the-logic-used-in-the-HackerRank-Maximise-Sum-problem
  *
  * Find the max m modulo of subarray a.
  *
