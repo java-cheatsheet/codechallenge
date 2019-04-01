@@ -13,6 +13,7 @@ public class Restaturant {
     //834 125
     public static void checkWithFailedTestCases() {
         int l = 310;
+
         int b = 620;
         int expected = 2;
         int result = restaurant( l, b );
