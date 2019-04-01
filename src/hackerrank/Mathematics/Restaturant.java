@@ -1,9 +1,10 @@
 package hackerrank.Mathematics;
 
+import java.math.BigInteger;
+
 public class Restaturant {
 
     public static void main(String args[]) {
-
         validMaxSquare();
         validMaxRestaurants();
         checkWithFailedTestCases();
