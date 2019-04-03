@@ -1,7 +1,5 @@
 package hackerrank.Mathematics;
 
-import java.math.BigInteger;
-
 /**
  * Problem:
  * https://www.hackerrank.com/challenges/restaurant/problem
@@ -61,7 +59,7 @@ public class Restaturant {
 }
 
 /**
- * This is the recent solution which was visualied after
+ * This is the recent solution which was visualized after
  * revising the usage of Euclid algorithm. This solution
  * also has passed hackerrank tests.
  *

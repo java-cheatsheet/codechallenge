@@ -35,6 +35,8 @@ import java.util.HashMap;
  * Still I am not very much comfortable with the implementation  of the
  * GayleMcDowellSolution recursion!
  *
+ * Other Solutions:
+ * https://www.techiedelight.com/coin-change-making-problem-unlimited-supply-coins/
  */
 public class TheCoinChangeProblem {
 

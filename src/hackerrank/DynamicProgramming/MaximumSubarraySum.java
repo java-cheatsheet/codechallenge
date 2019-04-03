@@ -6,11 +6,26 @@ import java.util.TreeSet;
 
 /**
  * Problem:
- * https://www.hackerrank.com/challenges/maximum-subarray-sum/problem
+ * This topic, Prefix Sum, came to my attention when I was resolving a problem from
+ * Maximum Subarray Sum in Hackerrank.com.
  *
+ * Link: https://www.hackerrank.com/challenges/maximum-subarray-sum/problem
+ *
+ * We define the following:
+ * A subarray of array a of length n is a contiguous segment from a[i] through a[j] where 0 <= i < j < n.
+ * The sum of an array is the sum of its elements.
+ * Given an n element array of integers, a, and an integer, m, determine the maximum value of the sum of any of its
+ * subarrays modulo m.
+ *
+ * Function Description:
+ * Complete the maximumSum function in the editor below. It should return a long integer that represents the maximum value
+ * of subarray sum % m.
+ * maximumSum has the following parameter(s):
+ *     a: an array of long integers, the array to analyze
+ *     m: a long integer, the modulo divisor
+ *
+ * Solution:
  * https://www.quora.com/What-is-the-logic-used-in-the-HackerRank-Maximise-Sum-problem
- *
- * Find the max m modulo of subarray a.
  *
  */
 public class MaximumSubarraySum {
@@ -29,6 +44,8 @@ public class MaximumSubarraySum {
     }
 
     /**
+     *
+     * Time Complexity O(N)
      *
      * @param a
      * @param m
@@ -60,6 +77,7 @@ public class MaximumSubarraySum {
 
     /**
      * This was the first naive brut force approach with time complexity O(N^2)
+     * Time Complexity O(N^2)
      *
      * @param a
      * @param m
