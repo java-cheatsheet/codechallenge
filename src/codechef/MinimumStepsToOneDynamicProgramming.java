@@ -48,6 +48,7 @@ package codechef;
  *
  */
 public class MinimumStepsToOneDynamicProgramming {
+
     public static void main(String args[]) {
         int positiveInt = 7;
         int expected = 3;
