@@ -37,6 +37,9 @@ import java.util.HashMap;
  *
  * Other Solutions:
  * https://www.techiedelight.com/coin-change-making-problem-unlimited-supply-coins/
+ *
+ * https://cs.stackexchange.com/questions/105313/dynamic-pseudo-code-for-simplified-coin-changing-algorithm
+ *
  */
 public class TheCoinChangeProblem {
 

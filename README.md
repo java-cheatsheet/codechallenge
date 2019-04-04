@@ -77,8 +77,9 @@
     ----------------------------------------------
 
 
-    References from Princeton University to re-enforce
-    the basic and advance programming skills:
+    References from Princeton University to
+    re-enforce the basic and advance programming
+    skills:
 
     https://introcs.cs.princeton.edu/java/home/
     https://www.coursera.org/learn/cs-programming-java
@@ -94,9 +95,10 @@
     https://www.coursera.org/learn/analytic-combinatorics
 
 
-    I am forever greatful to Princeton University and it's
-    outstanding team faculty for making these online resources
-    free, and especially Robert Sedgewick for wonderful presentations.
+    I am forever greatful to Princeton University
+    and it's outstanding faculty for making these
+    online resources free, and especially Robert
+    Sedgewick for wonderful presentations.
 
 
     ----------------------------------------------

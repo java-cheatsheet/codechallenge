@@ -33,6 +33,10 @@ import java.util.TreeSet;
  * 1. https://www.quora.com/What-is-the-logic-used-in-the-HackerRank-Maximise-Sum-problem
  * 2. Another solution was found in hackerrank submission.
  *
+ * Other Resource:
+ * 1. https://stackoverflow.com/questions/54577755/how-to-get-start-index-for-maximum-sum-sub-array
+ * 2. https://cs.stackexchange.com/questions/105313/dynamic-pseudo-code-for-simplified-coin-changing-algorithm
+ * 3. https://en.wikipedia.org/wiki/Maximum_subarray_problem
  */
 public class MaximumSubarraySum {
 
@@ -115,6 +119,7 @@ public class MaximumSubarraySum {
                 long temp = set.tailSet(cur,false).first();
                 minValue = Math.min(minValue, temp - cur);
             }
+
             set.add(cur);
 
             if( minValue == 1 ){ return m - minValue; }

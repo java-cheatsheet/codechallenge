@@ -40,10 +40,39 @@ import edu.princeton.cs.algs4.*;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-public class QuickSort {
+public class QuickSortAnalysis {
+
+    /**
+     * Reads in a sequence of strings from standard input; quicksorts them;
+     * and prints them to standard output in ascending order.
+     * Shuffles the array and then prints the strings again to
+     * standard output, but this time, using the select method.
+     *
+     * @param args the command-line arguments
+     */
+    public static void main(String[] args) {
+//        String[] a = StdIn.readAllStrings();
+
+        String[] a = {"A", "B", "E", "L", "M", "O", "P", "R", "S", "T", "X"};
+        QuickSortAnalysis.sort(a);
+        show(a);
+        assert isSorted(a);
+
+
+        // shuffle
+        StdRandom.shuffle(a);
+
+        // display results again using select
+        StdOut.println();
+        for (int i = 0; i < a.length; i++) {
+            String ith = (String) QuickSortAnalysis.select(a, i);
+            StdOut.println(ith);
+        }
+
+    }
 
     // This class should not be instantiated.
-    private QuickSort() { }
+    private QuickSortAnalysis() { }
 
     /**
      * Rearranges the array in ascending order, using the natural order.
@@ -161,33 +190,6 @@ public class QuickSort {
         }
     }
 
-    /**
-     * Reads in a sequence of strings from standard input; quicksorts them;
-     * and prints them to standard output in ascending order.
-     * Shuffles the array and then prints the strings again to
-     * standard output, but this time, using the select method.
-     *
-     * @param args the command-line arguments
-     */
-    public static void main(String[] args) {
-//        String[] a = StdIn.readAllStrings();
 
-        String[] a = {"A", "B", "E", "L", "M", "O", "P", "R", "S", "T", "X"};
-        Quick.sort(a);
-        show(a);
-        assert isSorted(a);
-
-
-        // shuffle
-        StdRandom.shuffle(a);
-
-        // display results again using select
-        StdOut.println();
-        for (int i = 0; i < a.length; i++) {
-            String ith = (String) QuickSort.select(a, i);
-            StdOut.println(ith);
-        }
-
-    }
 
 }

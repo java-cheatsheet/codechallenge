@@ -1,7 +1,7 @@
 package pincetonalgorithms;
 
 /******************************************************************************
- *  Compilation:  javac BinarySearch.java
+ *  Compilation:  javac BinarySearchAnalysis.java
  *  Execution:    java BinarySearch whitelist.txt < input.txt
  *  Dependencies: In.java StdIn.java StdOut.java
  *  Data files:   https://algs4.cs.princeton.edu/11model/tinyW.txt
@@ -42,12 +42,38 @@ import java.util.Arrays;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-public class BinarySearch {
+public class BinarySearchAnalysis {
+
+    /**
+     * Reads in a sequence of integers from the whitelist file, specified as
+     * a command-line argument; reads in integers from standard input;
+     * prints to standard output those integers that do <em>not</em> appear in the file.
+     *
+     * @param args the command-line arguments
+     */
+    public static void main(String[] args) {
+
+        // read the integers from a file
+//        In in = new In(args[0]);
+//        int[] whitelist = in.readAllInts();
+
+        int[] whitelist = {4,7,1,3,4,3,4,9,8,6,1,2,9,8,3,6,4,9,1,7,2,3,4,0,2,3};
+
+        // sort the array
+        Arrays.sort(whitelist);
+
+        // read integer key from standard input; print if not in whitelist
+        while (!StdIn.isEmpty()) {
+            int key = StdIn.readInt();
+            if (edu.princeton.cs.algs4.BinarySearch.indexOf(whitelist, key) == -1)
+                StdOut.println(key);
+        }
+    }
 
     /**
      * This class should not be instantiated.
      */
-    private BinarySearch() { }
+    private BinarySearchAnalysis() { }
 
     /**
      * Returns the index of the specified key in the specified array.
@@ -84,31 +110,7 @@ public class BinarySearch {
         return indexOf(a, key);
     }
 
-    /**
-     * Reads in a sequence of integers from the whitelist file, specified as
-     * a command-line argument; reads in integers from standard input;
-     * prints to standard output those integers that do <em>not</em> appear in the file.
-     *
-     * @param args the command-line arguments
-     */
-    public static void main(String[] args) {
 
-        // read the integers from a file
-//        In in = new In(args[0]);
-//        int[] whitelist = in.readAllInts();
-
-        int[] whitelist = {4,7,1,3,4,3,4,9,8,6,1,2,9,8,3,6,4,9,1,7,2,3,4,0,2,3};
-
-        // sort the array
-        Arrays.sort(whitelist);
-
-        // read integer key from standard input; print if not in whitelist
-        while (!StdIn.isEmpty()) {
-            int key = StdIn.readInt();
-            if (edu.princeton.cs.algs4.BinarySearch.indexOf(whitelist, key) == -1)
-                StdOut.println(key);
-        }
-    }
 }
 
 /******************************************************************************

@@ -1,13 +1,19 @@
 package basics;
 
+/**
+ * Checking Binary Search
+ *
+ * https://www.geeksforgeeks.org/binary-search/
+ */
 public class BinarySearchMain {
 
     public static void main(String args[])
     {
+        mainIterative();
 
     }
 
-    static void mainRecursive(String args[])
+    static void mainRecursive()
     {
         BinarySearchRecursive ob = new BinarySearchRecursive();
         int arr[] = { 2, 3, 4, 10, 40 };
@@ -20,13 +26,17 @@ public class BinarySearchMain {
             System.out.println("Element found at index " + result);
     }
 
-    static void mainIterative(String args[])
+    static void mainIterative()
     {
         BinarySearchIterative ob = new BinarySearchIterative();
         int arr[] = { 2, 3, 4, 10, 40 };
         int n = arr.length;
         int x = 10;
         int result = ob.binarySearch(arr, x);
+        boolean expected = true;
+
+        assert(result != -1);
+
         if (result == -1)
             System.out.println("Element not present");
         else
@@ -93,7 +103,7 @@ class BinarySearchIterative {
             if (arr[m] < x)
                 l = m + 1;
 
-                // If x is smaller, ignore right half
+            // If x is smaller, ignore right half
             else
                 r = m - 1;
         }

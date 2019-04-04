@@ -35,10 +35,23 @@ import edu.princeton.cs.algs4.*;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-public class MergeSort {
+public class MergeSortAnalysis {
+
+    /**
+     * Reads in a sequence of strings from standard input; mergesorts them;
+     * and prints them to standard output in ascending order.
+     *
+     * @param args the command-line arguments
+     */
+    public static void main(String[] args) {
+        //String[] a = StdIn.readAllStrings();
+        String[] a = {"A", "B", "E", "L", "M", "O", "P", "R", "S", "T", "X"};
+        MergeSortAnalysis.sort(a);
+        show(a);
+    }
 
     // This class should not be instantiated.
-    private MergeSort() { }
+    private MergeSortAnalysis() { }
 
     // stably merge a[lo .. mid] with a[mid+1 ..hi] using aux[lo .. hi]
     private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
@@ -161,16 +174,5 @@ public class MergeSort {
         }
     }
 
-    /**
-     * Reads in a sequence of strings from standard input; mergesorts them;
-     * and prints them to standard output in ascending order.
-     *
-     * @param args the command-line arguments
-     */
-    public static void main(String[] args) {
-//        String[] a = StdIn.readAllStrings();
-        String[] a = {"A", "B", "E", "L", "M", "O", "P", "R", "S", "T", "X"};
-        MergeSort.sort(a);
-        show(a);
-    }
+
 }
