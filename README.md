@@ -100,9 +100,31 @@
     online resources free, and especially Robert
     Sedgewick for wonderful presentations.
 
+    ----------------------------------------------
+
+
+    Recently came to know about a playlist on 
+    Algorithms by Abdul Bari on YouTube. I am 
+    very thankful to his effort on making very
+    hard things easy to understand.
+
+    youtube.com/watch?v=e2cF8a5aAhE&list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O
+
 
     ----------------------------------------------
 
+
+    Resources for Software Engineers
+    
+    Clean Code by Robert C. Martin
+    Design Patterns by The Gang of Four
+    Design Principles like SOLID, DRY
+    Test Driven Development by Kent Beck
+    Refactoring by Martin Fowler
+
+
+    ----------------------------------------------
+ 
 
     If in anyway I can be of anyhelp with my skills of
     programming, I will undoubtably be willing to help.
@@ -117,6 +139,3 @@
     TODO:
     1. Add unit tests.
     2. Implement CI to run the unit tests.
-
-
-    ----------------------------------------------
