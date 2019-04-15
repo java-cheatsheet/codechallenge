@@ -1,5 +1,8 @@
 package basics;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/
  */
@@ -7,7 +10,19 @@ public class Fibonacci {
 
     public static void main(String[] args)
     {
+        callFibonacciRecursiveWithHashMap();
+        callFibonacciTabulated();
+        callFibonacciMemoized();
+    }
 
+    public static void callFibonacciRecursiveWithHashMap()
+    {
+        FibonacciRecursiveWithHashMap obj = new FibonacciRecursiveWithHashMap();
+        int n = 9;
+        int result = obj.fib(n);
+        System.out.println("Fibonacci number is" + " " + result);
+//        int expected = 44;
+//        assert (result == expected) : "Result:" + result +" | Expected:" + expected;
     }
 
     public static void callFibonacciTabulated()
@@ -20,7 +35,7 @@ public class Fibonacci {
     public static void callFibonacciMemoized()
     {
         FibonacciMemoized f = new FibonacciMemoized();
-        int n = 40;
+        int n = 9;
         f._initialize();
         System.out.println("Fibonacci number is" + " " + f.fib(n));
     }
@@ -70,10 +85,29 @@ class FibonacciMemoized
 
 }
 
+
 class FibonacciRecursive {
     public int fib(int n) {
         if (n <= 1)
             return n;
         return fib(n - 1) + fib(n - 2);
+    }
+}
+
+
+class FibonacciRecursiveWithHashMap
+{
+    private Map<Integer, Integer> map = new HashMap<>();
+
+    public int fib(int n) {
+        if (n <= 1)
+            return n;
+
+        if( !map.containsKey(n) ) {
+            int count = fib(n-1 ) + fib(n - 2 );
+            map.put(n, count);
+        }
+
+        return map.get(n);
     }
 }

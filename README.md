@@ -121,7 +121,9 @@
     Design Principles like SOLID, DRY
     Test Driven Development by Kent Beck
     Refactoring by Martin Fowler
-
+    Introduction to Algorithms by CLRS
+    Algorithm Design by Kleinberg & Tardos
+    http://algorist.com/algorist.html
 
     ----------------------------------------------
  

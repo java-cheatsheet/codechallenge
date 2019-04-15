@@ -5,10 +5,19 @@ import java.util.Scanner;
 /**
  * Problem:
  * https://www.hackerrank.com/challenges/new-year-chaos/problem
- * It's New Year's Day and everyone's in line for the Wonderland rollercoaster ride! There are a number of people queued up, and each person wears a sticker indicating their initial position in the queue. Initial positions increment by 1 from 1 at the front of the line to n at the back.
+ *
+ * It's New Year's Day and everyone's in line for the Wonderland
+ * rollercoaster ride! There are a number of people queued up,
+ * and each person wears a sticker indicating their initial
+ * position in the queue. Initial positions increment by 1 from
+ * 1 at the front of the line to n at the back.
  *
  * Function Description
- * Complete the function minimumBribes in the editor below. It must print an integer representing the minimum number of bribes necessary, or Too chaotic if the line configuration is not possible.
+ * Complete the function minimumBribes in the editor below. It
+ * must print an integer representing the minimum number of
+ * bribes necessary, or Too chaotic if the line configuration
+ * is not possible.
+ *
  */
 public class NewYearChaos {
 

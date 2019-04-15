@@ -20,7 +20,7 @@ package codechef;
  * Solution:
  *
  * Approach / Idea: One can think of greedily choosing the step,
- * which makes n as low as possible and conitnue the same, till
+ * which makes n as low as possible and continue the same, till
  * it reaches
  *
  * 1. If you observe carefully, the greedy strategy

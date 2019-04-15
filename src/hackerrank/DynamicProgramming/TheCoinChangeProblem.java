@@ -1,11 +1,11 @@
 package hackerrank.DynamicProgramming;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 /**
  * Problem:
  * https://www.hackerrank.com/challenges/coin-change/problem
+ *
  * You are working at the cash counter at a fun-fair, and you have
  * different types of coins available to you in infinite quantities.
  * The value of each coin is already given. Can you determine the

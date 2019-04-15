@@ -5,10 +5,15 @@ import java.util.Arrays;
 /**
  * Problem:
  * https://www.hackerrank.com/challenges/pairs/problem
- * You will be given an array of integers and a target value. Determine the number of pairs of array elements that have a difference equal to a target value.
  *
- * Function Description
- * Complete the pairs function below. It must return an integer representing the number of element pairs having the required difference.
+ * You will be given an array of integers and a target value.
+ * Determine the number of pairs of array elements that have
+ * a difference equal to a target value.
+ *
+ * Function Description:
+ * Complete the pairs function below. It must return an integer
+ * representing the number of element pairs having the required
+ * difference.
  *
  */
 

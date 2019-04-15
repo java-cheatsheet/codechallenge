@@ -6,6 +6,33 @@ import java.util.Arrays;
  * Problem:
  * https://www.hackerrank.com/challenges/equal/problem
  *
+ * Christy is interning at HackerRank. One day she has
+ * to distribute some chocolates to her colleagues. She
+ * is biased towards her friends and plans to give them
+ * more than the others. One of the program managers
+ * hears of this and tells her to make sure everyone
+ * gets the same number.
+ *
+ * To make things difficult, she must equalize the
+ * number of chocolates in a series of operations. For
+ * each operation, she can give 1, 2 or 5 chocolates to
+ * all but one colleague. Everyone who gets chocolate
+ * in a round receives the same number of pieces.
+ *
+ * For example, assume the starting distribution is
+ * [1, 1, 5]. She can give 2 bars to the first two and
+ * the distribution will be [3, 3, 5].
+ *
+ * On the next round, she gives the same two 2 bars each,
+ * and everyone has the same number: [5, 5, 5]
+ *
+ * Given a starting distribution, calculate the minimum
+ * number of operations needed so that every colleague
+ * has the same number of chocolates.
+ *
+ * It should return an integer that represents the minimum
+ * number of operations required.
+ *
  * Solution:
  * http://edisonwang.me/algorithms-dynamic-programming-equal/
  *
@@ -15,8 +42,30 @@ import java.util.Arrays;
 public class Equal {
 
     public static void main(String args[]) {
+        failedTest0WithModImpl();
         validTestFor5();
         failedTestCase13WhenJLessThan2();
+    }
+
+    /**
+     * Test case 0.
+     *
+     * Problem: 2 5 5 5 5 5
+     * Solution: 6
+     *
+     * This test case fails when the value
+     * of loop j was less than 2,
+     *      for (int j = 0; j < 2; j++ )
+     *
+     */
+    public static void failedTest0WithModImpl() {
+        System.out.println("failedTest0WithModImpl");
+        int[] arr = {53 ,361 ,188 ,665 ,786 ,898 ,447 ,562 ,272 ,123 ,229 ,629 ,670 ,848 ,994 ,54 ,822 ,46 ,208 ,17 ,449 ,302 ,466 ,832 ,931 ,778 ,156 ,39 ,31 ,777 ,749 ,436 ,138 ,289 ,453 ,276 ,539 ,901 ,839 ,811 ,24 ,420 ,440 ,46 ,269 ,786 ,101 ,443 ,832 ,661 ,460 ,281 ,964 ,278 ,465 ,247 ,408 ,622 ,638 ,440 ,751 ,739 ,876 ,889 ,380 ,330 ,517 ,919 ,583 ,356 ,83 ,959 ,129 ,875 ,5 ,750 ,662 ,106 ,193 ,494 ,120 ,653 ,128 ,84 ,283 ,593 ,683 ,44 ,567 ,321 ,484 ,318 ,412 ,712 ,559 ,792 ,394 ,77 ,711 ,977 ,785 ,146 ,936 ,914 ,22 ,942 ,664 ,36 ,400 ,857};
+        int expected = 10605;
+        ThirdpartySolution sol = new ThirdpartySolution();
+        int result = sol.equal(arr);
+
+        assert (result == expected) : "testOddData - Result:" + result + " | Expected:" + expected;
     }
 
     /**
@@ -42,8 +91,8 @@ public class Equal {
 
     public static void validTestFor5() {
         System.out.println("validTestFor5");
-        int[] arr = {2, 2, 3, 7};
-        int expected = 2;
+        int[] arr = {2, 2, 5, 7};
+        int expected = 3;
         ThirdpartySolution sol = new ThirdpartySolution();
         int result = sol.equal(arr);
 
@@ -72,43 +121,86 @@ class ThirdpartySolution {
         int finalSolution = -1;
         int subFinal;
         int delta;
-        int[][] results = new int[arrLen][3];
+        int intermediateResult;
 
         for (int j = 0; j < 3; j++){
             subFinal = 0;
 
             for (int i = 0; i < arrLen; i++){
-                results[i][j] = 0;
-
-                //main logic
+                intermediateResult = 0;
                 delta = ( arr[i] - min ) + j;
 
-                //greedy approach
                 while ( true ) {
-                    if( delta >=5 ) {
-                        delta -= 5;
-                    }else if( delta >=2 ) {
-                        delta -= 2;
-                    }else if ( delta >= 1 ) {
-                        delta -= 1;
-                    } else {
-                        break;
-                    }
-                    results[i][j]++;
+                    if( delta >=5 ) delta -= 5;
+                    else if(delta >=2) delta -= 2;
+                    else if (delta >= 1) delta -= 1;
+                    else break;
+
+                    intermediateResult++;
                 }
 
-                subFinal += results[i][j];
-
-                if(DBG) System.out.format(" arr[%d] | results[%d][%d] = %d  \n", arr[i], j, i, results[i][j]);
+                subFinal += intermediateResult;
             }
 
-            if(DBG) System.out.println(subFinal);
-
-            if( finalSolution > subFinal || finalSolution < 0 ) finalSolution = subFinal;
+            if( finalSolution > subFinal || finalSolution < 0 )
+                finalSolution = subFinal;
         }
 
         return finalSolution;
     }
+
+    /**
+     * TODO
+     * @param arr
+     * @return
+     */
+    static int equalAltered(int[] arr){
+        Arrays.sort(arr);
+        int minVal = arr[0];
+        int arrLen = arr.length;
+        int finalSolution = -1;
+//        int intermediateSumOfEachNum;
+//        int sumWithOffsetValue;
+//        int[][] eachNumStepsTakenToReachMin = new int[arrLen][3];
+
+        for ( int offsetVal = 0; offsetVal < 3; offsetVal++) {
+            int intermediateSumOfEachNum = 0;
+
+            for ( int i = 0; i < arrLen; i++) {
+                int sumWithOffsetValue = ( arr[i] - minVal ) + offsetVal;
+                int remainder = 0;
+                int divisor = 0;
+                System.out.println("sumWithOffsetValue: " + sumWithOffsetValue);
+
+                if( sumWithOffsetValue >=5 ) {
+                    divisor = sumWithOffsetValue / 5;
+                    System.out.println("Divisor: " + sumWithOffsetValue);
+                    intermediateSumOfEachNum = intermediateSumOfEachNum + divisor;
+
+                    remainder = sumWithOffsetValue % 5;
+                    System.out.println("Remainder: " + divisor);
+                }
+
+//                if( divisor == 4 || divisor == 3 )
+//                    intermediateSumOfEachNum += 2;
+//                else
+//                    intermediateSumOfEachNum += 1;
+
+                if( sumWithOffsetValue >= 1 ) {
+                    sumWithOffsetValue = sumWithOffsetValue / 2;
+                    intermediateSumOfEachNum = intermediateSumOfEachNum + sumWithOffsetValue;
+
+                    if ( sumWithOffsetValue % 2 == 1 ) intermediateSumOfEachNum++;
+                }
+            }
+
+            if( finalSolution > intermediateSumOfEachNum || finalSolution < 0 ) finalSolution = intermediateSumOfEachNum;
+        }
+
+        return finalSolution;
+    }
+
+
 }
 
 
