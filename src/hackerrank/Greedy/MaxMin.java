@@ -67,4 +67,36 @@ public class MaxMin {
         return  minUnfairness;
     }
 
+
+    /**
+     * https://codereview.stackexchange.com/questions/217495/minmax-problem-implementation/217504#217504
+     *
+     * The maxMin() is reviewed at codereview and the below solution
+     * was provided.
+     *
+     * @param k
+     * @param arr
+     * @return
+     */
+    static int maxMinReviewed(int k, int[] arr) {
+        int arrLen = arr.length;
+        //1)Make Sorted Local Copy to prevent Side Effects
+        int[] localArr = Arrays.copyOf(arr, arrLen);
+        Arrays.sort(localArr);
+
+        int minUnfairness = Integer.MAX_VALUE;
+        //2)Loop while maintaining two pointers
+        // NOTE: we use J instead to prevent side effects on the int k
+        int i = 0;
+        int j = k - 1;
+        while(j < arrLen){
+            int tempMinUnfairness = localArr[j] - localArr[i];
+            if ( tempMinUnfairness < minUnfairness ) {
+                minUnfairness = tempMinUnfairness;
+            }
+            i++;
+            j++;
+        }
+        return  minUnfairness;
+    }
 }

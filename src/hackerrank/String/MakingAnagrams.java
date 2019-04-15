@@ -42,15 +42,6 @@ public class MakingAnagrams {
         assert (result == expected) : "Result:" + result +" | Expected:" + expected;
     }
 
-
-    /**
-     *
-     *
-     *
-     * @param a
-     * @param b
-     * @return
-     */
     static int makeAnagram(String a, String b) {
         Character[] aArray = a.chars().mapToObj(x -> (char) x).toArray(Character[]::new);
         Character[] bArray = b.chars().mapToObj(x -> (char) x).toArray(Character[]::new);
