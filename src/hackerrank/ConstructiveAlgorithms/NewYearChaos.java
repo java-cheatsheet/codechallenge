@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.ConstructiveAlgorithms;
 
 import java.util.Scanner;
 

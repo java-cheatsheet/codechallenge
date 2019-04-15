@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.Search;
 
 import java.util.Arrays;
 import java.util.List;

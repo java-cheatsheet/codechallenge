@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.Sort;
 
 
 public class BubbleSort {
@@ -40,9 +40,9 @@ public class BubbleSort {
 
         }
 
-        System.out.println("Array is sorted in " + swapCounts + " swaps.");
-        System.out.println("First Element: " + a[0]);
-        System.out.println("First Last: " + a[lenOfa  - 1]);
+        System.out.printf("Array is sorted in %d swaps.\n", + swapCounts);
+        System.out.printf("First Element: %d \n",a[0]);
+        System.out.printf("Last Element: %d \n", a[lenOfa  - 1]);
 
         return swapCounts;
     }

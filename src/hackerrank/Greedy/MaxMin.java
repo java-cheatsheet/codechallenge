@@ -29,6 +29,9 @@ public class MaxMin {
         assert (result == expected) : "testOddData - Result:" + result +" | Expected:" + expected;
     }
 
+    /**
+     * Valid Test Case
+     */
     private static void validTestCase1() {
         int[] arr = { 1,2,3,4,10,20,30,40,100,200};
         int expected = 3;

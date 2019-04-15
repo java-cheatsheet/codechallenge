@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.String;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package hackerrank;
+package hackerrank.String;
 
 import java.util.HashSet;
 import java.util.Set;
