@@ -128,7 +128,7 @@
     ----------------------------------------------
  
 
-    If in anyway I can be of anyhelp with my skills of
+    If in anyway I can be of any help with my skills of
     programming, I will undoubtably be willing to help.
     Please do not hesitate to reach out to me!
 
