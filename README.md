@@ -98,7 +98,8 @@
     I am forever greatful to Princeton University
     and it's outstanding faculty for making these
     online resources free, and especially Robert
-    Sedgewick for wonderful presentations.
+    Sedgewick & Kevin Waynefor excellent contents.
+
 
     ----------------------------------------------
 

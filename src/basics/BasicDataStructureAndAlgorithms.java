@@ -68,7 +68,7 @@ public class BasicDataStructureAndAlgorithms {
 
     public static void basicQueue() {
         Stack<Integer> stack = new Stack<>();
-        Queue<Integer> queue = new ArrayDeque<>();
+        Queue<Integer> queue = new Queue();
 
         stack.push(1);
         stack.push(2);
@@ -77,14 +77,15 @@ public class BasicDataStructureAndAlgorithms {
         System.out.println(stack); // [1, 2, 3]
 
         while (!stack.isEmpty()) {
-            queue.add(stack.pop());
+            queue.enqueue(stack.pop());
         }
 
         System.out.println(queue);
 
         while (!queue.isEmpty()) {
-            stack.push(queue.remove());
+            stack.push(queue.dequeue());
         }
+
         System.out.println(stack); // [3, 2, 1]
     }
 
