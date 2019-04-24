@@ -1,6 +1,11 @@
-
-
     ----------------------------------------------
+    
+    
+    OBJECTIVE - Become A Competitive Programmer
+    
+    
+    ----------------------------------------------
+
 
     “ For me, great algorithms are the poetry of
       computation. Just like verse, they can be terse,
@@ -103,7 +108,7 @@
 
     ----------------------------------------------
 
-
+    
     Recently came to know about a playlist on 
     Algorithms by Abdul Bari on YouTube. I am 
     very thankful to his effort on making very
@@ -127,7 +132,35 @@
     http://algorist.com/algorist.html
 
     ----------------------------------------------
- 
+    
+    
+    Contents of the repository to cover this list 
+    
+    - Mathematics : Prime Number, Big Integer, Permutation,
+        Number Theory, Factorial, Fibonacci, Sequences,
+        Modulus
+    
+    - Dynamic Programming : Longest Common Subsequence,
+        Longest Increasing Subsequence, Edit Distance,
+        0/1 Knapsack, Coin Change, Matrix Chain Multiplication,
+        Max Interval Sum
+    
+    - Graph Traversal : Flood Fill,Floyd Warshal, MST,
+        Max Bipartite Matching, Network Flow,
+        Articulation Point
+    
+    - Sorting : Bubble Sort, Quick Sort, Merge Sort,
+        Selection Sort, Radix Sort, Bucket Sort
+    
+    - Searching : Complete Search, Brute Force, Binary Search
+    
+    - String Processing : String Matching, Pattern Matching
+    
+    - AdHoc Problems: Trivial Problems
+
+
+    ----------------------------------------------
+
 
     If in anyway I can be of any help with my skills of
     programming, I will undoubtably be willing to help.

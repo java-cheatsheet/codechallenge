@@ -9,6 +9,7 @@ import java.util.concurrent.*;
 import java.util.regex.*;
 
 public class BasicDataStructureAndAlgorithms {
+
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {

@@ -1,6 +1,4 @@
-package basics;
-
-import java.util.LinkedList;
+package hackerrank.DataStructure;
 
 /**
  * Problem:
@@ -10,7 +8,6 @@ import java.util.LinkedList;
 class SinglyLinkedListNode {
     int data;
     SinglyLinkedListNode next;
-
     SinglyLinkedListNode(int data){ this.data = data; }
 }
 
