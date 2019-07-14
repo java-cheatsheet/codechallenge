@@ -14,7 +14,7 @@ import java.sql.SQLException;
  *  - mkyong.com/jdbc/how-to-connect-to-mysql-with-jdbc-driver-java
  *
  */
-public class JDBCTesting {
+public class MySQLJDBC {
 
     public static void main(String[] args) {
         Connection conn = null;
@@ -22,7 +22,7 @@ public class JDBCTesting {
         try {
             conn =
                     DriverManager.getConnection("jdbc:mysql://localhost/qrcode?" +
-                            "user=root&password=Dev45678");
+                            "user=root&password=passme");
 
             // Do something with the Connection
 
