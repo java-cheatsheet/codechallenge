@@ -1,4 +1,4 @@
-package hackerrank.DataStructure;
+package hackerrank.DataStructure.Tree;
 
 import java.util.Stack;
 
