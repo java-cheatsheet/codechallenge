@@ -30,6 +30,8 @@ import java.util.Scanner;
  * String: Welcome to HackerRank's Java tutorials
  * Double: 3.1415
  * Int: 42
+ *
+ * Link: https://www.hackerrank.com/challenges/java-stdin-stdout/problem?h_r=next-challenge&h_v=zen
  */
 public class StdInOutTwo {
     public static void main(String[] args) {
