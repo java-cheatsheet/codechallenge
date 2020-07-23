@@ -80,4 +80,15 @@ public class ScannerExamples {
         System.out.println("CGPA: "+cgpa);
     }
 
+    public void readContinously() {
+        Scanner scanner = new Scanner(System.in);
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for(int i = 1; scanner.hasNext() == true; i++) {
+            System.out.println( i + " " + scanner.nextLine() );
+        }
+
+        scanner.close();
+    }
+
 }
