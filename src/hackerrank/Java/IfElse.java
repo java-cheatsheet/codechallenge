@@ -36,5 +36,19 @@ public class IfElse {
 
         scanner.close();
     }
+
+    /**
+     * checkOddEven other solution
+     * @param number
+     */
+    public static void checkOddEven(int number) {
+        if ( number % 2 != 0 ) System.out.println("Weird");
+        else {
+
+            if ( number > 1 && number < 6 ) System.out.println("Not Weird");
+            else if ( number > 5 && number < 21 ) System.out.println("Weird");
+            else System.out.println("Not Weird");
+        }
+    }
 }
 
