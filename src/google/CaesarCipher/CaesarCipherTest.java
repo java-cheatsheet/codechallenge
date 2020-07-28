@@ -33,8 +33,9 @@ class CaesarCipherTest {
     @Test
     void encrypt() {
         String expected = "wrw blf hvv ozhg mrtsg'h vkrhlwv?";
-        String  result = "did you see last night's episode?";
-        Assertions.assertEquals(expected, CaesarCipher.solution(result) );
+        String plainText = "did you see last night's episode?";
+        result = CaesarCipher.encrypt(plainText);
+        Assertions.assertEquals(expected, result);
     }
 
     @Test

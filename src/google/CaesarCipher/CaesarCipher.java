@@ -79,7 +79,7 @@ public class CaesarCipher {
 
             if ( (int)character >= 97 && (int)character <= 122 ) {
                 int originalAlphabetPosition = character - 'z';
-                int newAlphabetPosition = (originalAlphabetPosition + 25 ) % 26;
+                int newAlphabetPosition = ( originalAlphabetPosition + 25 ) % 26;
                 result.append((char) ('z' - newAlphabetPosition));
 
             } else {
