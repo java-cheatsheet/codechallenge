@@ -1,7 +1,6 @@
-package basics;
+package datastructures;
 
 import java.util.Scanner;
-import java.util.*;
 
 /**
  * Depth First Traversals:

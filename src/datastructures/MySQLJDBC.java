@@ -1,5 +1,5 @@
 
-package basics;
+package datastructures;
 //import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;

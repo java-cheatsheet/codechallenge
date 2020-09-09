@@ -18,7 +18,7 @@ public class MyLists {
 
 //        basicTest.basicsHashMaps();
 
-//        HashMap<String, Integer> stringCountHM = basicTest.countWords("Gabba gabba hey, gabba gabba hey!");
+//        HashMap<String, Integer> stringCountHM = basicTest.countwords("Gabba gabba hey, gabba gabba hey!");
 //        System.out.println(stringCountHM);
 
 //        int[] compareArraya  = {1,2,4};

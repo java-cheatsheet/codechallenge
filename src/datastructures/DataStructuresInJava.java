@@ -1,14 +1,8 @@
-package basics;
+package datastructures;
 import java.util.*;
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
-public class BasicDataStructureAndAlgorithms {
+public class DataStructuresInJava {
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -90,16 +84,11 @@ public class BasicDataStructureAndAlgorithms {
         b.remove(5);
         System.out.println(a); // [0, 1, 2, 3, 4, 0, 6, 7, 8, 9]
         System.out.println(b); // [0, 1, 2, 3, 4, 6, 7, 8, 9]
-
         System.out.println(a.get(1));
-
-
     }
 
     public static void basicStack(){
-
         Stack<Integer> stacka = new Stack<>();
-
         stacka.push(1);
         stacka.push(2);
         System.out.println(stacka.pop()); // 2
@@ -114,19 +103,16 @@ public class BasicDataStructureAndAlgorithms {
         stack.push(1);
         stack.push(2);
         stack.push(3);
-
         System.out.println(stack); // [1, 2, 3]
 
         while (!stack.isEmpty()) {
             queue.enqueue(stack.pop());
         }
-
         System.out.println(queue);
 
         while (!queue.isEmpty()) {
             stack.push(queue.dequeue());
         }
-
         System.out.println(stack); // [3, 2, 1]
     }
 

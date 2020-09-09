@@ -65,8 +65,8 @@ public class BinarySearchAnalysis {
         // read integer key from standard input; print if not in whitelist
         while (!StdIn.isEmpty()) {
             int key = StdIn.readInt();
-            if (edu.princeton.cs.algs4.BinarySearch.indexOf(whitelist, key) == -1)
-                StdOut.println(key);
+            if ( BinarySearchAnalysis.indexOf(whitelist, key) == -1)
+                StdOut.println(key + " not found");
         }
     }
 

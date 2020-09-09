@@ -58,10 +58,10 @@
     I have worked for many years as a software
     development engineer and I believe that I
     have to keep myself skilled so from time to
-    time I have to go through the basics again
+    time I have to go through the datastructures again
     and after. Keep updated with the newer
     technologies is a must but not at the cost
-    of forgetting or weakening the basics that
+    of forgetting or weakening the datastructures that
     are fundamentals of any technology.
 
     Hence, the objective of this repository is

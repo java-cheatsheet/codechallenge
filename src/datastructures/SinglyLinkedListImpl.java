@@ -1,4 +1,4 @@
-package basics;
+package datastructures;
 
 class Node<T> implements Comparable<T> {
 

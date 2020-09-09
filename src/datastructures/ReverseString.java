@@ -1,4 +1,4 @@
-package basics;
+package datastructures;
 
 public class ReverseString {
     public static void main(String[] args) {
