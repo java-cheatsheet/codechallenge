@@ -21,9 +21,7 @@ given a limited number of plates to work with.
 
 You have L, a list containing some digits (0 to 9).
 
-Write a function solution(L) which finds **the largest
-number that can be made from some or all of these
-digits and is divisible by 3**. 
+Write a function solution(L) which finds **the largest number that can be made from some or all of these digits and is divisible by 3**. 
 
 If it is not possible to make such a number, return 0
 as the solution. 
