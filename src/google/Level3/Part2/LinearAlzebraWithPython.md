@@ -86,6 +86,7 @@ A second approach is to form a matrix A of the non-constant coefficients of the 
 
 No matter how the system is moved to matrix form the problem is made more difficult by the lack of guarantee that such a vector exists or that it is unique.
 
+
 ### Gaussian Elimination
 The basic operation of Gaussian elimination is to subtract some multiple of a row of a matrix from some other row, replacing the second row with the result. This can be implemented in Python as:
 
@@ -97,7 +98,7 @@ The basic operation of Gaussian elimination is to subtract some multiple of a ro
 [  3.0000 -1.0000  2.0000]
 ```
 
-This operation can be used to zero out part of the resulting row. This is equivalent to eliminating a variable from the equation the row represents. Gaussian reduction is a way to systematically zero out the lower left corner of the matrix. This puts the matrix in what is called "triangular" form, as the non-zero values in the matrix are now limited to the upper-right triangle. When this is done, the final row will represent an equation with very few variables. If only a single variable remains, then this equation can be solved for the remaining variable.
+This operation can be used to zero out part of the resulting row. This is equivalent to eliminating a variable from the equation the row represents. Gaussian reduction is a way to systematically zero out the lower left corner of the matrix. This puts the matrix in what is called " " form, as the non-zero values in the matrix are now limited to the upper-right triangle. When this is done, the final row will represent an equation with very few variables. If only a single variable remains, then this equation can be solved for the remaining variable.
 
 Gaussian elimination works a column at a time, working from left to right. For each column, rows are manipulated so that the column has only zeroes below the diagonal of the matrix. When working on the ith column, multiples of the ith row are subtracted from lower rows. The appropriate multiple to use when working on the jth row will be the ratio of the ith element of the ith row divided by the ith element of the ith row.
 
@@ -154,8 +155,10 @@ def gausselim2(themat): # Basic row pivoting
 ```
 
 Pivoting is also used in numerical linear algebra when the original pivot element was small but not zero. By moving a larger element in as the pivot the error in the computation is reduced.
-OK - I guess I should take the time to actually write this page
-Triangularization & LU Decompositions
+OK - I guess I should take the time to actually write this page.
+
+
+### Triangularization & LU Decompositions
 
 ```python
   def TriSimple(mm):  # Simple matrix triangularization, fields, no pivoting

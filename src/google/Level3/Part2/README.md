@@ -159,8 +159,7 @@ Made an interesting finding. After logging into the site, there is a message:
 
 `Commander Lambda has six suits, three dress uniforms, four casual outfits, and one Dress-Uniform-For-Important-Speeches-Only. You know this because you've already had to take all of them to the dry cleaner's. Twice!`
 
-So I just took out the numbers - 634122, and searched `634122 algorithms` and the results related to the problem.
-
+So I just took out the numbers - 634122, and searched `634122 algorithms` and the results related to the problem. The nature of problem it pointed towards were https://en.wikipedia.org/wiki/Stochastic_process or simply random process, which so led to https://en.wikipedia.org/wiki/Markov_chain
 
 
 https://towardsdatascience.com/bayesian-optimization-in-trading-77202ffed530
@@ -994,3 +993,78 @@ https://slides.com/miteshkhapra-2/cs6015_lecture4/fullscreen#/0/3/7
 
 Solving Linear Systems, with code examples
 http://www.math.umbc.edu/~campbell/Computers/Python/linalg.html
+
+
+### Review After Submission 9th Dec.
+Successfully submitted the solution but as I was still unable to grap the complete picture of what just happened I am reviewing the solution once again.
+
+Taking the solution that failed in Java.
+``` python
+[
+    [[1, 1, 1, 0, 1, 0, 1, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 1, 1, 1, 0, 1, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 1, 0, 1, 1, 1, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 1, 0, 1, 0, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 1, 0, 1, 0, 1, 0, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]],
+    [2, 1, 1, 1, 1, 6]
+],
+```
+
+From the https://www.youtube.com/watch?v=qhnFHnLkrfA&list=PLANMHOrJaFxPMQCMYcYqwOCYlreFswAKP&index=9
+
+We solve to find the **Limiting Matrix**.
+https://www.probabilitycourse.com/chapter11/11_2_6_stationary_and_limiting_distributions.php
+https://www.math.ucdavis.edu/~gravner/MAT135B/materials/ch15.pdf
+
+To do so we follow the steps:
+STEPS:
+- Order the matrix so that rows start with terminal states first. Remember to sort the columns correctly too to reflect this so everything matches up.
+- Now that you have done that you know how to find R and Q.
+- Calculate F=(I-Q)⁻¹.
+- Calculate FR.
+- Get the first line of FR and then you have your probabilities.
+- Find the common denominator and return the int array how the specification has asked it to be formatted.
+
+https://github.com/ivanseed/google-foobar-help/blob/master/challenges/doomsday_fuel/doomsday_fuel.md
+
+ 0  1  2  3  4  5  6  7  8  9       total probability
+[1, 1, 1, 0, 1, 0, 1, 0, 1, 0] 0    6
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 1    0
+[1, 0, 1, 1, 1, 0, 1, 0, 1, 0] 2    6
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 3    0
+[1, 0, 1, 0, 1, 1, 1, 0, 1, 0] 4    6
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 5    0
+[1, 0, 1, 0, 1, 0, 1, 1, 1, 0] 6    6
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 7    0   
+[1, 0, 1, 0, 1, 0, 1, 0, 1, 1] 8    6
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 9    0
+
+Total probability of non-terminating states are 6, so 1/6 = 0.166, say p, is the probability.
+
+Terminating States 1, 3, 5, 7, 9
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 1
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 3
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 5
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 7
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 9
+
+
+Order Matrix
+    1 3 5 7 9 0 2 4 6 8
+1   0 0 0 0 0 0 0 0 0 0
+3   0 0 0 0 0 0 0 0 0 0   
+5   0 0 0 0 0 0 0 0 0 0
+7   0 0 0 0 0 0 0 0 0 0
+9   0 0 0 0 0 0 0 0 0 0
+
+0   p 0 0 0 0 p p p p p
+2   0 p 0 0 0 p p p p p          
+4   0 0 p 0 0 p p p p p
+6   0 0 0 p 0 p p p p p
+8   0 0 0 0 p p p p p p
+
