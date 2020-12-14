@@ -45,7 +45,7 @@ class TestSolution(unittest.TestCase):
         {'A': '10', 'B': '2', 'want': 'impossible'},
         {'A': '7', 'B': '21', 'want': 'impossible'},
         {'A': '1', 'B': '1', 'want': '0'},
-        {'A': '19', 'B': '137', 'want': '1'},
+        {'A': '19', 'B': '137', 'want': '14'},
     ]
 
     def test_solution(self):
