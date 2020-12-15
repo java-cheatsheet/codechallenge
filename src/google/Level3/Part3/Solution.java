@@ -7,38 +7,22 @@ public class Solution {
 
     public static int solution(String s) {
         BigInteger n = new BigInteger(s);
-
-        BigInteger one = new BigInteger("1");
-        BigInteger two = new BigInteger("2");
-        BigInteger zero = new BigInteger("0");
-
-        if (n.compareTo(two) == -1) {
-            return 0;
-        }
-
-//        if ( n.compare == 0 )
-//            return 1;
-//
-//        if ( n == 1 )
-//            return 0;
-
+        BigInteger one = BigInteger.ONE;
+        BigInteger two = BigInteger.TWO;
+        BigInteger four = new BigInteger("4");
         int count = 0;
 
-//        if ( n < 0 ) {
-//            n *= -1;
-//            count += 2;
-//        }
-
-        while (n.compareTo(one)) {
+        while (n.compareTo(one) == 1) {
             count++;
 
-            if((n & 1) == 0)
-                n = n >> 1;
-            else if((n==3) || ((n & 3)==1))
-                n-=1;
+            if( n.and(one).byteValue() == 0 )
+                n = n.divide(two);
+            else if ( n.byteValue() == 3 || n.divide(BigInteger.THREE).byteValue() == 1)
+                n = n.subtract(one);
             else
-                n+=1;
+                n = n.add(one);
         }
+
         return count;
     }
 }

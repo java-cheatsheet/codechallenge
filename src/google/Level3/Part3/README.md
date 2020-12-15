@@ -205,3 +205,94 @@ public static int solution(String s) {
     }
 }
 ```
+
+Java solution fails because of the datatype. Trying out with BigInteger.
+There was a case to get n%4 which needed to be done in binary operation.
+https://www.geeksforgeeks.org/find-the-remainder-when-n-is-divided-by-4-using-bitwise-and-operator
+
+
+#### Third Attempt
+https://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html#compareTo-java.math.BigInteger
+
+After using BigInteger datatype the solution passes tests.
+```java
+public static int solution(String s) {
+        BigInteger n = new BigInteger(s);
+        BigInteger zero = new BigInteger("0");
+        BigInteger one = new BigInteger("1");
+        BigInteger two = new BigInteger("2");
+        BigInteger three = new BigInteger("3");
+        BigInteger four = new BigInteger("4");
+
+        int count = 0;
+
+        while (n.compareTo(one) == 1) {
+            count++;
+
+            if( n.and(one).equals(zero) )
+                n = n.divide(two);
+            else if ( n.equals(three) || n.mod(four).equals(one))
+                n = n.subtract(one);
+            else
+                n = n.add(one);
+        }
+
+        return count;
+    }
+```
+
+Some more improvement:
+```
+public static int solution(String s) {
+        BigInteger n = new BigInteger(s);
+        BigInteger one = new BigInteger("1");
+        BigInteger two = new BigInteger("2");
+        BigInteger three = new BigInteger("3");
+        BigInteger four = new BigInteger("4");
+        int count = 0;
+
+        while (n.compareTo(one) == 1) {
+            count++;
+
+            if( n.and(one).byteValueExact() == 0 )
+                n = n.divide(two);
+            else if ( n.equals(three) || n.mod(four).byteValueExact() == 1)
+                n = n.subtract(one);
+            else
+                n = n.add(one);
+        }
+
+        return count;
+    }
+```
+
+```
+public static int solution(String s) {
+        BigInteger n = new BigInteger(s);
+        BigInteger one = BigInteger.ONE;
+        BigInteger two = BigInteger.TWO;
+        BigInteger four = new BigInteger("4");
+        int count = 0;
+
+        while (n.compareTo(one) == 1) {
+            count++;
+
+            if( n.and(one).byteValue() == 0 )
+                n = n.divide(two);
+            else if ( n.byteValue() == 3 || n.mod(four).byteValue() == 1)
+                n = n.subtract(one);
+            else
+                n = n.add(one);
+        }
+
+        return count;
+    }
+```
+
+The problem I would like to solve is if there is better way to do things binary operations wise.
+At the moment the choice to make is either use `n.byteValue()` to compare with the integer or use the function n.equals(BigInteger).
+
+https://stackoverflow.com/questions/43955698/most-run-time-efficient-way-to-compare-two-very-large-numbers-bigger-than-long
+
+Asked StackOverflow community for code review:
+https://codereview.stackexchange.com/questions/253498/how-can-we-optimizing-java-biginteger-operations

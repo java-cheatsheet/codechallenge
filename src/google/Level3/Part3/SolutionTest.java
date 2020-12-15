@@ -16,17 +16,17 @@ public class SolutionTest {
         HashMap<String,Integer> cases = new HashMap<String,Integer>();
         cases.put("4", 2);
         cases.put("15", 5);
-        cases.put("1", 0);
-        cases.put("0", 1);
+//        cases.put("1", 0);
+//        cases.put("0", 1);
         cases.put("25", 6);
         cases.put("70", 8);
         cases.put("157", 10);
         cases.put("113", 9);
         cases.put("45", 8);
 
-        cases.put("-4", 4);
-        cases.put("-1", 2);
-        cases.put("-157", 12);
+//        cases.put("-4", 4);
+//        cases.put("-1", 2);
+//        cases.put("-157", 12);
 
 
         for (Map.Entry<String,Integer> entry : cases.entrySet()) {
