@@ -106,3 +106,102 @@ Test 8 failed  [Hidden]
 Test 9 failed  [Hidden]
 Test 10 failed  [Hidden]
 
+
+#### Second Attempt
+I probably did not check for negative values as in the lower limit of input is not mentioned.
+
+Some optimizations could be done and found some resources below:
+
+```python
+def solution(n):
+    current_number = int(n)
+    operations_so_far = 0
+
+    if current_number == 0:
+        return 1
+    if current_number < 0:
+        current_number = current_number * -1
+        operations_so_far = 2
+
+    while current_number != 1:
+        if current_number & 1:
+            if current_number & 2 and current_number != 3:
+                current_number = current_number + 1
+            else:
+                current_number = current_number - 1
+        else:
+            current_number = current_number // 2
+
+        operations_so_far = operations_so_far + 1
+
+    return operations_so_far
+```
+This solution passes all the tests.
+
+Optimation for Java solution : https://codereview.stackexchange.com/questions/167478/foobar-fuel-injection-perfection-efficiency
+
+For counting the steps the Python solution provies the solution.
+
+17. -4
+Convert the number into positive -1*-4  = 4
+Count the steps as normal
+Add two more steps as it take two steps from -1 to reach to 1 ( 0,1 ).
+    4>2>1 : 2
+Total steps 4
+
+
+Found another python solution that works
+```python
+
+def solution(n):
+    n=int(n)
+    steps=0
+
+    while(n!=1):
+        if(n%2==0):
+            n=n/2
+        elif((n==3) or (n%4==1)):
+            n-=1
+        else:
+            n+=1
+        steps=steps+1
+
+    return steps
+```
+
+
+Converted the solution to Java, and ran commenting negative test case value, which fails. That means the Google test cases does not contain negative test cases.
+
+
+The converted solution fails
+```java
+public static int solution(String s) {
+        int n = Integer.valueOf(s);
+
+        if ( n == 0 )
+            return 1;
+
+        if ( n == 1 )
+            return 0;
+
+        int count = 0;
+
+        if ( n < 0 ) {
+            n *= -1;
+            count += 2;
+        }
+
+        while (n > 1) {
+            count++;
+
+            if(n%2==0)
+                n=n/2;
+            else if((n==3) || (n%4==1))
+                n-=1;
+            else
+                n+=1;
+        }
+        return count;
+    }
+}
+```

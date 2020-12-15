@@ -24,6 +24,10 @@ public class SolutionTest {
         cases.put("113", 9);
         cases.put("45", 8);
 
+        cases.put("-4", 4);
+        cases.put("-1", 2);
+        cases.put("-157", 12);
+
 
         for (Map.Entry<String,Integer> entry : cases.entrySet()) {
             System.out.println("Key = " + entry.getKey() +
