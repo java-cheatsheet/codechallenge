@@ -298,3 +298,78 @@ Asked StackOverflow community for code review:
 https://codereview.stackexchange.com/questions/253498/how-can-we-optimizing-java-biginteger-operations
 
 I believe that there could be a separate fn for smaller data size.
+
+### Fourth Attempt - Optimization
+- [] How efficient is BigInteger when the input size is int or long? Should there be separate mechanism to handle these primitives? Or How efficient BigInteger handling them?  Does BigInteger converts when the number becomes smaller which fits in int and long?
+
+- [] Find possible alternate solution completely based on bit manipulation.
+
+https://stackoverflow.com/questions/7000082/efficient-biginteger-in-java
+https://stackoverflow.com/questions/29127511/how-to-optimize-the-code-that-uses-biginteger-operations-for-execution-time
+
+https://contributors.scala-lang.org/t/optimizing-bigint-for-small-integers/3412/8
+"I’m not considering reimplementing BigInteger. As per OpenJDK code, it is already based on Array[Int], and some operations are candidates for intrinsics."
+"The JVM BigInteger type is not exactly performant compared to other languages. I have no idea why it is not optimized further (see http://www.wilfred.me.uk/blog/2014/10/20/the-fastest-bigint-in-the-west/ 21 )"
+
+
+https://www.ibm.com/support/pages/apar/IV69419
+Fixed. Performance issue can be sometimes be observed when java.math.BigInteger class run in bytecode instrumentation mode(for example, when java agent is used).
+
+http://www.cs.yorku.ca/tech/other/java/docs/api/java.math.BigInteger.html
+https://www.baeldung.com/java-bigdecimal-biginteger
+
+
+https://www.codementor.io/@arpitbhayani/how-python-implements-super-long-integers-12icwon5vk
+
+https://codeforces.com/blog/entry/17235 | https://github.com/bwakell/Huldra
+Calculate 1337! using BigInteger: 
+```
+    BigInteger fac = BigInteger.ONE;
+    for(int i = 1; i<=1337; i++) fac = fac.multiply(BigInteger.valueOf(i)); 
+```
+
+"
+BigInteger is immutable it must allocate a new array for the results, convert the int to a BigInteger object, perform the multiplication (using a general algorithm), create a new object and return it. The overhead is massive and unnecessary. 
+BigInteger is not suitable for many small operations. Is it suitable for operations using larger operands? As it turns out, no it's not.
+
+The following time measurements are a results of some benchmarks run on my shitty 1.65GHz Dual Core computer.
+    Parsing: Converting two strings of length 500000 representing numbers in base 10 to the internal representation.
+    Add: Adding a 100000 decimal digit number to another equally sized number, 100000 times. (MidBig-size cumulative benchmark.)
+    Sub: Same as the addition experiment, but with subtractions.
+    MidMul: Multiplying a 300 decimal digit number to a growing product, initially a 300 decimal digit number. (Mid-size cumulative benchmark.)
+    TinyMul: The naive straightforward way to calculate 50000! (Small-size cumulative benchmark.)
+    BigMul: Multiplication of two 500000 decimal digit numbers. (Big-size benchmark.)
+    MidDiv: Dividing a 400000 decimal digit number by a 4000 decimal digit number a 1000 times. (Mid-size cumulative benchmark.)
+    BigDiv: Dividing a 400000 decimal digit number by a 200000 decimal digit number. (Big-size benchmark.)
+    toString: Converting the internal representation (having in decimal 213237 digits) to a decimal number string.
+
+Test        BigInteger    
+----------------------
+Parsing     31.602s       
+Add         6.394s        
+Sub         5.618s        
+MidMul      2.676s        
+TinyMul     10.683s       
+BigMul      12.332s       
+MidDiv      9.936s        
+BigDiv      3.647s        
+toString    16.912s       
+
+"
+
+https://stackoverflow.com/questions/51058385/see-if-number-is-smaller-than-232/51058796
+
+
+https://nullbeans.com/what-is-a-biginteger-and-how-to-use-it-in-java
+BigIntegers are Immutable
+Notice that each time you perform an arithmetic operation, a new BigInteger instance is produced. This is because already instantiated instances of BigIntegers are immutable. In other words, once you have created an instance, you cannot change the value of that instance. One can only assume that this was done by the Java creators because it was simpler to implement and less error prone, However, this also comes at the cost of memory as for each new instance, a new place in the JVM memory is reserved.
+
+
+https://www.baeldung.com/java-binary-numbers
+https://riptutorial.com/java/example/12139/binary-logic-operations-on-biginteger
+https://stackoverflow.com/questions/30703166/finding-the-appropriate-java-datatype
+
+https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/
+    n = n >> 1;   // Divide n by 2
+
+https://codereview.stackexchange.com/questions/56512/why-are-these-functions-slower-than-bigintegers-included-methods
