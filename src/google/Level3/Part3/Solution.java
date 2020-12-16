@@ -17,7 +17,7 @@ public class Solution {
 
             if( n.and(one).byteValue() == 0 )
                 n = n.divide(two);
-            else if ( n.byteValue() == 3 || n.divide(BigInteger.THREE).byteValue() == 1)
+            else if ( n.byteValue() == 3 || n.mod(four).byteValue() == 1)
                 n = n.subtract(one);
             else
                 n = n.add(one);

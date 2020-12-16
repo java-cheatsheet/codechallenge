@@ -296,3 +296,5 @@ https://stackoverflow.com/questions/43955698/most-run-time-efficient-way-to-comp
 
 Asked StackOverflow community for code review:
 https://codereview.stackexchange.com/questions/253498/how-can-we-optimizing-java-biginteger-operations
+
+I believe that there could be a separate fn for smaller data size.
