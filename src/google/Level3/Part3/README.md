@@ -304,6 +304,7 @@ I believe that there could be a separate fn for smaller data size.
 
 - [] Find possible alternate solution completely based on bit manipulation.
 
+
 https://stackoverflow.com/questions/7000082/efficient-biginteger-in-java
 https://stackoverflow.com/questions/29127511/how-to-optimize-the-code-that-uses-biginteger-operations-for-execution-time
 
@@ -373,3 +374,97 @@ https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/
     n = n >> 1;   // Divide n by 2
 
 https://codereview.stackexchange.com/questions/56512/why-are-these-functions-slower-than-bigintegers-included-methods
+
+
+### Fifth Attempt - Optimization Continued
+- [ ] Get the power of two
+
+Note that (2 ^ 32) ^ Integer.MAX_VALUE is implementation-dependent. Theoretically BigInteger has no max value
+
+https://stackoverflow.com/questions/31748028/long-vs-biginteger?noredirect=1&lq=1
+https://stackoverflow.com/questions/55752927/how-to-convert-an-unsigned-long-to-biginteger#55752928
+https://stackoverflow.com/questions/739532/logarithm-of-a-bigdecimal
+https://en.wikipedia.org/wiki/Power_of_two
+
+> Final Solution
+```java
+import java.math.BigInteger;
+import java.util.*;
+
+public class Solution {
+
+    public static int solution(String s) {
+        BigInteger n = new BigInteger(s);
+
+        if ( isPrimitive(n) ) {
+            return longOps(0, n.longValue());
+        }
+
+        return bigIntOps(n);
+    }
+
+    public static int bigIntOps(BigInteger n) {
+        BigInteger one = BigInteger.ONE;
+        BigInteger four = new BigInteger("4");
+        int count = 0;
+
+        while (n.compareTo(one) > 0) {
+            count++;
+
+            // If number is divisible by 2
+            if (n.and(one).byteValue() == 0) {
+                n = n.shiftRight(1); // Binary Division
+
+                if ( isPrimitive(n) )
+                    return longOps(count, n.longValue());
+
+            } else if (n.byteValue() == 3 || n.mod(four).byteValue() == 1)
+                n = n.subtract(one);
+
+            else
+                n = n.add(one);
+        }
+
+        return count;
+    }
+
+    public static int longOps(int count, long n) {
+
+        while (n > 1) {
+            count++;
+
+            // If number is divisible by 2
+            if ( (n & 1) == 0 )
+
+                // Check if the number is power of two
+                if ((n&(n-1)) == 0)
+                    // Return the power of two + counts
+                    return (int)Math.ceil(Math.log(n)/Math.log(2)) + count - 1;
+                else
+                    n = n >> 1;// Binary Division
+
+            else if ( n == 3 || n%4 == 1 )
+                n--;
+            else
+                n++;
+        }
+
+        return count;
+    }
+
+    public static boolean isPrimitive(BigInteger n) {
+        return n.compareTo(new BigInteger(String.valueOf(Long.MAX_VALUE))) < 0;
+    }
+}
+```
+From the research, BigInteger operations are memory intensive and hence slow. Hence, the processing was divided into BingInteger processing and Long processiing.
+
+A check was made at first to see if the number is Long, and the processing was divided based on the number.
+Check was also made in the BigInteger processing to check if the remainder was a Long, and if true, further processing was done for Long processing.
+
+I found a sweet math solution to find the 2 power of number:
+`Math.ceil(Math.log(x)/Math.log(2))`
+
+This solution provided a single statement to find the number of steps.
+
+Unfortunately BigInteger does not provide Math.log() functionality so this could not be implemented which could have been a great solution.

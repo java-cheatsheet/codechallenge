@@ -5,53 +5,65 @@ import java.util.*;
 
 public class Solution {
 
-    private static final BigInteger ONE= new BigInteger("1");
-    private static final BigInteger TWO = new BigInteger("2");
-    private static final BigInteger ZERO= new BigInteger("0");
-    private static final Map<BigInteger, Integer> cache = new HashMap<>(); // The storage
-
-    public static int solution (String n) {
-        cache.put(TWO, -1); // This special case can go directly into the storage
-        return helper(new BigInteger(n));
-    }
-
-    public static int helper (BigInteger n) {
-//        Integer cachedResult = cache.get(n);
-//        if (cachedResult != null) { // A previously computed value exists, use it
-//            return cachedResult;
-//        }
-//        Integer result;
-        // Compute this result once
-        if (n.mod(TWO).equals(ZERO)) {
-            result = helper(n.divide(TWO)) + 1;
-        } else {
-            result = Math.min(helper(n.add(ONE).divide(TWO)) + 2, helper(n.subtract(ONE).divide(TWO)) + 2);
-        }
-        // Store the result for future use
-//        cache.put(n, result);
-        return result;
-    }
-
-    public static int solutions(String s) {
+    public static int solution(String s) {
         BigInteger n = new BigInteger(s);
+
+        if ( isPrimitive(n) ) {
+            return longOps(0, n.longValue());
+        }
+
+        return bigIntOps(n);
+    }
+
+    public static int bigIntOps(BigInteger n) {
         BigInteger one = BigInteger.ONE;
-        BigInteger two = BigInteger.TWO;
         BigInteger four = new BigInteger("4");
         int count = 0;
 
-        while ( n.compareTo(one) > 0 ) {
+        while (n.compareTo(one) > 0) {
             count++;
 
-            if( n.and(one).byteValue() == 0 )
-                n = n.divide(two);
-            else if ( n.byteValue() == 3 || n.mod(four).byteValue() == 1)
+            // If number is divisible by 2
+            if (n.and(one).byteValue() == 0) {
+                n = n.shiftRight(1); // Binary Division
+
+                if ( isPrimitive(n) )
+                    return longOps(count, n.longValue());
+
+            } else if (n.byteValue() == 3 || n.mod(four).byteValue() == 1)
                 n = n.subtract(one);
+
             else
                 n = n.add(one);
         }
 
         return count;
     }
+
+    public static int longOps(int count, long n) {
+
+        while (n > 1) {
+            count++;
+
+            // If number is divisible by 2
+            if ( (n & 1) == 0 )
+
+                // Check if the number is power of two
+                if ((n&(n-1)) == 0)
+                    return (int)Math.ceil(Math.log(n)/Math.log(2)) + count - 1;
+                else
+                    n = n >> 1;// Binary Division
+
+            else if ( n == 3 || n%4 == 1 )
+                n--;
+            else
+                n++;
+        }
+
+        return count;
+    }
+
+    public static boolean isPrimitive(BigInteger n) {
+        return n.compareTo(new BigInteger(String.valueOf(Long.MAX_VALUE))) < 0;
+    }
 }
-
-
