@@ -457,6 +457,7 @@ public class Solution {
     }
 }
 ```
+
 From the research, BigInteger operations are memory intensive and hence slow. Hence, the processing was divided into BingInteger processing and Long processiing.
 
 A check was made at first to see if the number is Long, and the processing was divided based on the number.
@@ -468,3 +469,63 @@ I found a sweet math solution to find the 2 power of number:
 This solution provided a single statement to find the number of steps.
 
 Unfortunately BigInteger does not provide Math.log() functionality so this could not be implemented which could have been a great solution.
+
+
+### Sixth Attempt - Optimization Continued
+A great review was recieved from the code review that was submitted.
+
+https://codereview.stackexchange.com/questions/253626/follow-up-how-can-we-optimizing-java-biginteger-operations/253686
+
+```java
+import java.math.BigInteger;
+
+public class Solution {
+
+    private final static BigInteger MAX_LONG = BigInteger.valueOf(Long.MAX_VALUE);
+
+    public static int solution(String s) {
+        BigInteger n = new BigInteger(s);
+        int count = 0;
+
+        while (n.compareTo(MAX_LONG) > 0) {
+            int zeros = n.getLowestSetBit();
+
+            if (zeros > 0) {          // Even!
+                n = n.shiftRight(zeros);
+                count += zeros;
+            } else {                  // Odd
+                if (n.testBit(1))        // At least 2 least significant one bits
+                    n = n.add(BigInteger.ONE);
+                else                     // Only 1 least significant one bit
+                    n = n.subtract(BigInteger.ONE);
+                count++;
+            }
+        }
+
+        // Value now fits with a primitive long
+        long lv = n.longValue();
+
+        while (lv > 3) {
+            int zeros = Long.numberOfTrailingZeros(lv);
+            if (zeros > 0) {          // Even!
+                lv >>= zeros;
+                count += zeros;
+            } else {                  // Odd
+                if (lv % 4 == 1)        // Only 1 least significant one bit
+                    lv--;              
+                else
+                    lv++;               // At least 2 least significant one bits
+                count++;
+            }
+        }
+
+        if (lv == 3)
+            count += 2;
+        if (lv == 2)
+            count += 1;
+
+        return count;
+    }
+}
+```
+

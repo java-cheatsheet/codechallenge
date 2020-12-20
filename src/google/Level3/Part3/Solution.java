@@ -5,61 +5,48 @@ import java.math.BigInteger;
 public class Solution {
 
     public static int solution(String s) {
-
+        BigInteger MAX_LONG = BigInteger.valueOf(Long.MAX_VALUE);
         BigInteger n = new BigInteger(s);
-        if ( isPrimitive(n) ) {
-            return longOps(0, n.longValue());
-        }
-
-        BigInteger one = BigInteger.ONE;
-        BigInteger two = BigInteger.TWO;
-        BigInteger four = new BigInteger("4");
         int count = 0;
 
-        while (n.compareTo(one) == 1) {
-            count++;
+        while (n.compareTo(MAX_LONG) > 0) {
+            int zeros = n.getLowestSetBit();
 
-            if( n.and(one).byteValue() == 0 ){
-                n = n.shiftRight(1);
+            if (zeros > 0) {
+                n = n.shiftRight(zeros);
+                count += zeros;
+            } else {
 
-                if ( isPrimitive(n) )
-                    return longOps(count, n.longValue());
-
-            } else if ( n.byteValue() == 3 || n.mod(four).byteValue() == 1)
-                n = n.subtract(one);
-            else
-                n = n.add(one);
-        }
-
-        return count;
-    }
-
-
-    public static int longOps(int count, long n) {
-
-        while (n > 1) {
-            count++;
-
-            // If number is divisible by 2
-            if ( (n & 1) == 0 )
-
-                // Check if the number is power of two
-                if ((n&(n-1)) == 0)
-                    return (int)Math.ceil(Math.log(n)/Math.log(2)) + count - 1;
+                if (n.testBit(1))
+                    n = n.add(BigInteger.ONE);
                 else
-                    n = n >> 1;// Binary Division
-
-            else if ( n == 3 || n%4 == 1 )
-                n--;
-            else
-                n++;
+                    n = n.subtract(BigInteger.ONE);
+                count++;
+            }
         }
 
-        return count;
-    }
+        long lv = n.longValue();
 
-    public static boolean isPrimitive(BigInteger n) {
-        return n.compareTo(new BigInteger(String.valueOf(Long.MAX_VALUE))) < 0;
+        while ( lv > 3 ) {
+            int zeros = Long.numberOfTrailingZeros(lv);
+
+            if (zeros > 0) {
+                lv >>= zeros;
+                count += zeros;
+            } else {
+
+                if (lv % 4 == 1)
+                    lv--;
+                else
+                    lv++;
+                count++;
+            }
+        }
+
+        if ( lv > 2 ) count += 2;
+        else if ( lv > 1 ) count += 1;
+
+        return count;
     }
 
 }
