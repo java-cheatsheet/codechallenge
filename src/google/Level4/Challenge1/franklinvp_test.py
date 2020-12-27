@@ -4,6 +4,13 @@ import itertools
 
 
 # Second Solution
+def convert_to_path(perm):
+    perm = list(perm)
+    perm = [0] + perm + [-1]
+    path = list()
+    for i in range(1, len(perm)):
+        path.append((perm[i - 1], perm[i]))
+    return path
 
 def solution(time, time_limit):
     rows = len(time)
@@ -25,17 +32,11 @@ def solution(time, time_limit):
             path = convert_to_path(perm)
             for start, end in path:
                 total_time += time[start][end]
+
             if total_time <= time_limit:
                 return sorted(list(i - 1 for i in perm))
-    return None
 
-def convert_to_path(perm):
-    perm = list(perm)
-    perm = [0] + perm + [-1]
-    path = list()
-    for i in range(1, len(perm)):
-        path.append((perm[i - 1], perm[i]))
-    return path
+    return None
 
 
 ### First Solution
@@ -120,15 +121,15 @@ def BellmanFord(times, time_limit):
 class TestSolution(unittest.TestCase):
 
     cases = [
-        # [
-        #     [[0, 1, 1, 1, 1],
-        #     [1, 0, 1, 1, 1],
-        #     [1, 1, 0, 1, 1],
-        #     [1, 1, 1, 0, 1],
-        #     [1, 1, 1, 1, 0]],
-        #     [3],
-        #     [[0,1]]
-        # ],
+        [
+            [[0, 1, 1, 1, 1],
+            [1, 0, 1, 1, 1],
+            [1, 1, 0, 1, 1],
+            [1, 1, 1, 0, 1],
+            [1, 1, 1, 1, 0]],
+            [3],
+            [[0,1]]
+        ],
 
         [
             [[0, 2, 2, 2, -1],
@@ -140,17 +141,17 @@ class TestSolution(unittest.TestCase):
             [[1,2]]
         ],
 
-        # [
-        #     [
-        #         [0, 1, 1, 1, 1, 1, 1],
-        #         [1, 0, 1, 1, 1, 1, 1],
-        #         [1, 1, 0, 1, 1, 1, 1],
-        #         [1, 1, 1, 0, 1, 1, 1],
-        #         [1, 1, 1, 1, 0, 1, 1],
-        #         [1, 1, 1, 1, 1, 0, 1],
-        #         [1, 1, 1, 1, 1, 1, 0]
-        #     ],[3],[[0,1]]
-        # ],
+        [
+            [
+                [0, 1, 1, 1, 1, 1, 1],
+                [1, 0, 1, 1, 1, 1, 1],
+                [1, 1, 0, 1, 1, 1, 1],
+                [1, 1, 1, 0, 1, 1, 1],
+                [1, 1, 1, 1, 0, 1, 1],
+                [1, 1, 1, 1, 1, 0, 1],
+                [1, 1, 1, 1, 1, 1, 0]
+            ],[3],[[0,1]]
+        ],
 
         # [
         #     [
@@ -160,27 +161,40 @@ class TestSolution(unittest.TestCase):
         #         [9, 3, 2, 0, 0],
         #         [9, 0, 0, 2, 0],
         #         [-1, 3, 2, 2, 0]
-        #     ],
-        #     [1],
-        #     [[0,1,2]]
-        # ]
+        #     ], [9], [[0,1,2,3]]
+        # ],
+
+        # Matrix with Negative cycle
+        [
+            [
+                [0, 3, 1, 8, 1],
+                [2, 0, 9, 4, 2],
+                [-5, 1, 0, 3, -2],
+                [3, 2, 1, 0, 1],
+                [1, 3, 2, 0, 0]
+            ], [10], [[0,1,2]]
+        ]
     ]
     
     
     def test_solution(self):
-        a = "GeEK"
-        # no length entered so default length 
-        # taken as 4(the length of string GeEK) 
-        p = itertools.permutations(a)  
+        ### Permutations example
+        # a = "GeEK"
+        # # no length entered so default length 
+        # # taken as 4(the length of string GeEK) 
+        # p = itertools.permutations(a)  
+        # # Print the obtained permutations  
+        # for j in list(p):  
+        #     print(j)  
+        # print([x for x in range(5)])
         
-        # Print the obtained permutations  
-        for j in list(p):  
-            print(j)  
+        ### Reversed example
+        # alph = ["a", "b", "c", "d"]
+        # ralph = reversed(alph)
+        # for x in ralph:
+        #     print(x) 
 
-
-        print([x for x in range(5)])
         for x in self.cases[:]:
-            # print(int())
             got = solution( x[0], x[1][0] )
             self.assertEqual( got, x[2][0] )
             

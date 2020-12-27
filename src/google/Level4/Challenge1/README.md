@@ -7,7 +7,7 @@ You and your rescued bunny prisoners need to get out of this collapsing death tr
 
 The **time it takes to move** from your starting point to all of the bunnies and to the bulkhead will be given to you in a square matrix of integers. **Each row will tell you the time it takes to get to the start, first bunny, second bunny, ..., last bunny, and the bulkhead in that order**. The order of the rows follows the same pattern (start, each bunny, bulkhead). The bunnies can jump into your arms, so picking them up is instantaneous, and arriving at the bulkhead at the same time as it seals still allows for a successful, if dramatic, escape. (Don't worry, any bunnies you don't pick up will be able to escape with you since they no longer have to carry the ones you did pick up.) You can revisit different spots if you wish, and moving to the bulkhead doesn't mean you have to immediately leave - **you can move to and from the bulkhead to pick up additional bunnies if time permits**.
 
-In addition to spending time traveling between bunnies, some paths interact with the space station's security checkpoints and add time back to the clock. Adding time to the clock will delay the closing of the bulkhead doors, and if the time goes back up to 0 or a positive number after the doors have already closed, it triggers the bulkhead to reopen. Therefore, it might be possible to walk in a circle and keep gaining time: that is **each time a path is traversed, the same amount of time is used or added**.
+In addition to spending time traveling between bunnies, some paths interact with the space station's security checkpoints and **add time back to the clock**. Adding time to the clock will delay the closing of the bulkhead doors, and if the time goes back up to 0 or a positive number after the doors have already closed, it **triggers the bulkhead to reopen**. Therefore, it might be possible to walk in a circle and keep gaining time: that is **each time a path is traversed, the same amount of time is used or added**.
 
 Write a function of the form solution(times, time_limit) to calculate the most bunnies you can pick up and which bunnies they are, while still escaping through the bulkhead before the doors close for good. If there are multiple sets of bunnies of the same size, **return the set of bunnies with the lowest prisoner IDs (as indexes) in sorted order**. The bunnies are represented as a sorted list by prisoner ID, with the **first bunny being 0**.There are at most **5 bunnies**, and time_limit is a non-negative integer that is at most ***999**.
 
@@ -70,7 +70,7 @@ Use verify [file] to test your solution and see how it does. When you are finish
 
 ## First Analysis
 
-### Provided Case 1
+### Provided Case 1: Time Added Back
 Time Limit: 1
 Answer: Bunnies 1, 2
 
@@ -84,21 +84,22 @@ Answer: Bunnies 1, 2
 Start End Delta Time Status
     -   0     -    1 // Bulkhead initially open
 
-    0   4    -1    2 // Add time. As the minimal time needed is 2 to rescuse any bunny, it is opted to add more time. And to add time we can jump to Bulkhead once.
+    0   4    -1    2 // Add time. As the minimal time needed is 2 to rescuse any bunny, we need to add 1 more time which can be gained by opening Bulkhead as 0 to 4 is -1.
     
-    4   2     2    0 // Rescue a bunny. As there are bunnies those requires time which we have gathered, i.e. 2, it is opted to rescue Bunny 1.
+    4   2     2    0 // Rescue a bunny. As there are bunnies those requires time which we have gathered, i.e. 2, it is opted to rescue Bunny 1. 
     
-    2   4    -1    1 // Add time. Now rescue more bunny we need to get more time so we need to go through bulkhead again.
+    2   4    -1    1 // Add time. Although we can exit at this point but going to Bulhead add time back so we go through it. 
 
-    4   3     2   -1 // Go to second bunny as the time taken is 2, we will have to 1 time to give back. We can not go to first bunny as it takes 3 to carry bunny and we will not be able to reopen the bulkhead.
+    4   3     2   -1 // Future calculation. Rescue Second bunny as the time taken is 2, and from there is path to Bulkhead which adds back time while going through.
     
-    3   4    -1    0 Open bulkhead. Exit. As reopening bulkhead add 1, we can return the time we lended, i.e. -1.
+    3   4    -1    0 // Exit. The last Third bunny is left to rescue but as the time is 0 we will not be able to rescue it.
+
 
 > What if I try to recuse all of the bunnies?
 
 
 
-### Provided Case 2
+### Provided Case 2: No Time Added Back
 
 Time Limit: 3
 Answer: Bunnies 0, 1
@@ -112,9 +113,9 @@ Answer: Bunnies 0, 1
 
 Start End Delta Time Status
     -   0     -    3 Bulkhead is open
-    0   1     2    2 Rescue bunny one
-    1   2     1    1 Rescue bunny two
-    2   4     0    0 Exit. We can go directly to 4 as it takes 1 time to open the bulkhead.
+    0   1     2    2 Rescue First Bunny.
+    1   2     1    1 Rescue Second Bunny.
+    2   4     0    0 Exit.
     
 If we wanted to rescue third bunny then we needed to add more time, which is slows the process, so we skip them as the requirement to the problem was to be fast! But there could have been another solution to rescue 0,3 0r 1,3 bunny as well as every rescure needs exactly same time.
 
@@ -420,3 +421,72 @@ From the research solution could be found in the following steps:
 - [ ] Understand and implement the finding number 3. 
 - [ ] Review https://iq.opengenus.org/blossom-maximum-matching-algorithm
 - [ ] Review https://www.informit.com/articles/article.aspx?p=169575&seqNum=8
+
+
+### Third Analysis
+Went back to the problem and update the description to the given examples above.
+
+#### Some Theory
+
+> Graph representations 
+Adjacency Matrix is a n-by-n matrix with A uv = 1 if (u, v) is an edge.
+- Two representations of each edge.
+- Space proportional to n 2 .
+- Checking if (u, v) is an edge takes Θ(1) time.
+- Identifying all edges takes Θ(n 2 ) time.
+
+Adjacency Lists is a node-indexed array of lists.
+- Two representations of each edge.
+- Space is Θ(m + n).
+- Checking if (u, v) is an edge takes O(degree(u)) time. degree = number of neighbors of u.
+- Identifying all edges takes Θ(m + n) time.
+
+
+Cycles: A cycle is a path v 1 , v 2 , ..., v k in which v 1 = v k and k ≥ 2.
+Trees: An undirected graph is a tree if it is connected and does not contain a cycle.
+
+Shortest path problem. Given two nodes s and t, what is the length of a shortest path between s and t?
+
+**In our problem we intend to return the nodes which can be reached with the time we have.**
+
+Breadth-first search: Explore outward from s in all possible directions, adding nodes one “layer” L at a time.
+BFS algorithm.
+- L0 = {s}
+- L1 = all neighbors of L0
+- L2 = all nodes that do not belong to L0 or L1 , and that have an edge to a node in L1
+- Li+1 = all nodes that do not belong to an earlier layer, and that have an edge to a node in Li
+
+BFS runs in O(m + n) time if the graph is given by an adjacency representation.
+
+Connected component. Find all nodes reachable from a point.
+
+**This kind of represents our problem** - Which nodes can can we reach from start with the limited time constraints.
+
+> Graph search
+- Directed reachability. Given a node s, find all nodes reachable from s.
+- Directed s↝t shortest path problem. Given two nodes s and t, what is the length of a shortest path from s to t?
+- Graph search. BFS extends naturally to directed graphs.
+
+> Strong connectivity
+- Def. Nodes u and v are mutually reachable if there is both a path from u to v and also a path from v to u.
+- Def. A graph is strongly connected if every pair of nodes is mutually reachable.
+
+> Directed acyclic graphs
+- Def. A DAG is a directed graph that contains no directed cycles.
+- Def. A topological order of a directed graph G = (V, E) is an ordering of its nodes as v 1 , v 2 , ..., v n so that for every edge (v i , v j ) we have i < j.
+
+> Cycles
+Def. A path is a sequence of edges which connects a sequence of nodes.
+Def. A cycle is a path with no repeated nodes or edges other than the starting and ending nodes.
+
+> Minimum spanning tree (MST)
+Def. Given a connected, undirected graph G = (V, E) with edge costs ce, a minimum spanning tree (V, T ) is a spanning tree of G such that the sum of the edge costs in T is minimized.
+
+> Arborescence
+In graph theory, an arborescence is a directed graph in which, for a vertex u called the root and any other vertex v, there is exactly one directed path from u to v. An arborescence is thus the directed-graph form of a rooted tree, understood here as an undirected graph. Equivalently, an arborescence is a directed, rooted tree in which all edges point away from the root; a number of other equivalent characterizations exist. Every arborescence is a directed acyclic graph, but not every DAG is an arborescence. An arborescence can equivalently be defined as a rooted digraph in which the path from the root to any other vertex is unique.
+
+> Algorithmic Paradigms:
+- Greed: Process the input in some order, myopically making irrevocable decisions.
+- Divide-and-conquer: Break up a problem into independent subproblems; Solve each subproblem; Combine solutions to subproblems to form solutionto original problem.
+- Dynamic programming: Break up a problem into a series of overlapping subproblems; Combine solutions to smaller subproblems to form solution to large subproblem.Dynamic programming is a fancy name for caching intermediate results in a table for later reuse.
+
