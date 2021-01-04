@@ -9,7 +9,7 @@ The **time it takes to move** from your starting point to all of the bunnies and
 
 In addition to spending time traveling between bunnies, some paths interact with the space station's security checkpoints and **add time back to the clock**. Adding time to the clock will delay the closing of the bulkhead doors, and if the time goes back up to 0 or a positive number after the doors have already closed, it **triggers the bulkhead to reopen**. Therefore, it might be possible to walk in a circle and keep gaining time: that is **each time a path is traversed, the same amount of time is used or added**.
 
-Write a function of the form solution(times, time_limit) to calculate the most bunnies you can pick up and which bunnies they are, while still escaping through the bulkhead before the doors close for good. If there are multiple sets of bunnies of the same size, **return the set of bunnies with the lowest prisoner IDs (as indexes) in sorted order**. The bunnies are represented as a sorted list by prisoner ID, with the **first bunny being 0**.There are at most **5 bunnies**, and time_limit is a non-negative integer that is at most ***999**.
+Write a function of the form solution(times, time_limit) to calculate the most bunnies you can pick up and which bunnies they are, while still escaping through the bulkhead before the doors close for good. If there are multiple sets of bunnies of the same size, **return the set of bunnies with the lowest prisoner IDs (as indexes) in sorted order**. The bunnies are represented as a sorted list by prisoner ID, with the **first bunny being 0**.There are at most **5 bunnies**, and time_limit is a **non-negative** integer that is at most ***999**.
 
 For instance, in the case of
 [
@@ -143,7 +143,7 @@ https://cs.stackexchange.com/questions/129602/google-foobar-level-4-graph-proble
 https://github.com/franklinvp/foobar/blob/master/foobar2020/solutionProblem4.py
 
 
-### Second Analysis
+## Second Analysis
 
 https://www.cs.princeton.edu/~wayne/kleinberg-tardos
 https://en.wikipedia.org/wiki/Path_%28graph_theory%29#Different_types_of_paths
@@ -423,7 +423,7 @@ From the research solution could be found in the following steps:
 - [ ] Review https://www.informit.com/articles/article.aspx?p=169575&seqNum=8
 
 
-### Third Analysis
+## Third Analysis
 Went back to the problem and update the description to the given examples above.
 
 #### Some Theory
@@ -490,3 +490,405 @@ In graph theory, an arborescence is a directed graph in which, for a vertex u ca
 - Divide-and-conquer: Break up a problem into independent subproblems; Solve each subproblem; Combine solutions to subproblems to form solutionto original problem.
 - Dynamic programming: Break up a problem into a series of overlapping subproblems; Combine solutions to smaller subproblems to form solution to large subproblem.Dynamic programming is a fancy name for caching intermediate results in a table for later reuse.
 
+
+## Fourth Analysis
+From the last analysis and some theory, I believe that some modification of Bellman-Ford would be enough to get the answer while checking for a negative cycle.
+
+And I need to answer a question on negative cycle - 
+- [ ]  Why do return all the bunnies when there is a negative cycle? 
+This question is based on the solution that passed the tests.
+
+A simple algorithm that I came up in last analysis:
+
+2. Check if the time we have would be enough save a bunny that requires the same amount of time.
+3. If No, Check if there is a way to increase/add more time to save a bunny.
+4. 3. If Yes, add time, and save the bunny.
+5. 3. If No, return the number of bunnies saved.
+6. If Yes, Check if by saving that bunny we would still have more time to keep the Bulkhead.
+
+Well this thought can be done with an updated BFS or DFS but those would not work with a grapth that might have a negative cycle. So a modified Belmanford suits best.
+
+Looked into A* algorithm. This could be an alternative to finding short path but this does not detect neg cycle.
+- http://theory.stanford.edu/~amitp/GameProgramming
+- https://www.edureka.co/blog/a-search-algorithm
+- https://rosettacode.org/wiki/A*_search_algorithm
+- https://www.redblobgames.com/pathfinding/a-star/introduction.html
+- https://www.ics.uci.edu/~welling/teaching/ICS175winter12/A-starSearch.pdf
+- https://stackoverflow.com/questions/5197523/does-a-work-with-negative-weights-as-long-that-the-heuristic-is-admissible
+
+
+- [ ] So I am curious to know how the algorithms behave after we remove try to remove the negative cycle by augmenting the time provided at first in the auxilliary matrix.
+
+**Well this does not work!**
+
+```
+        # Matrix with negative cycle.
+        # [
+        #     [
+        #         [0, 3, 1, 8, 1],
+        #         [2, 0, 9, 4, 2],
+        #         [-5, 1, 0, 3, -2],
+        #         [3, 2, 1, 0, 1],
+        #         [1, 3, 2, 0, 0]
+        #     ], [10], [[0,1,2]]
+        # ],
+        
+        # Removed neg cycle by adding 10 to check how the solution behaves.
+        [
+            [
+                [0, 13, 11, 18, 11],
+                [12, 0, 19, 14, 12],
+                [5, 11, 0, 13, 8],
+                [13, 12, 11, 0, 11],
+                [11, 13, 12, 10, 0]
+            ], [0], [[0,1,2]]
+        ]
+
+        # Adding 10 was wrong because by adding we increased the time it takes to resuce each bunny.
+        # Instead we needed to substract the value or put some other/more logic that could realte in a better way.
+        
+```
+
+Code coverage with Python.
+I wanted to understand how much code was being covered by the tests cases.
+https://developer.ibm.com/recipes/tutorials/testing-and-code-coverage-with-python
+
+
+- [ ] Does first iteration from source node determines/finds out the shortest path and also if there exists any negative cycle in the graph? If so then there will be no need to iterate through all the rows as done in the solutions or default Belman-Ford does. [[0,1,2]]
+
+
+https://www.geeksforgeeks.org/graph-and-its-representations
+
+
+Abdul Bari:
+Graph Traversals - BFS & DFS -Breadth First Search and Depth First Search
+https://www.youtube.com/watch?v=pcKY4hjDrxk
+Visit And Explore - There are two fundamental activites in graph traversal.
+
+4.1 MultiStage Graph - Dynamic Programming
+https://www.youtube.com/watch?v=9iE9Mj4m8jk
+
+4.1.1 MultiStage Graph (Program) - Dynamic Programming
+https://www.youtube.com/watch?v=FcScLYJI42E
+
+Dijkstra Algorithm - Single Source Shortest Path - Greedy Method
+https://www.youtube.com/watch?v=XB4MIexjvY0
+
+All Pairs Shortest Path (Floyd-Warshall) - Dynamic Programming
+https://www.youtube.com/watch?v=oNI0rf2P9gE
+
+Bellman Ford Algorithm - Single Source Shortest Path - Dynamic Programming
+https://www.youtube.com/watch?v=FtN3BYH2Zes
+
+
+Dijkstra's Algorithm - Computerphile
+https://www.youtube.com/watch?v=GazC3A4OQTE
+A* (A Star) Search Algorithm - Computerphile
+https://www.youtube.com/watch?v=ySN5Wnu88nE
+
+
+https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue
+
+
+Note that if a graph contains a “negative cycle” (i.e. a cycle whose edges sum to a negative value) that is reachable from the source, then there is no shortest path. Any path that has a point on the negative cycle can be made cheaper by one more walk around the negative cycle. Bellman–Ford algorithm can easily detect any negative cycles in the graph.
+
+https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-1-introduction/
+Minimax is a kind of backtracking algorithm that is used in decision making and game theory to find the optimal move for a player, assuming that your opponent also plays optimally. It is widely used in two player turn-based games such as Tic-Tac-Toe, Backgammon, Mancala, Chess, etc.
+
+In Minimax the two players are called maximizer and minimizer. The maximizer tries to get the highest score possible while the minimizer tries to do the opposite and get the lowest score possible.
+
+Every board state has a value associated with it. In a given state if the maximizer has upper hand then, the score of the board will tend to be some positive value. If the minimizer has the upper hand in that board state then it will tend to be some negative value. The values of the board are calculated by some heuristics which are unique for every type of game.
+
+
+
+Time Amendment and use Dijkstras
+Lets say we have the below input:
+[
+        [[0, 2, 2, 2, -1], Adjacency Matrix
+        [9, 0, 2, 2, -1],
+        [9, 3, 0, 2, -1],
+        [9, 3, 2, 0, -1],
+        [9, 3, 2, 2, 0]],
+    [1], Time 
+    [[1,2]] Answer
+],
+
+Convert -ve time to 0, the largest negative number is -1, 
+so add 1 to it and substract 1 from others, and add 1 to
+time each time one is added.
+[[0, 1, 1, 1, 0], Time = 1 + time = 2
+[8, 0, 1, 1, 0], Time = 1 + time = 3
+[8, 2, 0, 1, 0], Time = 1 + time = 4
+[8, 2, 2, 0, 0],
+[8, 2, 1, 1, 0]],
+
+- [ ] Need to check with this theory.
+
+
+#### More Theory
+So when to use DFS over A*, when to use Dijkstra over A* to find the shortest paths?
+
+Summary:
+
+1) One source and One Destination-
+→ Use A* Search Algorithm (For Unweighted as well as Weighted Graphs)
+
+2) One Source, All Destination –
+→ Use BFS (For Unweighted Graphs)
+→ Use Dijkstra (For Weighted Graphs without negative weights)
+→ Use Bellman Ford (For Weighted Graphs with negative weights)
+
+3) Between every pair of nodes-
+→ Floyd-Warshall
+→ Johnson’s Algorithm
+
+
+Updated Algorithm
+2. Check if the time we have would be enough save a bunny that requires the same amount of time.
+3. If No, Check if there is a way to increase/add more time to save a bunny.
+4. 3. If Yes, add time, and save the bunny.
+5. 3. If No, return the number of bunnies saved.
+6. If Yes, Check if by saving that bunny we would still have more time to keep the Bulkhead.
+
+
+
+https://medium.com/cantors-paradise/dijkstras-shortest-path-algorithm-in-python-d955744c7064
+http://theory.stanford.edu/~amitp/GameProgramming/
+https://www.geeksforgeeks.org/a-search-algorithm
+https://medium.com/@nicholas.w.swift/easy-dijkstras-pathfinding-324a51eeb0f
+https://gist.github.com/codeanit/63846b7c07ba2731b5541820306f0efb
+https://www.redblobgames.com/pathfinding/a-star/implementation.html
+https://gist.github.com/jamiees2/5531924
+https://www.freecodecamp.org/news/dijkstras-shortest-path-algorithm-visual-introduction/
+https://www.geeksforgeeks.org/python-program-for-dijkstras-shortest-path-algorithm-greedy-algo-7/
+https://www.youtube.com/watch?v=XB4MIexjvY0&list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O&index=45 3.6 Dijkstra Algorithm - Single Source Shortest Path - Greedy Method
+https://www.geeksforgeeks.org/comparison-dijkstras-floyd-warshall-algorithms/
+https://github.com/vkasojhaa/Comparison-of-Shortest-Path-Searching-Algorithms
+https://www.geeksforgeeks.org/detect-cycle-in-the-graph-using-degrees-of-nodes-of-graph/?ref=rp
+https://konaeakira.github.io/posts/using-the-shortest-path-faster-algorithm-to-find-negative-cycles.html
+https://iq.opengenus.org/shortest-path-faster-algorithm/
+
+https://en.wikipedia.org/wiki/Paging
+https://www.geeksforgeeks.org/paging-in-operating-system/
+https://dengking.github.io/Linux-OS/Kernel/Guide/Memory-management/Virtual-memory/Paging/
+https://www.geeksforgeeks.org/program-for-least-recently-used-lru-page-replacement-algorithm/
+https://www.geeksforgeeks.org/page-replacement-algorithms-in-operating-systems/?ref=lbp
+
+
+
+#### Analysis with Bellman-Ford
+
+Time: [[0, 2, 2, 2, -1], [9, 0, 2, 2, -1], [9, 3, 0, 2, -1], [9, 3, 2, 0, -1], [9, 3, 2, 2, 0]]
+
+Shortest distance from 0
+Parent: [-1, 0, 4, 4, 0]
+From  0  to  0  distance is  0. It's path is [ 0 ]
+From  0  to  1  distance is  2. It's path is [ 0 1 ]
+From  0  to  2  distance is  1. It's path is [ 0 4 2 ]
+From  0  to  3  distance is  1. It's path is [ 0 4 3 ]
+From  0  to  4  distance is  -1. It's path is [ 0 4 ]
+Here the shortest distance from 0 is 1 that leads to 2.
+
+
+`And from here we can see that the another shortest distance from 0 is 1, 0 to 2.
+As there is a possibility to add time back -1 so we can precalculate that
+we can rescue third bunny from this initial stage.`
+
+That though would be invalid as there might not be a path from 2-3 with a cost of 1. 
+
+But as 4 is an intermediary route to which both path has a cost of 1, 
+the above logic is valid for such case, i.e. The route will be: 
+    0->4, 4->2, 2->4, 4->3, 3->4
+
+
+Shortest distance from 2
+Parent: [4, 4, -1, 4, 2]
+From  2  to  0  distance is  8. It's path is [ 2 4 0 ]
+From  2  to  1  distance is  2. It's path is [ 2 4 1 ]
+From  2  to  2  distance is  0. It's path is [ 2 ]
+From  2  to  3  distance is  1. It's path is [ 2 4 3 ]
+From  2  to  4  distance is  -1. It's path is [ 2 4 ]
+
+The shortest distance from 2 is 1 that leads to 3.
+
+There is a pattern here that can help to find the distances from the
+first loop with the origin 0.
+
+
+#### Python Theory
+
+**Python Collections (Arrays)**
+
+There are four collection data types in the Python programming language:
+
+    List is a collection which is ordered and changeable. Allows duplicate members.
+    Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+    Set is a collection which is unordered and unindexed. No duplicate members.
+    Dictionary is a collection which is unordered and changeable. No duplicate members.
+
+When choosing a collection type, it is useful to understand the properties of that type. Choosing the right type for a particular data set could mean retention of meaning, and, it could mean an increase in efficiency or security.
+
+#### Analysis with Bellman-Ford (contd..)
+Bellman ford gives the shortest path from one vertex to other. 
+So with this in mind, and as I've seen some other implementations,
+I wanted to find the shortest next path with in the Bellman-Ford.
+
+The first rough idea was to use a recursion that would fetch the
+next shortest path. This idea worked for the provided case with
+negative weight but failed for the positive weights.
+
+```python
+def BellmanFord(edges, source, time, N, last):
+    
+    if source > 0 and source < N-1 :
+        bunny.add(source) 
+        # print(bunny)
+
+    # cost stores shortest-path information
+    cost = [INF] * N
+ 
+    # Initially all vertices except source vertex have a weight of infinity
+    cost[source] = 0
+    
+    parent = [-1] * N
+
+    # Relaxation step (run V-1 times)
+    for i in range(N):
+        # consider all edges from u to v having weight w
+        for (u, v, w) in edges:
+            # if the cost to the destination u can be
+            # shortened by taking the edge u -> v
+            if cost[u] <= INF and cost[u] + w < cost[v]:
+
+                # print("cost[v] ", cost[v], ' cost[u] ', cost[u], ' + w ', w )
+
+                # update cost to the lower value
+                cost[v] = cost[u] + w
+
+                # set v's parent as u
+                parent[v] = u
+    
+            # print("cost[v]:v ", cost[v],":", v )
+                # print()
+
+
+    # Run relaxation step once more for N'th time to
+    # check for negative-weight cycles
+    for (u, v, w) in edges:
+        # if the cost to the destination u can be
+        # shortened by taking the edge u -> v
+        if cost[u] <= INF and cost[u] + w < cost[v]:
+            return True
+
+    print(parent)
+    
+    for i in range(N):
+        print("From ", source, " to ", i , " distance is ", cost[i], end='.')
+        print(" It's path is [ ", end='')
+        printPath(parent, i)
+        print("]")
+
+
+    # Find the cheapest distance
+    minCost = INF
+    next = INF
+    
+    for i in range(1, N):
+
+        if cost[i] < minCost \
+        and i != source \
+        and not i in bunny :
+            next = i
+            minCost = cost[i]
+            
+    if not last:         
+        if ( minCost < 0 ):
+            time = time + -1*minCost
+
+        elif ( minCost > 0 ):
+            time = time - minCost
+
+        # This is for negative costs involved.
+        # For the first solution.
+        if time < 0 and source == N-1 and len(bunny)+1 == N-2: 
+            return 
+
+        # if time < 0 and source == N-1 and len(bunny)+1 == N-2: 
+        #     return 
+
+        # check if this is the last stage and door is yet not open
+        if time < 0 and source == N-2:
+            # go back and check if there is a way from the previous source to door.
+            time = time + minCost
+            bunny.pop()
+            last = bunny.pop()
+
+            # This was the previous logic but as we already have 
+            # the shortest path so we can use that data but the data 
+            # is not stored yet.
+            # BellmanFord(edges, last, time, N, 1)    
+    else:
+        next = N-1
+        time = time + minCost
+
+    # BellmanFord(edges, next, time, N, False)
+    
+    # else:
+    #     # Check if there is a path from the next to bulhead
+    #     BellmanFord(edges, next, time, N )
+    #     # print source in asecending order
+    #     False
+
+    return False
+
+```
+
+Then the next idea was to use all the computed paths by
+completed Bellman-Ford.
+
+```python
+    
+    # Store computed data bunnies in the Bellman-Ford
+    bunny = []
+
+    for i in range(len(bunny)-4):
+        minDist = INF
+        for j in range(len(bunny)-1):
+            print("From ", i, " to ", j , " distance is ", bunny[i]['cost'][j], end='.')
+            print(" It's path is [ ", end='')
+            printPath(bunny[i]['parent'], j)
+            print("]")
+            print('Cost', bunny[i]['cost'][j])
+
+            if bunny[i]['cost'][j] < minDist and i!=j:
+                minDist = bunny[i]['cost'][j]
+                print(bunny[i]['cost'][j]) 
+```
+
+Both ideas are not yet fully relaized as the remaninig time was minimal.
+So I choose to use existing solution for submission.
+
+I choose Python as the programming language as the solutions and examples 
+were better and more, and I use it as tooling language to validate ideas.
+
+
+###### Tabs On Brower
+- [ ] https://www.hackerearth.com/practice/algorithms/graphs/shortest-path-algorithms/tutorial/
+- [ ] https://docs.ioin.in/writeup/www.auxy.xyz/_tutorial_Webkit_Exp_Tutorial_/index.html
+- [ ] https://tech.ebayinc.com/engineering/ou-online-analytical-processing/
+- [ ] https://www.linkedin.com/pulse/dos-donts-while-preparing-amazon-machine-learning-specialty-semaan/
+- [ ] https://www.infoq.com/podcasts/software-architecture-team-topologies
+- [ ] https://medium.com/awsblogs/ci-cd-with-kubernetes-3c29e8073c38
+- [ ] https://www.infoq.com/presentations/hotspot-graalvm-code-execution
+- [ ] https://medium.com/better-programming/modern-day-architecture-design-patterns-for-software-professionals-9056ee1ed977 
+- [ ] https://www.linkedin.com/learning/cobol-essential-training/cobol-is-alive-and-well
+- [ ] https://mailchi.mp/5125b7b5305e/18-dear-architects
+- [ ] https://advocacy.vmware.com/member/post/1d9aff34-0610-42ed-9b90-21233cabc9ae?uc=113877&g=df4af070-be59-44be-b7f0-ea2387c55f98&f=2433965
+- [ ] https://minimatech.org/from-postgresql-to-neo4j
+- [ ] https://www.siddharthsarda.com/p/developer-progression-as-a-function
+- [ ] https://www.infoworld.com/article/3563829/jamstack-the-static-website-revolution-upending-web-development.html
+- [ ] https://apenwarr.ca/log/20201227 System design
+- [ ] https://www.infoq.com/articles/database-audit-system-kafka
+- [ ] https://increment.com/remote/committing-to-collaboration-version-control | https://increment.com/remote
+- [ ] https://medium.com/neotiv-gmbh/5-design-patterns-every-software-engineer-should-know-470c8b6c0b54
+- [ ] https://chromeisbad.com
