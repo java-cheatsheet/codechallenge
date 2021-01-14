@@ -1,7 +1,14 @@
-'''Bellman-Ford Algorithm 
+'''Bellman–Ford–Moore algorithm Algorithm 
 
 
-Source: https://www.techiedelight.com/determine-negative-weight-cycle-graph/
+Source: 
+- https://www.techiedelight.com/determine-negative-weight-cycle-graph
+- https://www.techiedelight.com/single-source-shortest-paths-bellman-ford-algorithm
+- https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/06DynamicProgrammingII.pdf
+
+The purpose of this solution is to find an optimum solution based on Bellman-Ford-Moore.
+
+
 '''
 
 import itertools  
@@ -19,7 +26,7 @@ def MakeEdge(adjMatrix, N, time):
             
             # print('adjMatrix[v][u]: ' + str(v) +':'+ str(u) +' = '+  str(adjMatrix[v][u]))
 
-            if adjMatrix[v][u] and adjMatrix[v][u] != time:
+            if adjMatrix[v][u] and adjMatrix[v][u] != INF:
                 # edge from source v to dest u having specified weight
                 edges.append((v, u, adjMatrix[v][u]))
 
@@ -37,11 +44,11 @@ def printPath(parent, vertex):
 
 
 # Function to run Bellman-Ford algorithm from given source
-def BellmanFord(edges, source, time, N, last):
-    
-    if source > 0 and source < N-1 :
-        bunny.add(source) 
-        # print(bunny)
+def BellmanFord(edges, source, time, N, last, verticesCost):
+
+    # if source > 0 and source < N-1 :
+    #     bunny.add(source) 
+    #     # print(bunny)
 
     # cost stores shortest-path information
     cost = [INF] * N
@@ -63,10 +70,10 @@ def BellmanFord(edges, source, time, N, last):
 
                 # update cost to the lower value
                 cost[v] = cost[u] + w
-
+                
                 # set v's parent as u
                 parent[v] = u
-    
+                
             # print("cost[v]:v ", cost[v],":", v )
                 # print()
 
@@ -79,56 +86,57 @@ def BellmanFord(edges, source, time, N, last):
         if cost[u] <= INF and cost[u] + w < cost[v]:
             return True
 
-    print(parent)
+    # print(parent)
     
-    for i in range(N):
-        print("From ", source, " to ", i , " distance is ", cost[i], end='.')
-        print(" It's path is [ ", end='')
-        printPath(parent, i)
-        print("]")
+    # for i in range(N):
+    #     print("From ", source, " to ", i , " distance is ", cost[i], end='.')
+    #     print(" It's path is [ ", end='')
+    #     printPath(parent, i)
+    #     print("]")
 
+    verticesCost.append(cost)
 
     # Find the cheapest distance
-    minCost = INF
-    next = INF
+    # minCost = INF
+    # next = INF
     
-    for i in range(1, N):
+    # for i in range(1, N):
 
-        if cost[i] < minCost \
-        and i != source \
-        and not i in bunny :
-            next = i
-            minCost = cost[i]
+    #     if cost[i] < minCost \
+    #     and i != source \
+    #     and not i in bunny :
+    #         next = i
+    #         minCost = cost[i]
             
-    if not last:         
-        if ( minCost < 0 ):
-            time = time + -1*minCost
+    # if not last:         
+    #     if ( minCost < 0 ):
+    #         time = time + -1*minCost
 
-        elif ( minCost > 0 ):
-            time = time - minCost
+    #     elif ( minCost > 0 ):
+    #         time = time - minCost
 
-        # This is for negative costs involved.
-        # For the first solution.
-        if time < 0 and source == N-1 and len(bunny)+1 == N-2: 
-            return 
+    #     # This is for negative costs involved.
+    #     # For the first solution.
+    #     if time < 0 and source == N-1 and len(bunny)+1 == N-2: 
+    #         return 
 
-        # if time < 0 and source == N-1 and len(bunny)+1 == N-2: 
-        #     return 
+    #     # if time < 0 and source == N-1 and len(bunny)+1 == N-2: 
+    #     #     return 
 
-        # check if this is the last stage and door is yet not open
-        if time < 0 and source == N-2:
-            # go back and check if there is a way from the previous source to door.
-            time = time + minCost
-            bunny.pop()
-            last = bunny.pop()
+    #     # check if this is the last stage and door is yet not open
+    #     if time < 0 and source == N-2:
+    #         # go back and check if there is a way from the previous source to door.
+    #         time = time + minCost
+    #         bunny.pop()
+    #         last = bunny.pop()
 
-            # This was the previous logic but as we already have 
-            # the shortest path so we can use that data but the data 
-            # is not stored yet.
-            # BellmanFord(edges, last, time, N, 1)    
-    else:
-        next = N-1
-        time = time + minCost
+    #         # This was the previous logic but as we already have 
+    #         # the shortest path so we can use that data but the data 
+    #         # is not stored yet.
+    #         # BellmanFord(edges, last, time, N, 1)    
+    # else:
+    #     next = N-1
+    #     time = time + minCost
 
     # BellmanFord(edges, next, time, N, False)
     
@@ -144,15 +152,19 @@ def BellmanFord(edges, source, time, N, last):
 def solution(adjacentMatrix, time):
     rows = len(adjacentMatrix)
     edges =  MakeEdge(adjacentMatrix, rows, time)
+    
+    # verticeCosts = [(INF for i in range(rows)]*rows
+    shortestPaths = []
 
     # run Bellman-Ford algorithm from each vertex as source
     # and check for any Negative Weight Cycle
-    # for i in range(1):
-    if BellmanFord(edges, 0, time, rows, False):
-        print("Negative Weight Cycle Found!!")
-        exit()
+    for i in range(rows-1):
+        # store cost info for every vertex
+        if BellmanFord(edges, i, time, rows, False, shortestPaths):
+            print("Negative Weight Cycle Found!!")
+            exit()
 
-    print(bunny)
+    print(shortestPaths)
     
     # bunnies = rows - 2
     # for i in reversed(range(bunnies + 1)):

@@ -68,6 +68,11 @@ Use verify [file] to test your solution and see how it does. When you are finish
 
 # Solution
 
+### Primary Resources
+- https://algs4.cs.princeton.edu/44sp
+- https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/06DynamicProgrammingII.pdf
+
+
 ## First Analysis
 
 ### Provided Case 1: Time Added Back
@@ -622,7 +627,11 @@ time each time one is added.
 [8, 2, 2, 0, 0],
 [8, 2, 1, 1, 0]],
 
-- [ ] Need to check with this theory.
+- [X] Need to check with this theory.
+This theory also does not work as from theory - 
+https://algs4.cs.princeton.edu/44sp/
+https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/06DynamicProgrammingII.pdf:
+`Reweighting. Adding a constant to every edge length does not necessarily make Dijkstra’s algorithm produce shortest paths.`
 
 
 #### More Theory
@@ -641,15 +650,6 @@ Summary:
 3) Between every pair of nodes-
 → Floyd-Warshall
 → Johnson’s Algorithm
-
-
-Updated Algorithm
-2. Check if the time we have would be enough save a bunny that requires the same amount of time.
-3. If No, Check if there is a way to increase/add more time to save a bunny.
-4. 3. If Yes, add time, and save the bunny.
-5. 3. If No, return the number of bunnies saved.
-6. If Yes, Check if by saving that bunny we would still have more time to keep the Bulkhead.
-
 
 
 https://medium.com/cantors-paradise/dijkstras-shortest-path-algorithm-in-python-d955744c7064
@@ -843,8 +843,8 @@ def BellmanFord(edges, source, time, N, last):
 
 ```
 
-Then the next idea was to use all the computed paths by
-completed Bellman-Ford.
+Then the next idea was to use all the computed
+paths by completed Bellman-Ford.
 
 ```python
     
@@ -870,6 +870,119 @@ So I choose to use existing solution for submission.
 
 I choose Python as the programming language as the solutions and examples 
 were better and more, and I use it as tooling language to validate ideas.
+
+### Further analysis after submission
+The submitted solution was third-party and I wanted to find better
+optimium solution.
+
+##### First Example:
+``` python
+adjacencyMatrix = [
+            [0, 2, 2, 2, -1],  # 0 = Start
+            [9, 0, 2, 2, -1],  # 1 = Bunny 0
+            [9, 3, 0, 2, -1],  # 2 = Bunny 1
+            [9, 3, 2, 0, -1],  # 3 = Bunny 2
+            [9, 3, 2, 2,  0],  # 4 = Bulkhead
+        ]
+time = 1
+```
+
+The shortest paths are from 0, 1, 2 and 3 are:
+[0, 2, 1, 1, -1], [8, 0, 1, 1, -1], [8, 2, 0, 1, -1], [8, 2, 1, 0, -1]
+
+Rough algorithm could be:
+
+Find the miminum value. 
+If there are more than one, put them in a queue, i.e. Here there is two 1's,
+Select the minimum value.
+Reduce the total time provided.
+
+Move to next stage who's minimum value was selected.
+Select the next minimum value excluding the previous stage.
+
+Check if the available time is enough to reach next stage.
+The remaining time must be greater than or equal to shortest time it takes to reach next level.
+
+Steps taken based on the algorithm based on the shortest path:
+
+Previous vertices pv = null
+Remaining time rt =  2
+
+Step 1 [0, 2, 1, 1, -1]
+Remove first and last index from the list, say AL, = [2, 1, 1]
+Sort = [1,1,2]
+Add sorted list to queue
+Dequeue: Choose the first number from the sorted list 
+    The next path np = Select the first index in AL = 2
+rt = 2 - 1 = 1
+Is rt - np > 0, go to next step.
+
+
+Step 2 [8, 2, 0, 1, -1]
+Previous vertices:0
+Remove first, last index, self, and previous vertices index AL = [2, 1]
+    This filtration might cause issue while selecting as the index are removed
+    But we need it for sorting
+Sort = [1, 2]
+Add sorted list to queue
+Choose the first number from the sorted list
+    The next path = Select the index in the shortest path whose value is dequeued
+        [x, x, x, 1, x] = 3, the only option remaining  
+    Probable problem:
+rt = 1 - 1 = 0
+Is rt - np > 0, go to next step. No
+
+
+##### Second Example:
+Adjacency Matrix = [[0, 1, 1, 1, 1], [1, 0, 1, 1, 1], [1, 1, 0, 1, 1], [1, 1, 1, 0, 1], [1, 1, 1, 1, 0]]
+Time = 3
+Shortest Path sp = [[0, 1, 1, 1, 1], [1, 0, 1, 1, 1], [1, 1, 0, 1, 1], [1, 1, 1, 0, 1]]
+
+
+Previous vertices pv = null
+Remaining time rt =  3
+list = sp[0] = [0, 1, 1, 1, 1] 
+
+while i > 0:
+
+Step 1 [0, 1, 1, 1, 1]
+pv = null
+Remove first and last index from the list, say AL, = [1, 1, 1]
+Sort = [1,1,1]
+Add sorted list to queue
+Dequeue: Choose the first number from the sorted list = 1
+    Choose the first index whose value is 1.
+    nextIndex = sp[1]
+rt = 3 - 1 = 2
+Is rt - np > 0, 
+    Go to next step: nextIndex
+
+
+Step 2 [1, 0, 1, 1, 1]
+pv = 0
+Remove first and last index from the list, say AL, = [1, 1, 1]
+Sort = [1,1,1]
+Add sorted list to queue
+Dequeue: Choose the first number from the sorted list = 1
+    Choose the first index whose value is 1
+    nextIndex = sp[1]
+rt = 2 - 1 = 1
+Is rt - np > 0, 
+    Go to next step: nextIndex
+
+Step 3 [1, 1, 0, 1, 1]
+pv = 1
+Remove first, last and previous index from the list, say AL, = [1]
+Sort = [1] // No need to sort if there's one one item
+Add sorted list to queue // No need
+Dequeue: Choose the first number from the sorted list = 1
+    Choose the first index whose value is 1
+    nextIndex = sp[1]
+rt = 2 - 1 = 1
+Is rt - np > 0, 
+    Go to next step: nextIndex
+
+
 
 
 ###### Tabs On Brower

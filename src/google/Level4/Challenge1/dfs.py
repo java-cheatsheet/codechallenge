@@ -13,9 +13,10 @@ class Graph:
 		self.adj[v].append(w) # Add w to v’s list. 
 
 
-	# prints all not yet visited vertices reachable from s 
-	def DFS(self,s):		 # prints all vertices in DFS manner from a given source. 
-								# Initially mark all verices as not visited 
+	# prints all not yet visited vertices reachable from s
+	# prints all vertices in DFS manner from a given source.  
+	def DFS(self,s):		 
+		# Initially mark all verices as not visited 
 		visited = [False for i in range(self.V)] 
 
 		# Create a stack for DFS 
@@ -24,7 +25,7 @@ class Graph:
 		# Push the current source node. 
 		stack.append(s) 
 
- 		while (len(stack)): 
+		while (len(stack)): 
 			# Pop a vertex from stack and print it 
 			s = stack[-1] 
 			stack.pop() 
@@ -44,18 +45,17 @@ class Graph:
 					stack.append(node) 
 
 
-
 # Driver program to test methods of graph class 
+if __name__ == '__main__':
+	g = Graph(7); # Total 5 vertices in graph 
+	g.addEdge(1, 0); 
+	g.addEdge(0, 2); 
+	g.addEdge(2, 1); 
+	g.addEdge(0, 3);
+	g.addEdge(3, 4); 
+	g.addEdge(1, 4); 
+	g.addEdge(4, 5);
+	g.addEdge(5, 6);
 
-g = Graph(7); # Total 5 vertices in graph 
-g.addEdge(1, 0); 
-g.addEdge(0, 2); 
-g.addEdge(2, 1); 
-g.addEdge(0, 3);
-g.addEdge(3, 4); 
-g.addEdge(1, 4); 
-g.addEdge(4, 5);
-g.addEdge(5, 6);
-
-print("Following is Depth First Traversal") 
-g.DFS(0) 
+	print("Following is Depth First Traversal") 
+	g.DFS(0) 

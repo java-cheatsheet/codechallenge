@@ -18,11 +18,13 @@ def solution(time, timeLimit):
         return [i for i in range(bunnies)]
 
     
-    # return carryBunnies(time, timeLimit, bunnies)
+    print(time)
+
+    return carryBunnies(time, timeLimit, bunnies)
     
     # Testing other solution if it works? 
     # It works!
-    return bfs(time, rows, timeLimit)
+    # return bfs(time, rows, timeLimit)
 
 
 def negativeCycleExists(time, rows):
@@ -44,8 +46,7 @@ def negativeCycleExists(time, rows):
             # Skip early if negative cycle is detected
             if time[i][i] < 0:
                return True
-
-
+    
 def makePath(bunniesList):
     '''Returns a list of list as path from 0 to -1 in the same order in the parameter.
 
