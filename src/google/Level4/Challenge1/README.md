@@ -981,27 +981,3 @@ Dequeue: Choose the first number from the sorted list = 1
 rt = 2 - 1 = 1
 Is rt - np > 0, 
     Go to next step: nextIndex
-
-
-
-
-###### Tabs On Brower
-- [ ] https://www.hackerearth.com/practice/algorithms/graphs/shortest-path-algorithms/tutorial/
-- [ ] https://docs.ioin.in/writeup/www.auxy.xyz/_tutorial_Webkit_Exp_Tutorial_/index.html
-- [ ] https://tech.ebayinc.com/engineering/ou-online-analytical-processing/
-- [ ] https://www.linkedin.com/pulse/dos-donts-while-preparing-amazon-machine-learning-specialty-semaan/
-- [ ] https://www.infoq.com/podcasts/software-architecture-team-topologies
-- [ ] https://medium.com/awsblogs/ci-cd-with-kubernetes-3c29e8073c38
-- [ ] https://www.infoq.com/presentations/hotspot-graalvm-code-execution
-- [ ] https://medium.com/better-programming/modern-day-architecture-design-patterns-for-software-professionals-9056ee1ed977 
-- [ ] https://www.linkedin.com/learning/cobol-essential-training/cobol-is-alive-and-well
-- [ ] https://mailchi.mp/5125b7b5305e/18-dear-architects
-- [ ] https://advocacy.vmware.com/member/post/1d9aff34-0610-42ed-9b90-21233cabc9ae?uc=113877&g=df4af070-be59-44be-b7f0-ea2387c55f98&f=2433965
-- [ ] https://minimatech.org/from-postgresql-to-neo4j
-- [ ] https://www.siddharthsarda.com/p/developer-progression-as-a-function
-- [ ] https://www.infoworld.com/article/3563829/jamstack-the-static-website-revolution-upending-web-development.html
-- [ ] https://apenwarr.ca/log/20201227 System design
-- [ ] https://www.infoq.com/articles/database-audit-system-kafka
-- [ ] https://increment.com/remote/committing-to-collaboration-version-control | https://increment.com/remote
-- [ ] https://medium.com/neotiv-gmbh/5-design-patterns-every-software-engineer-should-know-470c8b6c0b54
-- [ ] https://chromeisbad.com
