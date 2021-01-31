@@ -114,6 +114,8 @@ abstract class NetworkFlowBase {
    * @param path - The number of nodes in the graph including s and t.
    */
   public NetworkFlowBase( int[] entrances, int[] exits, int[][] path ) {
+    
+    // As per requirement: A most 2000000 bunnies that will fit at a time.
     MAX_VAL = 20000;
 
     this.path = path;
@@ -323,8 +325,8 @@ class Dinics extends NetworkFlowBase {
       int cap = edge.remainingCapacity();
 
       if ( cap > 0 && ( level[edge.to] == level[at] + 1 )) {
-
-        int bottleNeck = dfs( edge.to, next, flow > cap ? cap : flow);
+        flow = flow > cap ? cap : flow;
+        int bottleNeck = dfs( edge.to, next, flow );
 
         if ( bottleNeck > 0 ) {
           edge.augment(bottleNeck);

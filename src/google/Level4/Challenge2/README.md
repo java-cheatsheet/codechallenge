@@ -117,20 +117,26 @@ The problem is related to finding the network flow.
 
 ### Theory
 - https://algs4.cs.princeton.edu/40graphs
+- Maximum Flow Problem at Communications of the ACM : https://dl.acm.org/doi/10.1145/2628036
+- https://en.wikipedia.org/wiki/Maximum_flow_problem
 - [Network Flow Algorithms Starting Here](https://www.youtube.com/watch?v=LdOnanfc5TM&list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P&index=33)
+
+MIT Open Course Ware : 
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/lecture-videos  
+https://www.youtube.com/watch?v=8C_T4iTzPCU&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=19
 - 13. Incremental Improvement: Max Flow, Min Cut](https://www.youtube.com/watch?v=VYZGlgzr_As)
 - 14. https://www.youtube.com/watch?v=8C_T4iTzPCU
+
 - https://www.youtube.com/watch?v=0CdxkgAjsDA
 - https://en.wikipedia.org/wiki/Flow_network
 - https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem
-- https://en.wikipedia.org/wiki/Maximum_flow_problem
 - https://www.geeksforgeeks.org/cuts-and-network-flow
 - https://www.sciencedirect.com/science/article/pii/002200008590039X
 - https://stackoverflow.com/questions/36054690/how-to-use-dinics-algorithm-to-find-min-cut-edges-in-undireted-graph
 - Actual Complexity of Max Flow Algorithms https://codeforces.com/blog/entry/52714
 
 
-### First Example
+### First Example,  Edmonds-Karp Algorithm 
 
 ```java
 
@@ -222,13 +228,25 @@ public class EscapePods {
         return solveWithFordFulkerson(transform(entrances, exits, path));
     }
 }
-```                                                                                                                                                          
+```                                              
+
+Ford-Fulkerson - Time Complexity: O(fV^2), where f is the max flow
+
+The idea of Edmonds-Karp is to use BFS in Ford-Fulkerson 
+implementation as BFS always picks a path with minimum 
+number of edges. When BFS is used, the worst case time 
+complexity can be reduced to O(VE^2).
+
+
 ### Dinic's Algorithm
+
+Time Complexity: O(EV²)
+
 From further research, a more efficient algorithm - Dinic's algorithm selected.
 
 ##### Theory
 - https://en.wikipedia.org/wiki/Dinic%27s_algorithm
-- https://www.youtube.com/watch?v=M6cm8UeeziI&list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P&index=42
+- WilliamFiset - Graphh Theory - [Playlist](https://www.youtube.com/watch?v=M6cm8UeeziI&list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P&index=42)
 - https://github.com/ADJA/algos/blob/master/Graphs/Dinic.cpp
 - https://www.geeksforgeeks.org/dinics-algorithm-maximum-flow
 - https://www.hackerearth.com/practice/algorithms/graphs/maximum-flow/tutorial
@@ -508,4 +526,66 @@ than 0 was transformed as edges of the graph.
 
 The implementation was slightly modified as my implementation.
 
-### Search For Better Algorithm
+Further optimization of implemented Dinic's algorithm and also finding better
+version is in progress.
+
+
+> Ford–Fulkerson algorithm, Edmond Karp algorithm and Dinic’s algorithm
+
+
+### Finding More Efficient 
+
+Push-Relabel Maximum Flow Algorithm
+Push-Relabel approach is the more efficient than Ford-Fulkerson algorithm. In this post, Goldberg’s “generic” maximum-flow algorithm is discussed that runs in O(V^2E) time. This time complexity is better than O(E^2V) which is time complexity of Edmond-Karp algorithm (a BFS based implementation of Ford-Fulkerson). There exist a push-relabel approach based algorithm that works in O(V3) which is even better than the one discussed here.
+
+Similarities with Ford Fulkerson
+    Like Ford-Fulkerson, Push-Relabel also works on Residual Graph (Residual Graph of a flow network is a graph which indicates additional possible flow. If there is a path from source to sink in residual graph, then it is possible to add flow).
+Differences with Ford Fulkerson
+    Push-relabel algorithm works in a more localized. Rather than examining the entire residual network to find an augmenting path, push-relabel algorithms work on one vertex at a time (Source : CLRS Book).
+    In Ford-Fulkerson, net difference between total outflow and total inflow for every vertex (Except source and sink) is maintained 0. Push-Relabel algorithm allows inflow to exceed the outflow before reaching the final flow. In final flow, the net difference is 0 for all except source and sink.
+    Time complexity wise more efficient.
+
+Dinic's algorithm can be improved to O(VElogV) with dynamic trees.
+
+There exists another more efficient algorithm James B Orlin's + KRT (King, Rao, Tarjan)'s algorithm to O(VE).
+https://dspace.mit.edu/handle/1721.1/88020
+
+- https://failedturing.blogspot.com/2018/12/harvard-compsci-224-advanced-algorithms.html
+
+
+#### Improving Dinic's To O(VElogV) With Dynamic Trees
+
+- https://courses.csail.mit.edu/6.851/spring12/lectures/L19.html
+- https://www.youtube.com/playlist?list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf
+- https://courses.csail.mit.edu/6.851/spring12/
+
+- https://sites.google.com/site/indy256/algo/link-cut-tree-connectivity
+- https://github.com/jeffrey-xiao/competitive-programming/blob/master/src/codebook/datastructures/LinkCutTree.java
+- https://codeforces.com/blog/entry/75885
+- https://github.com/detel/Data-Structures/blob/master/LinkCutTree.java
+- https://github.com/jeffrey-xiao/competitive-programming/blob/master/src/codebook/datastructures/LinkCutTree.java
+- https://posobin.com/advancedDS/
+
+
+Amortized Analysis
+In computer science, amortized analysis is a method for analyzing a given algorithm's complexity, or how much of a resource, especially time or memory, it takes to execute. The motivation for amortized analysis is that looking at the worst-case run time per operation, rather than per algorithm, can be too pessimistic. - Wikipedia
+
+Amortization
+In computer science, amortised analysis is a method of analyzing the execution cost of algorithms over a sequence of operations. In the context of zoning regulations, amortisation refers to the time period a non-conforming property has to conform to a new zoning classification before the non-conforming use becomes prohibited. - Wikipedia 
+
+Amortization
+A technique from financial analysis, but we've appropriated it in computer science as an analysis technique to say, well, let's not worry about every single operation worst case cost, let's just worry about the total operation, the sum of all the operations cost. - https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/lecture-videos/lecture-5-amortization-amortized-analysis
+
+This lecture is about a cool data structure for maintaining rooted trees (potentially very unbalanced) in O(log n) time per operation. The operations include linking two trees together by adding an edge, and cutting an edge to split a tree into two trees, so the data structure is called link-cut trees. This result is our first solving a dynamic graph problem (where in general we can insert and delete edges); next lecture will see other solutions for trees and generalization from trees to undirected graphs. Link-cut trees have specific advantages in that they can represent information over root-to-node paths; for example, they can easily compute the min/max/sum of values stored in nodes or edges along any root-to-node paths. Most importantly, link-cut trees introduce two powerful tree decompositions: preferred-path decomposition (which we already used in Tango trees) and heavy-light decomposition. As we will cover them, link-cut trees also demonstrate how a surprisingly “care-free” use of splay trees is actually still efficient. 
+
+
+Goldberg and Tarjan O(nm log(n*/m)))
+https://www.semanticscholar.org/paper/A-new-approach-to-the-maximum-flow-problem-Goldberg-Tarjan/c8fb31bef2bf64bfbde869601cb624812a1d066e
+https://dl.acm.org/doi/10.1145/12130.12144
+https://deepai.org/publication/a-strongly-polynomial-algorithm-for-linear-exchange-markets
+https://web.stanford.edu/class/archive/cs/cs161/cs161.1176
+
+CSE 542. Advanced Data Structures and Algorithms Spring 2013 https://www.arl.wustl.edu/~jst/cse/542/
+
+# Submission
+Other solutions was not implmented due to time limitation.
