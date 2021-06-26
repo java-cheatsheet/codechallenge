@@ -1,6 +1,5 @@
 package google.Level3.Part2;
 
-import google.Level2.Part1.SecondSolution;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
