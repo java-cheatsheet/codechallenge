@@ -31,13 +31,13 @@ quadrant through which you'll make your jump.
 There's something important to note about
 quasar quantum flux fields' configurations:
 when drawn on a star grid, configurations
-are considered equivalent by grouping rather
+are considered equivalent by grouping, rather
 than by order. That is, for a given set of
 configurations, if you exchange the position
-of any two columns or any two rows some number
-of times, you'll find that all of those configurations
-are equivalent in that way -- in grouping,
-rather than order.
+of any two columns or any two rows some 
+number of times, you'll find that all of 
+those configurations are equivalent in that 
+way -- in grouping, rather than order.
 
 Write a function solution(w, h, s) that takes
 3 integers and returns the number of unique,
@@ -160,11 +160,13 @@ see how it does. When you are finished editing
 your code, use submit [file] to submit your
 answer. If your solution passes the test cases,
 it will be removed from your home folder.
-
++
 
 # Solution
 
-'''txt
+
+Good problem description.
+```txt
 Mathematics Description
 
 This part is better read with nicely typeset formulas. See a concise explanation here where links to further reading are given.
@@ -194,9 +196,10 @@ For these, we can do:
     To compute all partitions one can use the iterative algorithms here. Already written in Python here.
     An efficient way to compute gcd one could use Euclidean algorithm. However, since we are going to need the gcd of all pairs of numbers in a range and each one many times. It is better to pre-compute the full table of gcd all at once by dynamic programming. If a>b, then gcd(a,b)=gcd(a-b,b). This recurrence equation allows to compute gcd of larger pairs in terms of that of smaller pairs. In the table, one has the initial values gcd(1,a)=gcd(a,1)=1 and gcd(a,a)=a, for all a.
     The same happens for factorials. The formula will require the factorials of all numbers in a range many times each. So, it is better to compute them all from the bottom up using that n! = n(n-1)! and 0!=1!=1.
-'''
+```
 
-'''python
+Solutoion with good comments to describe the process.
+```python
 from collections import Counter
 
 def buildGCDTable(n):
@@ -218,12 +221,14 @@ def buildGCDTable(n):
 
 def gcd(x,y, gcdTable):
     """
-    Because we are going to need the gcd of many pairs of numbers
-    we compute the full gcd table of the numbers that we need, instead 
-    of applying Euclid's algorithm for each pair.
-    Note that Euclid's algorithm essentially computes, for large inputs, the gcd
-    of many smaller values too. Since we need them all, we compute them
-    bottom up, as in Dynamic Programming.
+    Because we are going to need the gcd of many 
+    pairs of numbers we compute the full gcd table 
+    of the numbers that we need, instead of applying 
+    Euclid's algorithm for each pair.
+    Note that Euclid's algorithm essentially computes, 
+    for large inputs, the gcd of many smaller values 
+    too. Since we need them all, we compute them bottom 
+    up, as in Dynamic Programming.
     """
     return gcdTable[x-1][y-1]
 
@@ -259,12 +264,16 @@ def coefficientFactor(c, n,factorialTable):
 
 def partitionsAndCycleCount(n, factorialTable):
     """
-    Iterative algorithm to generate all partitions of 
-    the positive integer n.
-    In addition to each partition, we compute the following number:
-        if the partition has i_1 1s, i_2 2s, ..., i_n ns, we compute
+    Iterative algorithm to generate all partitions 
+    of the positive integer n.
+    
+    In addition to each partition, we compute the 
+    following number:
+        if the partition has i_1 1s, i_2 2s, ..., i_n ns, 
+        we compute
         n!/(1^{i_1}i_1!2^{i_2}i_2!...n^{i_n}i_n!)
-    This algorithm comes from https://arxiv.org/abs/0909.2331
+    
+    This algorithm comes from https://arxiv.org/abs/0909.2331.
     """
     k = 0  # Index of last element in a partition 
     p = n*[0] # To store a partition in p[0:k+1]
@@ -278,7 +287,7 @@ def partitionsAndCycleCount(n, factorialTable):
     while k != 0:
         x = a[k - 1] + 1
         k -= 1
-        while 2 * x <= y:
+        while 2 * x <= y:   
             a[k] = x
             y -= x
             k += 1
@@ -300,9 +309,12 @@ def solution(w, h, s):
     # We are going to need the gcd for all pairs of numbers (a,b)
     # with a<= w and b <= h. So, let's compute them all.
     n = max(w,h)
+    
     gcdTable = buildGCDTable(n)
+
     # We will also need the factorials of all numbers 1,2,...,max(w,h)
     factorialTable = buildFactorialTable(n)
+    
     # Consider G=S_w\times S_h, acting on X=W\times H, where 
     # W={1,2,...,w}, H={1,2,...,h}, S_w and S_h are the symmetric group
     # acting as permutations of W and H, respectively.
@@ -314,115 +326,236 @@ def solution(w, h, s):
     # from the Cycle Index Polynomial of the group action.
     # See https://franklinvp.github.io/2020-06-05-PolyaFooBar/
     # for the formula.
+
     grid=0
     for cpw in partitionsAndCycleCount(w,factorialTable):
         for cph in partitionsAndCycleCount(h,factorialTable):
             m=cpw[1]*cph[1]
             grid+=m*(s**sum([sum([gcd(i, j, gcdTable) for i in cpw[0]]) for j in cph[0]]))
     return str(grid//(factorial(w,factorialTable)*factorial(h,factorialTable)))
-'''
-  - https://stackoverflow.com/questions/61689832/disorderly-escape-google-foobar-2020-not-passing-test-cases#62478260 
-  - https://franklinvp.github.io/2020-06-05-PolyaFooBar
+```
 
+Another solution that I find simpler. 
+```python
+from collections import Counter
 
-## Combinatorics
- - https://en.wikipedia.org/wiki/Combinatorics 
+def answer(w, h, s):    
+    grid=0
+    for pw in partitions(w):
+        for ph in partitions(h):            
+            m=count(pw, w)*count(ph, h)
+            grid+=m*(s**sum([sum([gcd(i, j) for i in pw]) for j in ph]))
+              
+    return grid//(factorial(w)*factorial(h))
+    
+def count(c, n):
+    cnt=factorial(n)
+    for a, b in Counter(c).items():
+        cnt//=(a**b)*factorial(b)
+    return cnt        
 
-Combinatorics is involved with:
-- The enumeration (counting) of specified structures, sometimes referred to as arrangements or configurations in a very general sense, associated with finite systems,
-- The existence of such structures that satisfy certain given criteria,
-- The construction of these structures, perhaps in many ways, 
-- optimization, finding the "best" structure or solution among several possibilities, be it the "largest", "smallest" or satisfying some other optimality criterion.
+def partitions(n, i=1):
+    yield [n]
+    for i in range(i, n//2 + 1):
+        for p in partitions(n-i, i):
+            yield [i] + p
 
-### Approaches And Subfields
-#### Enumerative combinatorics
-Five binary trees on three vertices, an example of Catalan numbers.
-Enumerative combinatorics is the most classical area of combinatorics and concentrates on counting the number of certain combinatorial objects. Although counting the number of elements in a set is a rather broad mathematical problem, many of the problems that arise in applications have a relatively simple combinatorial description. Fibonacci numbers is the basic example of a problem in enumerative combinatorics. The twelvefold way provides a unified framework for counting permutations, combinations and partitions.
+def gcd(x,y):
+    while y:
+        x,y=y,x%y
+    return x
 
-#### Analytic combinatorics
-Analytic combinatorics concerns the enumeration of combinatorial structures using tools from complex analysis and probability theory. In contrast with enumerative combinatorics, which uses explicit combinatorial formulae and generating functions to describe the results, analytic combinatorics aims at obtaining asymptotic formulae.
+def factorial(n):
+    if n==0:
+        return 1
+    else:
+        return n*factorial(n-1)
+```
 
-#### Partition theory
-A plane partition.
+Description of problem of similar sorts.
 
-Partition theory studies various enumeration and asymptotic problems related to integer partitions, and is closely related to q-series, special functions and orthogonal polynomials. Originally a part of number theory and analysis, it is now considered a part of combinatorics or an independent field. It incorporates the bijective approach and various tools in analysis and analytic number theory and has connections with statistical mechanics.
+Problem: Coloring a rectangle with 3 rows and 4 columns using two colors.
+```txt
+I want to color a 3x4 rectangle using 2 colors. The number of squares colored by each color must equal 6. However, we say that two colorings are equal if they can be obtained from each other by permutating rows or by cyclically permutating columns, e.g.
+1011    0001
+1000 =  1001   
+0110    1110
 
-#### Graph theory
-Petersen graph.
-Graphs are fundamental objects in combinatorics. Considerations of graph theory range from enumeration (e.g., the number of graphs on n vertices with k edges) to existing structures (e.g., Hamiltonian cycles) to algebraic representations (e.g., given a graph G and two numbers x and y, does the Tutte polynomial TG(x,y) have a combinatorial interpretation?). Although there are very strong connections between graph theory and combinatorics, they are sometimes thought of as separate subjects.[20] While combinatorial methods apply to many graph theory problems, the two disciplines are generally used to seek solutions to different types of problems.
+Solution1:
+First you have to work out in what ways you can transform one of your rectangles in general. You can cyclicly permute the columns in 4 ways, and permute the rows in 6 ways. You can combine these (in either order) to get 24 ways in which a rectangle can be transformed. Each of those 24 ways may or may not actually result in a different pattern. I'll denote the transformation by [r,c] where r is the row permutation, and c
 
-#### Design theory
-Design theory is a study of combinatorial designs, which are collections of subsets with certain intersection properties. Block designs are combinatorial designs of a special type. This area is one of the oldest parts of combinatorics, such as in Kirkman's schoolgirl problem proposed in 1850. The solution of the problem is a special case of a Steiner system, which systems play an important role in the classification of finite simple groups. The area has further connections to coding theory and geometric combinatorics.
+is the column permutation.
 
-#### Finite geometry
-Finite geometry is the study of geometric systems having only a finite number of points. Structures analogous to those found in continuous geometries (Euclidean plane, real projective space, etc.) but defined combinatorially are the main items studied. This area provides a rich source of examples for design theory. It should not be confused with discrete geometry (combinatorial geometry).
+For each of those 24 transformations [r,c]
+you now have to count how many of the rectangles remain unchanged.
 
-#### Order theory
-Hasse diagram of the powerset of {x,y,z} ordered by inclusion.
-Order theory is the study of partially ordered sets, both finite and infinite. Various examples of partial orders appear in algebra, geometry, number theory and throughout combinatorics and graph theory. Notable classes and examples of partial orders include lattices and Boolean algebras.
+Solution2:
+There are, as you noted, 924 ways to colour the grid if you ignore symmetry.
 
-#### Matroid theory
-Matroid theory abstracts part of geometry. It studies the properties of sets (usually, finite sets) of vectors in a vector space that do not depend on the particular coefficients in a linear dependence relation. Not only the structure but also enumerative properties belong to matroid theory. Matroid theory was introduced by Hassler Whitney and studied as a part of order theory. It is now an independent field of study with a number of connections with other parts of combinatorics.
+The symmetries give a group action on those 924 colorings, you want to count the orbits of that action.
 
-#### Extremal combinatorics
-Extremal combinatorics studies extremal questions on set systems. The types of questions addressed in this case are about the largest possible graph which satisfies certain properties. For example, the largest triangle-free graph on 2n vertices is a complete bipartite graph Kn,n. Often it is too hard even to find the extremal answer f(n) exactly and one can only give an asymptotic estimate.
+Burnside's counting lemma says that to count the orbits, you can average the number of colourings fixed by each element of the group.
 
-Ramsey theory is another part of extremal combinatorics. It states that any sufficiently large configuration will contain some sort of order. It is an advanced generalization of the pigeonhole principle.
+The symmetry group is S_3 × S_4, which has 144 elements, so that's a lot of work, but you can simplify things a bit as follows.
 
-#### Probabilistic combinatorics
-Self-avoiding walk in a square grid graph.
-In probabilistic combinatorics, the questions are of the following type: what is the probability of a certain property for a random discrete object, such as a random graph? For instance, what is the average number of triangles in a random graph? Probabilistic methods are also used to determine the existence of combinatorial objects with certain prescribed properties (for which explicit examples might be difficult to find), simply by observing that the probability of randomly selecting an object with those properties is greater than 0. This approach (often referred to as the probabilistic method) proved highly effective in applications to extremal combinatorics and graph theory. A closely related area is the study of finite Markov chains, especially on combinatorial objects. Here again probabilistic tools are used to estimate the mixing time.
+Instead of counting orbits of the 924 colourings, you realise that the action of S_4 preserves the column counts, so a colouring with 3 in one column, 2 in another, 1 in a third column and 0 in a fourth column will always have those counts, no matter how you permute the rows and columns. So, I'll count colourings with those numbers of coloured squares in the first, second, third and fourth columns respectively, and average the number of such colourings fixed by each element of S_3.
+```
 
-Often associated with Paul Erdős, who did the pioneering work on the subject, probabilistic combinatorics was traditionally viewed as a set of tools to study problems in other parts of combinatorics. However, with the growth of applications to analyze algorithms in computer science, as well as classical probability, additive number theory, and probabilistic number theory, the area recently grew to become an independent field of combinatorics.
+Simple solution for counting neckalces configurations with N stones and M colors.
+```java
+class GFG{
 
-#### Algebraic combinatorics
-Young diagram of a partition (5,4,1).
+    static int gcd(int a, int b)
+    {
+        if (a == 0)
+            return b;
+            
+        return gcd(b % a, a);
+    }
 
-Algebraic combinatorics is an area of mathematics that employs methods of abstract algebra, notably group theory and representation theory, in various combinatorial contexts and, conversely, applies combinatorial techniques to problems in algebra. Algebraic combinatorics is continuously expanding its scope, in both topics and techniques, and can be seen as the area of mathematics where the interaction of combinatorial and algebraic methods is particularly strong and significant.
+    // Function to find result using
+    // Orbit counting theorem
+    // or Burnside's Lemma
+    static void countDistinctWays(int N, int M)
+    {
+        int ans = 0;
 
-#### Combinatorics on words
-Construction of a Thue–Morse infinite word.
+        // According to Burnside's Lemma
+        // calculate distinct ways for each
+        // rotation
+        for(int i = 0; i < N; i++)
+        {
+            // Find GCD
+            int K = gcd(i, N);
+            ans += Math.pow(M, K);
+        }
 
-Combinatorics on words deals with formal languages. It arose independently within several branches of mathematics, including number theory, group theory and probability. It has applications to enumerative combinatorics, fractal analysis, theoretical computer science, automata theory, and linguistics. While many applications are new, the classical Chomsky–Schützenberger hierarchy of classes of formal grammars is perhaps the best-known result in the field.
+        ans /= N;
+        System.out.print(ans);
+    }
 
-#### Geometric combinatorics
-An icosahedron.
+    public static void main(String []args)
+    {
+        int N = 4, M = 3;
+        countDistinctWays(N, M);
+    }
+}
+```
 
-Geometric combinatorics is related to convex and discrete geometry, in particular polyhedral combinatorics. It asks, for example, how many faces of each dimension a convex polytope can have. Metric properties of polytopes play an important role as well, e.g. the Cauchy theorem on the rigidity of convex polytopes. Special polytopes are also considered, such as permutohedra, associahedra and Birkhoff polytopes. Combinatorial geometry is an old fashioned name for discrete geometry.
+## Final Submitted Solution
+```python
+from collections import Counter
 
-#### Topological combinatorics
-Splitting a necklace with two cuts.
+def solution(w, h, s):
+    '''
+    Le's consider G = S_w times S_h, acting on X = W times H, 
+    where W = {1,2,...,w}, H = {1,2,...,h}, S_w and S_h 
+    are the symmetric group acting as permutations of 
+    W and H, respectively.
 
-Combinatorial analogs of concepts and methods in topology are used to study graph coloring, fair division, partitions, partially ordered sets, decision trees, necklace problems and discrete Morse theory. It should not be confused with combinatorial topology which is an older name for algebraic topology.
+    Each matrix is a function f in S^X, f:X to S, 
+    where S={1,2,...,s}.
+    
+    G acts on S^X, by (gf)(x)=f(gx) for g in G and f 
+    in S^X.
+    
+    We need to compute the orbits of G in S^X.
+    
+    We use Polya's enumeration theorem to obtain it from 
+    the Cycle Index Polynomial of the group action.
+    '''
+    grid=0
+    n = max(w,h)    
+    facTbl = factorialTable(n)
+    gcdTbl = gcdTable(n)
 
-#### Arithmetic combinatorics
-Arithmetic combinatorics arose out of the interplay between number theory, combinatorics, ergodic theory, and harmonic analysis. It is about combinatorial estimates associated with arithmetic operations (addition, subtraction, multiplication, and division). Additive number theory (sometimes also called additive combinatorics) refers to the special case when only the operations of addition and subtraction are involved. One important technique in arithmetic combinatorics is the ergodic theory of dynamical systems.
+    for pw in partition(w):
+        for ph in partition(h):
 
-#### Infinitary combinatorics
-Infinitary combinatorics, or combinatorial set theory, is an extension of ideas in combinatorics to infinite sets. It is a part of set theory, an area of mathematical logic, but uses tools and ideas from both set theory and extremal combinatorics.
+            coe = coefficient(pw, w, facTbl) * coefficient(ph, h, facTbl)
 
-Gian-Carlo Rota used the name continuous combinatorics to describe geometric probability, since there are many analogies between counting and measure. 
+            grid += coe*(s**sum([sum([gcd(i, j, gcdTbl) for i in pw]) for j in ph]))
 
-## Partition
- - https://en.wikipedia.org/wiki/Partition_(number_theory)
+    return str(grid // (factorial(w, facTbl) * factorial(h, facTbl)))
+    
+def coefficient(c, n, factorialTable):
+    """
+    Computes coefficient factorial.
+    
+    Mathematically:
+        n!/(1^{i_1}i_1!2^{i_2}i_2!...n^{i_n}i_n!)
 
-A partition of a positive integer n, also called an integer partition, is a way of writing n as a sum of positive integers. Two sums that differ only in the order of their summands are considered the same partition. (If order matters, the sum becomes a composition.) For example, 4 can be partitioned in five distinct ways:
-    4
-    3 + 1
-    2 + 2
-    2 + 1 + 1
-    1 + 1 + 1 + 1 
+    where c is a partition of n that has 
+        i_1 1s, i_2 2s, ..., and i_n ns.
+    """
 
-## Polya Theorem
-( Or the Pólya enumeration theorem or the Redfield–Pólya theorem or Pólya counting) 
+    coe=factorial(n, factorialTable)
+    for a, b in Counter(c).items():
+        coe//=(a**b)*factorial(b, factorialTable)
+    return coe        
 
-It is a theorem in combinatorics that both 
-follows from and ultimately generalizes 
-Burnside's lemma on the number of orbits 
-of a group action on a set.
+def partition(n, i=1):
+    '''
+    Partitions a number into it's sum of numbers
+    (greater than 0).
 
+    Example: 3 can be partitioned as: 1+1+1, 2+1
+    '''
+    yield [n]
+    for i in range(i, n//2 + 1):
+        for p in partition(n-i, i):
+            yield [i] + p
 
-https://github.com/DevAlone/google_foobar_solutions/blob/master/level%205/Disorderly%20Escape/main.py
-https://github.com/xphoniex/Google-Foobar/issues/5
-https://en.wikipedia.org/wiki/Permutation
-https://en.wikipedia.org/wiki/Burnside%27s_lemma
+def gcdTable(n):
+    x=[0 for x in range(n)]
+    result = [[0 for x in range(n)] for y in range(n)]
+
+    for i in range(n):
+        for j in range(i,n):
+            if i == 0 or j == 0:
+                result[i][j] = 1
+                result[j][i] = 1
+            elif i == j:
+                result[i][j] = i+1
+            else:
+                result[i][j] = result[i][j-i-1]
+                result[j][i] = result[i][j-i-1]
+    return result
+
+def gcd(x,y, gcdTable):
+    return gcdTable[x-1][y-1]
+
+def factorialTable(n):
+    result = [1]
+    for i in range(n-1):
+        result.append(result[-1]*(i+2))
+    return result
+
+def factorial(x, factorialTable):
+    return factorialTable[x-1]
+
+```
+
+I believe that there is more places to improve 
+the code. One sure place I think can be reviewed
+is partition(). As the partition is generating,
+partitions of the numbers, which probably can 
+be generated and stored like GCD and Factorials.
+And even the partition logic can be improved.
+
+I will leave this for further continued research.
+
+# Resources
+- https://franklinvp.github.io/2020-06-05-PolyaFooBar
+- https://github.com/cbrowncodes/Disorderly_Escape/blob/master/Disorderly_Escape.py
+- https://bogobogosort.wordpress.com/2018/03/30/completing-google-foobar, https://github.com/pijel/assorted-algos/blob/master/foobar_5.py   
+- https://github.com/nhulbert/DisorderlyEscape/blob/master/src/disorderly/DisorderlyEscape.java
+- https://stackoverflow.com/questions/61689832/disorderly-escape-google-foobar-2020-not-passing-test-cases#62478260
+- https://math.stackexchange.com/questions/2403174/coloring-a-rectangle-with-3-rows-and-4-columns-using-two-colors
+- https://puzzling.stackexchange.com/questions/54433/combinations-of-pentagons-on-a-3-by-3-dot-grid-how-to-use-burnsides-lemma?newreg=226d9eea75ce415f9691191281952caf
+- https://www.geeksforgeeks.org/orbit-counting-theorem-or-burnsides-lemma
+- https://mathoverflow.net/questions/50033/intuitive-explanation-of-burnsides-lemma?newreg=18f301a02daf4a9a9580a919ae0b1d30
+- https://github.com/xphoniex/Google-Foobar/issues/5
+- https://www.sciencedirect.com/science/article/pii/0012365X75900412
+- https://cp-algorithms.com/combinatorics/burnside.html
+- 
