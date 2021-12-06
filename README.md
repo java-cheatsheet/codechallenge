@@ -1,178 +1,116 @@
-    A----------------------------------------------
-    
-    
-    OBJECTIVE - Become A Competitive Programmer
-    
-    
-    ----------------------------------------------
+
+**“For me, great algorithms are the poetry of 
+computation. Just like verse, they can be terse,
+allusive, dense, and even mysterious.
+But once unlocked, they cast a brilliant new
+light on some aspect of computing.” 
+— Francis Sullivan**
 
 
-    “ For me, great algorithms are the poetry of
-      computation. Just like verse, they can be terse,
-      allusive, dense, and even mysterious.
-
-      But once unlocked, they cast a brilliant new
-      light on some aspect of computing. ”
-
-    — Francis Sullivan
+**“An algorithm must be seen to be believed.” 
+— Donald Knuth**
 
 
-    ----------------------------------------------
+**“I will, in fact, claim that the difference 
+between a bad programmer and a good one is 
+whether he considers his code or his data
+structures more important.
+Bad programmers worry about the code.
+Good programmers worry about data structures and 
+their relationships.” — Linus Torvalds**
 
 
-    “ An algorithm must be seen to be believed. ”
-
-    — Donald Knuth
-
-
-    ----------------------------------------------
+**“Algorithms + Data Structures = Programs.” 
+— Niklaus Wirth`**
 
 
-    “ I will, in fact, claim that the difference
-    between a bad programmer and a good one is
-    whether he considers his code or his data
-    structures more important.
+# Code Challenge
 
-    Bad programmers worry about the code.
+Code challenge solutions from different sources
+in Java by @codeanit.
 
-    Good programmers worry about data structures
-    and their relationships. ”
-
-    — Linus Torvalds
+I do this because I want to improve my problem
+solving and technical skills and keep my competitive edge.
 
 
-    ----------------------------------------------
+### How to become good at code challenges?
+
+**#Observe #Introspect #Retrospect #Refactor**
+
+##### Understand The Basics
+Don't skip basics, mathematics, data structures
+and algorithms. Mathematics helps build a solution.
+The data structures are the tools and the algorithms
+are the techniques that are the arsenal that every
+good programmer must have, more the better. Else,
+you will only see `a hammer and a nail`.
+
+##### Know The Process
+To solve the challenge, start with trivial, slow
+ideas to form a heuristic technique, and then
+improve towards creative, fast algorithms which
+could be solved with specific techniques. So just
+solve as you can first even the exponential solution
+if it works it's fine, be greatful.
+
+Start by solving easy problems, then medium, and
+finally the difficult ones. Try different types
+of problems from different sources.
+
+Learn from other's solution and compare with your
+own. Try to understand what other did differently
+and analyse what can be improved, both in your
+solution as well as others. This will help add more
+dimensions to problem analysis and solutions ideas.
+
+Improve your understanding by trying to answer
+Why was it done this way?.
+
+##### Estimate The Complexity
+The time limit set for online tests is usually
+from 1 to 10 seconds. We can therefore estimate
+the expected complexity. During contests, we are
+often given a limit on the size of data, and
+therefore we can guess the time complexity within
+which the task should be solved. This is usually
+a great convenience because we can look for a
+solution that works in a specific complexity instead
+of worrying about a faster solution.
+For example, if:
+• n <= 1 000 000, the expected time complexity is O(n) or O(nlogn),
+• n <= 10 000, the expected time complexity is O(n^2),
+• n <= 500, the expected time complexity is O(n^3).
+
+Of course, these limits are not precise. They are
+just approximations, and will vary depending on the
+specific task.
 
 
-    “ Algorithms + Data Structures = Programs. ”
-
-    — Niklaus Wirth
-
-
-    ----------------------------------------------
+# Folders
+`resource` folder contains learning materials.
 
 
-    Hi. I am Anit and I am a ever learning
-    student of mathematics and computer science.
+# Objective 
+Objective of the repository to cover this list below:
 
-    I have worked for many years as a software
-    development engineer and I believe that I
-    have to keep myself skilled so from time to
-    time I have to go through the datastructures again
-    and after. Keep updated with the newer
-    technologies is a must but not at the cost
-    of forgetting or weakening the datastructures that
-    are fundamentals of any technology.
+- Mathematics: Prime Number, Big Integer, Permutation,
+    Number Theory, Factorial, Fibonacci, Sequences,
+    Modulus
 
-    Hence, the objective of this repository is
-    personal growth and development of programming
-    skills.
+- Dynamic Programming: Longest Common Subsequence,
+    Longest Increasing Subsequence, Edit Distance,
+    0/1 Knapsack, Coin Change, Matrix Chain Multiplication,
+    Max Interval Sum
 
-    The repository contains the code challenges
-    and their solutions from different sources.
-    Also includes implementation of basic data
-    structures and algorithms.
+- Graph Traversal: Flood Fill,Floyd Warshal, MST,
+    Max Bipartite Matching, Network Flow,
+    Articulation Point
 
-    The code base is Java.
+- Sorting: Bubble Sort, Quick Sort, Merge Sort,
+    Selection Sort, Radix Sort, Bucket Sort
 
-    Books and other resources can be found at the
-    "notes" folder.
+- Searching: Complete Search, Brute Force, Binary Search
 
+- String Processing: String Matching, Pattern Matching
 
-    ----------------------------------------------
-
-
-    References from Princeton University to
-    re-enforce the basic and advance programming
-    skills:
-
-    https://introcs.cs.princeton.edu/java/home/
-    https://www.coursera.org/learn/cs-programming-java
-
-    https://algs4.cs.princeton.edu/
-    https://www.coursera.org/learn/algorithms-part1/
-    https://www.coursera.org/learn/algorithms-part2/
-
-    https://aofa.cs.princeton.edu/home/
-    https://www.coursera.org/learn/analysis-of-algorithms/
-
-    https://ac.cs.princeton.edu/home/
-    https://www.coursera.org/learn/analytic-combinatorics
-
-
-    I am forever greatful to Princeton University
-    and it's outstanding faculty for making these
-    online resources free, and especially Robert
-    Sedgewick & Kevin Waynefor excellent contents.
-
-
-    ----------------------------------------------
-
-    
-    Recently came to know about a playlist on 
-    Algorithms by Abdul Bari on YouTube. I am 
-    very thankful to his effort on making very
-    hard things easy to understand.
-
-    youtube.com/watch?v=e2cF8a5aAhE&list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O
-
-
-    ----------------------------------------------
-
-
-    Resources for Software Engineers
-    
-    Clean Code by Robert C. Martin
-    Design Patterns by The Gang of Four
-    Design Principles like SOLID, DRY
-    Test Driven Development by Kent Beck
-    Refactoring by Martin Fowler
-    Introduction to Algorithms by CLRS
-    Algorithm Design by Kleinberg & Tardos
-    http://algorist.com/algorist.html
-
-    ----------------------------------------------
-    
-    
-    Contents of the repository to cover this list 
-    
-    - Mathematics : Prime Number, Big Integer, Permutation,
-        Number Theory, Factorial, Fibonacci, Sequences,
-        Modulus
-    
-    - Dynamic Programming : Longest Common Subsequence,
-        Longest Increasing Subsequence, Edit Distance,
-        0/1 Knapsack, Coin Change, Matrix Chain Multiplication,
-        Max Interval Sum
-    
-    - Graph Traversal : Flood Fill,Floyd Warshal, MST,
-        Max Bipartite Matching, Network Flow,
-        Articulation Point
-    
-    - Sorting : Bubble Sort, Quick Sort, Merge Sort,
-        Selection Sort, Radix Sort, Bucket Sort
-    
-    - Searching : Complete Search, Brute Force, Binary Search
-    
-    - String Processing : String Matching, Pattern Matching
-    
-    - AdHoc Problems: Trivial Problems
-
-
-    ----------------------------------------------
-
-
-    If in anyway I can be of any help with my skills of
-    programming, I will undoubtably be willing to help.
-    Please do not hesitate to reach out to me!
-
-    codeanit@gmail.com
-
-
-    ----------------------------------------------
-
-
-    TODO: Update this file.
-    1. Add unit tests.
-    2. Implement CI to run the unit tests.
-    
+- AdHoc Problems: Trivial Problems
