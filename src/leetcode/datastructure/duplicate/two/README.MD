@@ -74,3 +74,56 @@ for ( int j = i+1; j < nums.length; j++ )
 ```
 
 
+## Failed To Run 
+The given test case failed to run with exception:
+Time Limit Exceeded
+
+Data stored in failed-testcase.txt
+
+The first O(n^2) solution does not work for 
+large input size.
+
+Other algorithm:
+Search with other efficient algorithm.
+Check the condition.
+
+### Pseudo code
+for loop to iterate all
+binary search 
+if binary search finds, 
+    check condition, return true
+return false
+
+Well for binary search to work, we need sorted array.
+While doing this we loose original index. 
+Either we store the original indexes and then apply
+binary search or look for other algorithms.
+
+
+Store values and their indexes in a key-value pair
+in a map.
+key = the number
+value = indexes of the number separated by comma ','.
+Example: 1111=>1,2,3
+
+Loop through this key. We only want to loop through 
+those keys that have duplicate values.
+
+Store only those values which has duplicate values.
+
+
+OR
+
+Sort 
+Loop through sorted
+If current == next, 
+    Find the index current.
+    Find the index of next.
+    Check condition.
+    
+Let's say we have 3 same numbers at different indexes. When we sort the array, 3 of them will appear one after another. And the value of k might be just less than the first index and the last. So we might have to check the current and the last.
+
+## Solution Accepted
+Runtime: 30 ms, faster than 37.52% of Java online submissions for Contains Duplicate II.
+Memory Usage: 49.3 MB, less than 54.65% of Java online submissions for Contains Duplicate II.
+
