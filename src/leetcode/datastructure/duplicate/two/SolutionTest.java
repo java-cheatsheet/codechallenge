@@ -11,5 +11,10 @@ class SolutionTest {
         Assertions.assertTrue(solution.containsNearbyDuplicate(new int[]{1, 2, 3, 1}, 3));
     }
 
+    @Test
+    void shouldPassWithExample2() {
+        Solution solution = new Solution();
+        Assertions.assertTrue(solution.containsNearbyDuplicate(new int[]{1, 0, 1, 1}, 1));
+    }
 
 }
