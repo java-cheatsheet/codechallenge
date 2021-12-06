@@ -9,6 +9,62 @@ class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         int[] numsClone = nums.clone();
         Arrays.sort(numsClone);
+        int duplicateCount = 0;
+        int count = 0;
+
+        for (; count < nums.length-1; count++) {
+
+            if (numsClone[count] == numsClone[count + 1]) {
+                duplicateCount++;
+            } else {
+
+                if ( duplicateCount > 0 ) {
+
+                    if ( this.isLessThanK(numsClone[count], duplicateCount, k, nums) == true )
+                        return true;
+                }
+
+                duplicateCount = 0;
+            }
+        }
+
+        if ( duplicateCount > 0 ) {
+            return this.isLessThanK(numsClone[count], duplicateCount, k, nums);
+        }
+
+        return false;
+    }
+
+    public boolean isLessThanK(int num, int duplicateCount, int k, int[] nums){
+        ArrayList<Integer> indexes = new ArrayList<Integer>();
+        int index = 0;
+
+        for (int j=0; j <= duplicateCount ;j++) {
+
+            index = IntStream.range(index, nums.length).
+                    filter(a -> num == nums[a]).
+                    findFirst().orElse(Integer.MIN_VALUE);
+
+            if ( index > Integer.MIN_VALUE )
+                indexes.add(index);
+
+            index++;
+        }
+
+        for (int y=0; y < indexes.size(); y++) {
+            for (int z = y + 1; z < indexes.size(); z++) {
+
+                if ((abs(indexes.get(y) - indexes.get(z))) <= k)
+                    return  true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean containsNearbyDuplicateAccepted(int[] nums, int k) {
+        int[] numsClone = nums.clone();
+        Arrays.sort(numsClone);
         int parent = 0;
         int count = 0;
 
