@@ -1,8 +1,8 @@
-package leetcode.datastructure.duplicate.one;
+package leetcode.datastructure.containsduplicate.one;
 
 import java.util.Arrays;
 
-public class Duplicate {
+public class Solution {
     public boolean containsDuplicate(int[] nums) {
 
         Arrays.sort(nums);
