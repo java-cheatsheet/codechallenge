@@ -1,4 +1,4 @@
-package leetcode.datastructure.duplicate.two;
+package leetcode.datastructure.containsduplicate.two;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,7 +6,71 @@ import java.util.stream.IntStream;
 import static java.lang.Math.abs;
 
 class Solution {
-    public boolean containsNearbyDuplicate(int[] nums, int k) {
+
+    // Fails with Time Limit Exceeded for test case 47
+    public boolean containsNearbyDuplicateSlidingWindowFAILS(int[] nums, int k) {
+        if ( nums.length == 1 )
+            return false;
+
+        if ( nums.length <= k && nums[0] == nums[nums.length-1]) {
+            return true;
+        }
+
+        int initialRange =  nums.length-k == 1 ? k+1 : k;
+
+        if ( k == 1 || k == 2 ||  k % 2 > 0 ) initialRange = k+1;
+
+        int loops = nums.length-k;
+
+        int count = 0;
+        for (; count < loops; count++) {
+            int[] window = Arrays.copyOfRange(nums, count, initialRange + count);
+            Arrays.sort(window);
+
+            for (int i = 0; i < window.length-1; i++) {
+                    if (window[i] == window[i+1])
+                        return true;
+            }
+        }
+
+        // Last few values would not have been compared
+        // beacuase of the size of sliding window above.
+        for (; count < nums.length-1 && k > 2; count++, k--) {
+            for (int l = count; l < nums.length-1; l++) {
+
+                if (nums[count] == nums[l + 1])
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    // Fails with Time Limit Exceeded for test case 47
+    public boolean containsNearbyDuplicateFails(int[] nums, int k) {
+        int i = 0;
+        int window =  nums.length - k == 1 ? 2 : nums.length - k;
+
+        for (; i < window; i++) {
+            for (int j = i; j < i + k; j++) {
+
+                if (nums[i] == nums[j+1])
+                        return true;
+            }
+        }
+
+        for (; i < nums.length-1 && window > 2; i++, k--) {
+            for (int l = i; l < nums.length-1; l++) {
+
+                if (nums[i] == nums[l + 1])
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean containsNearbyDuplicateSUCCESS(int[] nums, int k) {
         int[] numsClone = nums.clone();
         Arrays.sort(numsClone);
         int duplicateCount = 0;
@@ -39,7 +103,7 @@ class Solution {
         ArrayList<Integer> indexes = new ArrayList<Integer>();
         int index = 0;
 
-        for (int j=0; j <= duplicateCount ;j++) {
+        for (int j = 0; j <= duplicateCount; j++) {
 
             index = IntStream.range(index, nums.length).
                     filter(a -> num == nums[a]).

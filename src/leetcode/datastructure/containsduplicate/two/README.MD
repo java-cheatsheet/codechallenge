@@ -34,7 +34,7 @@ So we cannot sort as index needs to be preserved.
 ### Pseudocode
 
 for (i=0; i < nums.len; i++) // loop all nums
-for (j=i+1; j < nums.len; j++) // loop all numbs except i  
+for (j=i+1; j < nums.len; j++) // loop all nums except i  
 
 if nums[i]=nums[j] and abs(i-j)<=k, return true
 
@@ -52,7 +52,7 @@ Stores whole numbers from -2,147,483,648 to 2,147,483,647.
 ```
 
 ### Understanding Case 1
-Initial logic below was failing case 1
+Initial logic below was failing test case 1
 ```
 for (int i = 0; i < nums.length - 1; i++) {
     for ( int j = i+1; j < nums.length-1; j++ ) {
@@ -76,9 +76,9 @@ for ( int j = i+1; j < nums.length; j++ )
 
 ## Failed To Run 
 The given test case failed to run with exception:
-Time Limit Exceeded
+**Time Limit Exceeded**
 
-Data stored in failed-testcase.txt
+Data stored in testcase-48.txt
 
 The first O(n^2) solution does not work for 
 large input size.
@@ -121,9 +121,40 @@ If current == next,
     Find the index of next.
     Check condition.
     
-Let's say we have 3 same numbers at different indexes. When we sort the array, 3 of them will appear one after another. And the value of k might be just less than the first index and the last. So we might have to check the current and the last.
+Let's say we have 3 same numbers at different indexes. 
+When we sort the array, 3 of them will appear one after 
+another. And the value of k might be just less than the 
+first index and the last. So we might have to check the 
+current and the last.
 
 ## Solution Accepted
-Runtime: 30 ms, faster than 37.52% of Java online submissions for Contains Duplicate II.
-Memory Usage: 49.3 MB, less than 54.65% of Java online submissions for Contains Duplicate II.
+Runtime: 30 ms, faster than 37.52% of Java online 
+submissions for Contains Duplicate II.
+
+Memory Usage: 49.3 MB, less than 54.65% of Java 
+online submissions for Contains Duplicate II.
+
+## Refactor
+The current solution is not efficient - time 
+and space constraints are high.
+
+Another solution would be using `Sliding Window`
+technique.
+
+The constraint k defines the difference and 
+this also means the distance between the two 
+equal numbers.
+
+### Pseudocode
+Iterate through array
+Create a new array of size of the window.
+Sort it.
+Check if two numbers are equal.
+
+Two implementations are applied based on the technique.
+And both of them fails when large volume of data is 
+processed.
+
+
+
 
