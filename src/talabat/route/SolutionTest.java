@@ -16,7 +16,7 @@ class SolutionTest {
                 {"UAE", "JPN"}
         };
         String expected = "USA, BRA, UAE, JPN, CAI";
-        Assertions.assertEquals(expected, solution.findPath(itineraries));
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 
     @Test
@@ -30,7 +30,7 @@ class SolutionTest {
                 {"CAI", "KAT"}
         };
         String expected = "USA, BRA, UAE, JPN, CAI, KAT";
-        Assertions.assertEquals(expected, solution.findPath(itineraries));
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 
     @Test
@@ -45,7 +45,7 @@ class SolutionTest {
                 {"Winnipeg", "Seattle"}
         };
         String expected = "Halifax, Montreal, Toronto, Chicago, Winnipeg, Seattle";
-        Assertions.assertEquals(solution.findPath(itineraries), expected);
+        Assertions.assertEquals(solution.trackRoute(itineraries), expected);
     }
 
     @Test
@@ -60,7 +60,7 @@ class SolutionTest {
                 {"Winnipeg", "Seattle"}
         };
         String expected = "Halifax, Montreal, Toronto, Chicago, Winnipeg, Seattle";
-        Assertions.assertEquals(solution.findPath(itineraries), expected);
+        Assertions.assertEquals(solution.trackRoute(itineraries), expected);
     }
 
 }
