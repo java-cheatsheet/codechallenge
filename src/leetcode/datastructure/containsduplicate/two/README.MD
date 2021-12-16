@@ -141,6 +141,14 @@ and space constraints are high.
 Another solution would be using `Sliding Window`
 technique.
 
+https://sdever.medium.com/sliding-window-algorithm-approach-go-example-9df848c76077
+https://leetcode.com/discuss/general-discussion/657507/Sliding-Window-for-Beginners-Problems-or-Template-or-Sample-Solutions
+https://newbedev.com/what-is-sliding-window-algorithm-examples
+https://redquark.org/cotd/sliding_window
+https://quanticdev.com/algorithms/dynamic-programming/sliding-window
+https://redquark.org/cotd/sliding_window
+https://www.geeksforgeeks.org/window-sliding-technique
+
 The constraint k defines the difference and 
 this also means the distance between the two 
 equal numbers.
@@ -155,6 +163,16 @@ Two implementations are applied based on the technique.
 And both of them fails when large volume of data is 
 processed.
 
+## Second Refactoring
+### Pseudocode
+1. Create a hashmap (nmap) of all the keys of duplicate values
+2. Iterate through nmap
+3. If nmap.value > 1
+4. Iterate through nmap.value
+5. If the keys satisfies condition, return true
+6. return false
 
+Runtime: 44 ms, faster than 21.07% of Java online submissions for Contains Duplicate II.
+Memory Usage: 61.3 MB, less than 26.38% of Java online submissions for Contains Duplicate II.
 
 

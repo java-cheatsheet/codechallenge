@@ -2,11 +2,59 @@ package leetcode.datastructure.containsduplicate.two;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.IntStream;
 import static java.lang.Math.abs;
 
 class Solution {
 
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        if ( nums.length == 1 || k == 0 )
+            return false;
+
+        if ( nums.length <= k && nums[0] == nums[nums.length-1]) {
+            return true;
+        }
+
+        Map<Integer, ArrayList<Integer>> nmap = new HashMap<Integer, ArrayList<Integer>>();
+        int numsLen =  nums.length;
+
+        for (int i = 0; i < numsLen; i++) {
+            nmap.computeIfAbsent(nums[i], val -> new ArrayList<>()).add(i);
+        }
+
+        for(Map.Entry<Integer,ArrayList<Integer>> entry : nmap.entrySet()){
+            ArrayList<Integer> dupIndex = entry.getValue();
+            int dupIndexSize = dupIndex.size();
+            int currIndex =  dupIndex.get(0);
+
+            if( dupIndexSize > 1 ) {
+                int i = 1;
+                int nextIndex =  dupIndex.get(i);
+
+                for(; i < dupIndex.size(); i++) {
+
+                    if ( isLessThanOrEqualsK(currIndex, nextIndex, k) == true )
+                            return true;
+
+                    currIndex = nextIndex;
+                    nextIndex = dupIndex.get(i);
+                }
+
+
+            }
+        }
+
+        return false;
+    }
+
+    public boolean isLessThanOrEqualsK(int current, int next, int k){
+        if ( abs(current - next) <= k)
+            return  true;
+
+        return false;
+    }
     // Fails with Time Limit Exceeded for test case 47
     public boolean containsNearbyDuplicateSlidingWindowFAILS(int[] nums, int k) {
         if ( nums.length == 1 )
