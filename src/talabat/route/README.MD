@@ -77,6 +77,10 @@ value exists.
 
 **boolean containsValue(Object value)**	
 
+The probable time complexity of this function
+is O(n).
+https://stackoverflow.com/questions/55679728/how-does-java-util-hashmap-containsvalue-work-what-is-its-time-complexity
+
 This method returns true if some value 
 equals to the value exists within the map, 
 else return false.
