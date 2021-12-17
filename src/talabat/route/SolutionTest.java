@@ -63,4 +63,14 @@ class SolutionTest {
         Assertions.assertEquals(solution.trackRoute(itineraries), expected);
     }
 
+    @Test
+    void shouldPassWithASingleInput() {
+        Solution solution = new Solution();
+        String[][] itineraries = {
+                {"USA", "BRA"}
+        };
+        String expected = "USA, BRA";
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
+    }
+
 }
