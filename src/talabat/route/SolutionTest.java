@@ -45,7 +45,7 @@ class SolutionTest {
                 {"Winnipeg", "Seattle"}
         };
         String expected = "Halifax, Montreal, Toronto, Chicago, Winnipeg, Seattle";
-        Assertions.assertEquals(solution.trackRoute(itineraries), expected);
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 
     @Test
@@ -60,7 +60,7 @@ class SolutionTest {
                 {"Winnipeg", "Seattle"}
         };
         String expected = "Halifax, Montreal, Toronto, Chicago, Winnipeg, Seattle";
-        Assertions.assertEquals(solution.trackRoute(itineraries), expected);
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 
     @Test
@@ -73,4 +73,19 @@ class SolutionTest {
         Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 
+    @Test
+    void shouldPassWithExample2AddOne() {
+
+        Solution solution = new Solution();
+        String[][] itineraries = {
+                {"Montreal", "Toronto"},
+                {"Toronto", "Chicago"},
+                {"Chicago", "Winnipeg"},
+                {"Halifax", "Montreal"},
+                {"Winnipeg", "Seattle"},
+                {"Seattle", "Boston"}
+        };
+        String expected = "Halifax, Montreal, Toronto, Chicago, Winnipeg, Seattle, Boston";
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
+    }
 }
