@@ -1,41 +1,66 @@
+# Code Challenge
 
-**“For me, great algorithms are the poetry of 
+Code challenge solutions from different sources
+in Java programming language.
+
+## Objective
+
+I want to improve my problem-solving 
+and technical skills and keep my 
+competitive edge by covering the core 
+programming concepts and exploring 
+further.
+
+Listed below are few topics which
+helps improve capabilities.
+
+- Mathematics: Prime Number, Big Integer, 
+Permutation, Number Theory, Factorial, 
+Fibonacci, Sequences, Modulus
+
+- Sorting: Bubble Sort, Quick Sort, 
+Merge Sort, Selection Sort, Radix Sort, 
+Bucket Sort
+
+- Searching: Complete Search, Brute Force, 
+Binary Search
+
+- String Processing: String Matching, 
+Pattern Matching
+
+- Dynamic Programming: Longest Common 
+Subsequence, Longest Increasing Subsequence, 
+Edit Distance, 0/1 Knapsack, Coin Change, 
+Matrix Chain Multiplication, Max Interval Sum
+
+- Graph Traversal: Flood Fill, Floyd Warshal, 
+MST, Max Bipartite Matching, Network Flow,
+Articulation Point
+ 
+*“For me, great algorithms are the poetry of 
 computation. Just like verse, they can be terse,
 allusive, dense, and even mysterious.
 But once unlocked, they cast a brilliant new
 light on some aspect of computing.” 
-— Francis Sullivan**
+— Francis Sullivan*
 
+*“An algorithm must be seen to be believed.” 
+— Donald Knuth*
 
-**“An algorithm must be seen to be believed.” 
-— Donald Knuth**
-
-
-**“I will, in fact, claim that the difference 
+*“I will, in fact, claim that the difference 
 between a bad programmer and a good one is 
 whether he considers his code or his data
 structures more important.
 Bad programmers worry about the code.
 Good programmers worry about data structures and 
-their relationships.” — Linus Torvalds**
+their relationships.” — Linus Torvalds*
 
+*“Algorithms + Data Structures = Programs.” 
+— Niklaus Wirth`*
 
-**“Algorithms + Data Structures = Programs.” 
-— Niklaus Wirth`**
+## How to become good at code challenges?
 
-
-# Code Challenge
-
-Code challenge solutions from different sources
-in Java by @codeanit.
-
-I do this because I want to improve my problem
-solving and technical skills and keep my competitive edge.
-
-
-### How to become good at code challenges?
-
-**#Observe #Introspect #Retrospect #Refactor**
+*Observe, Introspect, Retrospect, Refactor, Repeat*
 
 ##### Understand The Basics
 Don't skip basics, mathematics, data structures
@@ -51,7 +76,7 @@ ideas to form a heuristic technique, and then
 improve towards creative, fast algorithms which
 could be solved with specific techniques. So just
 solve as you can first even the exponential solution
-if it works it's fine, be greatful.
+if it works it's fine, be grateful.
 
 Start by solving easy problems, then medium, and
 finally the difficult ones. Try different types
@@ -60,7 +85,7 @@ of problems from different sources.
 Learn from other's solution and compare with your
 own. Try to understand what other did differently
 and analyse what can be improved, both in your
-solution as well as others. This will help add more
+solutions. This will help add more
 dimensions to problem analysis and solutions ideas.
 
 Improve your understanding by trying to answer
@@ -76,10 +101,11 @@ which the task should be solved. This is usually
 a great convenience because we can look for a
 solution that works in a specific complexity instead
 of worrying about a faster solution.
+
 For example, if:
-• n <= 1 000 000, the expected time complexity is O(n) or O(nlogn),
-• n <= 10 000, the expected time complexity is O(n^2),
-• n <= 500, the expected time complexity is O(n^3).
+- n <= 1 000 000, the expected time complexity is O(n) or O(nlogn)
+- n <= 10 000, the expected time complexity is O(n^2)
+- n <= 500, the expected time complexity is O(n^3)
 
 Of course, these limits are not precise. They are
 just approximations, and will vary depending on the
@@ -88,29 +114,3 @@ specific task.
 
 # Folders
 `resource` folder contains learning materials.
-
-
-# Objective 
-Objective of the repository to cover this list below:
-
-- Mathematics: Prime Number, Big Integer, Permutation,
-    Number Theory, Factorial, Fibonacci, Sequences,
-    Modulus
-
-- Dynamic Programming: Longest Common Subsequence,
-    Longest Increasing Subsequence, Edit Distance,
-    0/1 Knapsack, Coin Change, Matrix Chain Multiplication,
-    Max Interval Sum
-
-- Graph Traversal: Flood Fill,Floyd Warshal, MST,
-    Max Bipartite Matching, Network Flow,
-    Articulation Point
-
-- Sorting: Bubble Sort, Quick Sort, Merge Sort,
-    Selection Sort, Radix Sort, Bucket Sort
-
-- Searching: Complete Search, Brute Force, Binary Search
-
-- String Processing: String Matching, Pattern Matching
-
-- AdHoc Problems: Trivial Problems
