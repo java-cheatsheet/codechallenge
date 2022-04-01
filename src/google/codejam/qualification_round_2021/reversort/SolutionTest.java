@@ -13,8 +13,6 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import static org.junit.Assert.assertEquals;
-
 class SolutionTest {
     private final PrintStream originalOut = System.out;
 
