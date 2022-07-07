@@ -5,7 +5,11 @@ import java.util.*;
 /**
  *
 Note on: Object Ordering, Comparable and Comparators
- Comparable` implementations provide a natural ordering for a class, which allows objects of that class to be sorted automatically. The following table summarizes some of the more important Java platform classes that implement Comparable.
+ Comparable` implementations provide a natural ordering
+ for a class, which allows objects of that class to be
+ sorted automatically. The following table summarizes
+ some of the more important Java platform classes that
+ implement Comparable.
 
  Class | Natural Ordering
  -- | --
@@ -24,15 +28,35 @@ Note on: Object Ordering, Comparable and Comparators
  Date | Chronological
  CollationKey | Locale-specific lexicographic
 
- What if you want to sort some objects in an order other than their natural ordering? Or what if you want to sort some objects that don't implement Comparable? To do either of these things, you'll need to provide a `Comparator` — an object that encapsulates an ordering. Like the Comparable interface, the Comparator interface consists of a single method.
+ What if you want to sort some objects in an order
+ other than their natural ordering? Or what if you
+ want to sort some objects that don't implement
+ Comparable? To do either of these things, you'll
+ need to provide a `Comparator` — an object that
+ encapsulates an ordering. Like the Comparable
+ interface, the Comparator interface consists of
+ a single method.
 
  public interface Comparator<T> {
  int compare(T o1, T o2);
  }
 
- The compare method compares its two arguments, returning a negative integer, 0, or a positive integer depending on whether the first argument is less than, equal to, or greater than the second. If either of the arguments has an inappropriate type for the Comparator, the compare method throws a ClassCastException.
+ The compare method compares its two arguments,
+ returning a negative integer, 0, or a positive
+ integer depending on whether the first argument
+ is less than, equal to, or greater than the second.
+ If either of the arguments has an inappropriate
+ type for the Comparator, the compare method throws
+ a ClassCastException.
 
- Much of what was said about Comparable applies to Comparator as well. Writing a compare method is nearly identical to writing a compareTo method, except that the former gets both objects passed in as arguments. The compare method has to obey the same four technical restrictions as Comparable's compareTo method for the same reason — a Comparator must induce a total order on the objects it compares.
+ Much of what was said about Comparable applies to
+ Comparator as well. Writing a compare method is
+ nearly identical to writing a compareTo method,
+ except that the former gets both objects passed
+ in as arguments. The compare method has to obey
+ the same four technical restrictions as Comparable's
+ compareTo method for the same reason — a Comparator
+ must induce a total order on the objects it compares.
 
 
  * https://docs.oracle.com/javase/tutorial/collections/index.html

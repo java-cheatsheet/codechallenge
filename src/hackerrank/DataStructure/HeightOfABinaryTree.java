@@ -57,10 +57,16 @@ class HeightOfABinaryTree {
         Scanner scan = new Scanner(System.in);
         int t = scan.nextInt();
         Node root = null;
-        while(t-- > 0) {
+//        while(t-- > 0) {
+//            int data = scan.nextInt();
+//            root = insert(root, data);
+//        }
+
+        for (int i = 0; i < 5; i ++){
             int data = scan.nextInt();
             root = insert(root, data);
         }
+
         scan.close();
         int height = height(root);
         System.out.println(height);
