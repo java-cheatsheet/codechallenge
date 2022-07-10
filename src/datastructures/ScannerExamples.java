@@ -1,6 +1,13 @@
 package datastructures;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html
@@ -11,7 +18,12 @@ public class ScannerExamples {
     public static void main(String[] args) {
 //        getINT();
 //        getString();
-        takeMixInputs();
+//        takeMixInputs();
+        try {
+            readInts(args);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private static void getINT() {
@@ -89,6 +101,21 @@ public class ScannerExamples {
         }
 
         scanner.close();
+    }
+    public static void readInts(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                .map(Integer::parseInt)
+                .collect(toList());
+
+        for(int a=arr.size()-1; a >-1; a--) {
+            System.out.print(arr.get(a)+" ");
+        }
+
+        bufferedReader.close();
     }
 
 }

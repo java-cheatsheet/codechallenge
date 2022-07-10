@@ -7,7 +7,7 @@ public class DataStructuresInJava {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        dsTreeSet();
+        printNamePh();
     }
 
     public static void dsTreeSet() {
@@ -154,6 +154,28 @@ public class DataStructuresInJava {
 
         scanner.close();
     }
+    public static void printNamePh(){
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
 
+        HashMap<String, Integer> contact = new HashMap<>();
+        for(int i = 0; i < n; i++){
+            String name = in.next();
+            int phone = in.nextInt();
+            // Write code here
+            contact.put(name, phone);
+//            contact.put("anit", 1);
+//            contact.put("dipta", 2);
+//            contact.put("baby", 3);
+        }
+        while(in.hasNext()){
+            String s = in.next();
+            // Write code here
+            if (contact.containsKey(s))
+                System.out.println(s +"="+ contact.get(s));
+            else System.out.println("Not found");
+        }
+        in.close();
+    }
 }
 

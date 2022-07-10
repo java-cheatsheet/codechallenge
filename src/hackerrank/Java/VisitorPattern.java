@@ -130,8 +130,8 @@ class FancyVisitor extends TreeVis {
 
 public class VisitorPattern {
 
-    public static Tree solve() {
-        //read the tree from STDIN and return its root as a return value of this function
-    }
+//    public static Tree solve() {
+//        //read the tree from STDIN and return its root as a return value of this function
+//   }
 
 }
