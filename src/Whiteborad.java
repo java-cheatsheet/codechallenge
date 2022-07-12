@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,6 +10,9 @@ import java.util.stream.Stream;
 import static java.util.stream.Collectors.toList;
 
 public class Whiteborad {
+    Whiteborad(){
+
+    }
     public static void main(String[] args) {
         new Whiteborad().maxHourGlassSum();
     }
@@ -341,6 +345,23 @@ public class Whiteborad {
 
         return max;
     }
+    public char calculateAvg(int[] testScores) {
+        int sum = 0; // initialize sum
+        int len = testScores.length;
+        int average = 0;
+
+        for (int i = 0; i < len; i++)
+            sum += testScores[i];
+
+        average = sum/len;
+
+        if (average > 89) return 'O';
+        else if (average > 79) return 'E';
+        else if (average > 69) return 'A';
+        else if (average > 54) return 'P';
+        else if (average > 39) return 'D';
+        else return 'T';
+    }
 }
 
 final class HashFunction {
@@ -436,4 +457,67 @@ final class Person {
             System.out.println(e);
         }
     }
+}
+
+class Palindrome{
+    public Stack<Character> stack;
+    public Queue<Character> queue;
+        // Write your code here.
+    Palindrome(){
+       stack = new Stack();
+       queue = new LinkedList<>();
+    }
+
+    public void pushCharacter(char c){
+        stack.push(c);
+    }
+
+    public void enqueueCharacter(char c) {
+        queue.add(c);
+    }
+
+    public char popCharacter(){
+        return stack.pop();
+    }
+
+    public char dequeueCharacter(){
+        return queue.remove();
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String input = scan.nextLine();
+        scan.close();
+
+        // Convert input String to an array of characters:
+        char[] s = input.toCharArray();
+
+        // Create a Solution object:
+        Palindrome p = new Palindrome();
+
+        try {
+            // Enqueue/Push all chars to their respective data structures:
+            for (char c : s) {
+                p.pushCharacter(c);
+                p.enqueueCharacter(c);
+            }
+
+            // Pop/Dequeue the chars at the head of both data structures and compare them:
+            boolean isPalindrome = true;
+            for (int i = 0; i < s.length / 2; i++) {
+                if (p.popCharacter() != p.dequeueCharacter()) {
+                    isPalindrome = false;
+                    break;
+                }
+            }
+
+            //Finally, print whether string s is palindrome or not.
+            System.out.println("The word, " + input + ", is "
+                    + ((!isPalindrome) ? "not a palindrome." : "a palindrome."));
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
 }

@@ -140,4 +140,20 @@ class WhiteboradTest {
         Assertions.assertEquals(3, whiteborad.findConsecutiveOnes(7));
     }
 
+    @Test
+    void checkTestScores(){
+        Assertions.assertEquals( 'D', whiteborad.calculateAvg(new int[]{41, 42, 43, 44, 45, 46, 48}));
+    }
+
+    @Test
+    void divisorSum() {
+        int num = 6;
+        int sum = 0;
+
+        for (int i=1; i<=num; i++){
+            if(num%i == 0) sum+=i;
+        }
+
+        Assertions.assertEquals(12, sum);
+    }
 }
