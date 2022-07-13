@@ -1,5 +1,9 @@
 package datastructures;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.util.Scanner;
 import java.util.Stack;
 
 /**
@@ -23,7 +27,15 @@ public class PrimeNumber {
 //        checkPrimeSqrRoot(11);
 //        checkPrimeSieveApporoach(11);
 
-        factorizeSqrt(12);
+//        factorizeSqrt(12);
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i=0; i<n;i++){
+            PrimeNumber pn = new PrimeNumber();
+            pn.checkPrimeSieveApporoach(sc.nextInt());
+        }
     }
 
     /**
@@ -73,10 +85,11 @@ public class PrimeNumber {
         }
         isPrime[0] = false;
         isPrime[1] = false;
+
         for(int i = 2; i * i <= N; ++i) {
 
             if(isPrime[i] == true) {                    //Mark all the multiples of i as composite numbers
-                for(int j = i * i; j <= N ;j += i)
+                for(int j=i*i; j<=N; j+=i)
                     isPrime[j] = false;
             }
         }
@@ -105,6 +118,13 @@ public class PrimeNumber {
 
         return res;
     }
+}
+
+class PrimeNumberTest{
+    @Test
+    void testCheckPrimeSieveApporoach(){
 
 
+//        Assertions.assertEquals();
+    }
 }

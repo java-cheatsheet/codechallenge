@@ -105,13 +105,13 @@ public class ScannerExamples {
     public static void readInts(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = Integer.parseInt(bufferedReader.readLine().trim());
+//        int n = Integer.parseInt(bufferedReader.readLine().trim());
 
         List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
                 .map(Integer::parseInt)
                 .collect(toList());
 
-        for(int a=arr.size()-1; a >-1; a--) {
+        for(int a=arr.size()-1; a>-1; a--) {
             System.out.print(arr.get(a)+" ");
         }
 

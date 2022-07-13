@@ -36,6 +36,7 @@ class Solution {
         System.out.println(levelOrderQ(root));
     }
 
+//     Level-Order Traversal (Breadth First Search)
     public static String levelOrderQ(Node root) {
         List<List<Integer>> result = new ArrayList<>();
 
@@ -54,6 +55,7 @@ class Solution {
             int level = levelQueue.poll();
 
             List<Integer> l=null;
+
             if(result.size()<level){
                 l = new ArrayList<>();
                 result.add(l);

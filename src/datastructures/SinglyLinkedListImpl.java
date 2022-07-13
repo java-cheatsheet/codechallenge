@@ -1,9 +1,9 @@
 package datastructures;
 
-class Node<T> implements Comparable<T> {
+class SinglyLinkedListNode<T> implements Comparable<T> {
 
     private T value;
-    private Node<T> nextRef;
+    private SinglyLinkedListNode<T> nextRef;
 
     public T getValue() {
         return value;
@@ -11,10 +11,10 @@ class Node<T> implements Comparable<T> {
     public void setValue(T value) {
         this.value = value;
     }
-    public Node<T> getNextRef() {
+    public SinglyLinkedListNode<T> getNextRef() {
         return nextRef;
     }
-    public void setNextRef(Node<T> ref) {
+    public void setNextRef(SinglyLinkedListNode<T> ref) {
         this.nextRef = ref;
     }
     @Override
@@ -30,12 +30,12 @@ class Node<T> implements Comparable<T> {
 
 public class SinglyLinkedListImpl<T> {
 
-    private Node<T> head;
-    private Node<T> tail;
+    private SinglyLinkedListNode<T> head;
+    private SinglyLinkedListNode<T> tail;
 
     public void add(T element){
 
-        Node<T> nd = new Node<T>();
+        SinglyLinkedListNode<T> nd = new SinglyLinkedListNode<T>();
         nd.setValue(element);
         System.out.println("Adding: "+element);
         /**
@@ -56,8 +56,8 @@ public class SinglyLinkedListImpl<T> {
 
     public void addAfter(T element, T after){
 
-        Node<T> tmp = head;
-        Node<T> refNode = null;
+        SinglyLinkedListNode<T> tmp = head;
+        SinglyLinkedListNode<T> refNode = null;
         System.out.println("Traversing to all nodes..");
         /**
          * Traverse till given element
@@ -75,7 +75,7 @@ public class SinglyLinkedListImpl<T> {
         }
         if(refNode != null){
             //add element after the target node
-            Node<T> nd = new Node<T>();
+            SinglyLinkedListNode<T> nd = new SinglyLinkedListNode<T>();
             nd.setValue(element);
             nd.setNextRef(tmp.getNextRef());
             if(tmp == tail){
@@ -93,7 +93,7 @@ public class SinglyLinkedListImpl<T> {
         if(head == null){
             System.out.println("Underflow...");
         }
-        Node<T> tmp = head;
+        SinglyLinkedListNode<T> tmp = head;
         head = tmp.getNextRef();
         if(head == null){
             tail = null;
@@ -103,8 +103,8 @@ public class SinglyLinkedListImpl<T> {
 
     public void deleteAfter(T after){
 
-        Node<T> tmp = head;
-        Node<T> refNode = null;
+        SinglyLinkedListNode<T> tmp = head;
+        SinglyLinkedListNode<T> refNode = null;
         System.out.println("Traversing to all nodes..");
         /**
          * Traverse till given element
@@ -134,7 +134,7 @@ public class SinglyLinkedListImpl<T> {
 
     public void traverse(){
 
-        Node<T> tmp = head;
+        SinglyLinkedListNode<T> tmp = head;
         while(true){
             if(tmp == null){
                 break;
