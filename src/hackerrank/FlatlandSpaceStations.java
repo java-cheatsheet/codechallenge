@@ -93,81 +93,218 @@ import java.util.Arrays;
  * number of cities-1.
  */
 public class FlatlandSpaceStations {
-    public static int flatlandSpaceStations(int n, int[] c){
-        int spaceStations = c.length;
+    public static int flatlandSpaceStations(int noOfCities, int[] spaceStations){
+        int noSpaceStations = spaceStations.length;
 
-        if ( n == 1 && spaceStations == 1 ) return 0;
-        else if ( n == 2 && spaceStations == 1 ) return 1;
-        else if ( n == 2 && spaceStations == 2 ) return 0;
-        else if ( n == 3 && spaceStations == 2 ) return 1;
+        if ( noOfCities == 1 && noSpaceStations == 1 ) return 0;
+        else if ( noOfCities == 2 && noSpaceStations == 1 ) return 1;
+        else if ( noOfCities == 2 && noSpaceStations == 2 ) return 0;
+        else if ( noOfCities == 3 && noSpaceStations == 2 ) return 1;
 
-        if ( spaceStations == 1 ) {
-            int firstSpaceStation = c[0];
+        if ( noSpaceStations == 1 ) {
+            int firstSpaceStation = spaceStations[0];
 
-            if ( n == 3 )
-                return Math.max(firstSpaceStation, n-firstSpaceStation-1);
+            if ( noOfCities == 3 )
+                return Math.max(firstSpaceStation, noOfCities-firstSpaceStation-1);
 
-            else if ( firstSpaceStation == c.length-1 || c.length == 3 )
-                return Math.max(firstSpaceStation-1, n-firstSpaceStation-1);
+            else if ( firstSpaceStation == noSpaceStations-1 || noSpaceStations == 3 )
+                return Math.max(firstSpaceStation-1, noOfCities-firstSpaceStation-1);
 
             else
-                return Math.max(Math.abs(firstSpaceStation-1), n-firstSpaceStation);
+                return Math.max(Math.abs(firstSpaceStation-1), noOfCities-firstSpaceStation);
         }
 
-        Arrays.sort(c);
         int maxDistance = 0;
+        Arrays.sort(spaceStations);
+        int i=0;
 
-        int[] withLastCity = new int[spaceStations+1];
-        withLastCity[spaceStations] = n-1;
-
-        System.arraycopy(c, 0, withLastCity, 0, spaceStations);
-        // maximum distance between space stations
-
-        for(int i=0; i<spaceStations-1; i++){
-            int distanceDiff =  Math.abs(withLastCity[i]-withLastCity[i+1]);
+        for(; i<noSpaceStations-1; i++){
+            int distanceDiff =  Math.abs(spaceStations[i]-spaceStations[i+1]);
 
             if ( maxDistance < distanceDiff)
                 maxDistance = distanceDiff;
         }
 
+        if (spaceStations[i] < noSpaceStations) {
+            int distanceFromLast =  noOfCities-1-spaceStations[i];
+
+            if (maxDistance < distanceFromLast)
+                return distanceFromLast;
+        }
+
         return maxDistance;
     }
+
 }
 
 
 class FlatlandSpaceStationsTest {
 
+//    @Test
+//    @Disabled
+//    void hasFourCitiesThreeStationsAtFirstSecondLast() {
+//        int n=4, expected=1; // Distance from city four to city 2
+//        int[] c={0,1,3};
+//        Assertions.assertEquals(expected,
+//                FlatlandSpaceStations.flatlandSpaceStations(n, c));
+//
+//        /**
+//         * The current implementation fails.
+//         * Expected :1
+//         * Actual   :2
+//         *
+//         * The maximum distance being calculated
+//         */
+//    }
+
     @Test
-    @Disabled
-    void hasFourCitiesThreeStationsAtFirstSecondLast() {
-        int n=4, expected=1; // Distance from city four to city 2
-        int[] c={0,1,3};
-        Assertions.assertEquals(expected,
-                FlatlandSpaceStations.flatlandSpaceStations(n, c));
+    void hasFourCitiesTwoStationsAtFirstAndLast() {
+        int noOfCities = 4, expectedMaxDistance=1; // Distance from city four to city 2
+        int[] spaceStaions = {3, 0};
+        int spaceStationsLen = spaceStaions.length;
+
+        Assertions.assertEquals(expectedMaxDistance,
+                FlatlandSpaceStations.flatlandSpaceStations(noOfCities, spaceStaions));
 
         /**
-         * The current implementation fails.
+         * Test fails
          * Expected :1
-         * Actual   :2
+         * Actual   :3
          *
-         * The maximum distance being calculated
+         *         int maxDistance = 0;
+         *         Arrays.sort(spaceStations);
+         *         int i=0;
+         *
+         *         for(; i<noSpaceStations-1; i++){
+         *             int distanceDiff =  Math.abs(spaceStations[i]-spaceStations[i+1]);
+         *
+         *             if ( maxDistance < distanceDiff)
+         *                 maxDistance = distanceDiff;
+         *         }
+         *
+         *         if (spaceStations[i] < noSpaceStations) {
+         *             int distanceFromLast =  noOfCities-1-spaceStations[i];
+         *
+         *             if (maxDistance < distanceFromLast)
+         *                 return distanceFromLast;
+         *         }
+         *
+         *         return maxDistance;
+         *
+         * Logic fail
+         *      int distanceDiff =  Math.abs(spaceStations[i]-spaceStations[i+1]);
+         * distanceDiff is 3,  spaceStation[1](3) - spaceStation[0](3)
+         *
+         * We failed to consider the cities and distance
+         * from space stations to cities.
+         *
+         * The distance between two space stations should
+         * be (spaceStation[1](3) - spaceStation[0](3))/2
+         *
+         * Let's just consider first and last to be a
+         * special case.
+         *
          */
+
+
     }
 
     @Test
-    @Disabled
+    void hasFourCitiesTwoStationsAtFirstAndThird() {
+        int noOfCities = 4, expectedMaxDistance=2; // Distance from city four to city 2
+        int[] spaceStaions = {2, 0};
+        int spaceStationsLen = spaceStaions.length;
+
+        Assertions.assertEquals(expectedMaxDistance,
+                FlatlandSpaceStations.flatlandSpaceStations(noOfCities, spaceStaions));
+    }
+
+    @Test
     void hasFourCitiesTwoStationsAtFirstAndSecond() {
-        int n=4, expected=2; // Distance from city four to city 2
-        int[] c={0,1};
-        Assertions.assertEquals(expected,
-                FlatlandSpaceStations.flatlandSpaceStations(n, c));
+        int noOfCities = 4, expectedMaxDistance=2; // Distance from city four to city 2
+        int[] spaceStaions = {1, 0};
+        int spaceStationsLen = spaceStaions.length;
+
+        Assertions.assertEquals(expectedMaxDistance,
+                FlatlandSpaceStations.flatlandSpaceStations(noOfCities, spaceStaions));
+
+//        int maxDistance = 0;
+//        Arrays.sort(spaceStaions);
+//
+////        int[] withLastCity = new int[noOfCities+1];
+////        withLastCity[noOfCities] = noOfCities-1;
+////        System.arraycopy(spaceStaions, 0, withLastCity, 0, spaceStationsLen);
+//
+//        for(int i=0; i<spaceStationsLen-1; i++){
+//            int distanceDiff =  Math.abs(spaceStaions[i]-spaceStaions[i+1]);
+//
+//            if ( maxDistance < distanceDiff)
+//                maxDistance = distanceDiff;
+//        }
+//
+//        maxDistance++;
+//
+//        Assertions.assertEquals(expectedMaxDistance, maxDistance);
 
         /**
-         * Get the maximum distance in space stations.
-         * Here, 0 and 1 has 0 distance but there
-         * 0 is the starting so no other cities and
-         * there are cities after one as total cities
-         * is 4.
+         * Get the distance from the space station to city.
+         *
+         * 0 is a space station, check if the next city has
+         * space station or not.
+         *
+         * If it has then start counting the cities from next.
+         *
+         * Pseudocode:
+         * Sort space stations
+         * Loop in cities
+         * Check if space station or not
+         * If not increase distance
+         *
+         *
+         */
+//        Arrays.sort(spaceStaions);
+//        int maxDistance=0;
+//        for (int city=0; city<noOfCities; city++) {
+//            int distance=0;
+//
+//            for (int spaceStation=city+1; spaceStation < spaceStaions.length; spaceStation++){
+//
+//                if ( city != spaceStaions[spaceStation] )
+//                    distance++;
+//                else break;
+//            }
+//
+//            if (distance > maxDistance) maxDistance = distance;
+//
+//        }
+        /**
+         * This above idea becomes complicated.
+         * We are trying to keep track of distance from
+         * city to space station.
+         *
+         * for (int spaceStation=city+1;
+         *  if ( city != spaceStaions[spaceStation] )
+         *
+         * This logic fails.
+         *
+         * Loop space stations.
+         * Get the distance from the last city.
+         *
+         * Original/First logic implemented which failed
+         * for the test case.
+         *
+         * The idea is to get the distance from max index
+         * to the space station. Looks a bit like Sub-Array
+         * Sum kind of problem.
+         *
+         * Factored in last city which is not a space station.
+         *
+         * The solution should be straight forward.
+         * Get the distance from city to space station or
+         * space station to city. The only problem being
+         * created is solving by considering which comes
+         * first.
+         *
          */
     }
 
