@@ -94,22 +94,22 @@ import java.util.Arrays;
  */
 public class FlatlandSpaceStations {
     public static int flatlandSpaceStations(int noOfCities, int[] spaceStations){
-        int noSpaceStations = spaceStations.length;
+        int noOfSpaceStations = spaceStations.length;
 
-        if (noOfCities == noSpaceStations) return 0;
+        if (noOfCities == noOfSpaceStations) return 0;
 //        if ( noOfCities == 1 && noSpaceStations == 1 ) return 0;
-        else if ( noOfCities == 2 && noSpaceStations == 1 ) return 1;
+        else if ( noOfCities == 2 && noOfSpaceStations == 1 ) return 1;
 //        else if ( noOfCities == 2 && noSpaceStations == 2 ) return 0;
-        else if ( noOfCities == 3 && noSpaceStations == 2 ) return 1;
+        else if ( noOfCities == 3 && noOfSpaceStations == 2 ) return 1;
 
 
-        if ( noSpaceStations == 1 ) {
+        if ( noOfSpaceStations == 1 ) {
             int firstSpaceStation = spaceStations[0];
 
             if ( noOfCities == 3 )
                 return Math.max(firstSpaceStation, noOfCities-firstSpaceStation-1);
 
-            else if ( firstSpaceStation == noSpaceStations-1 || noSpaceStations == 3 )
+            else if ( firstSpaceStation == noOfSpaceStations-1 || noOfSpaceStations == 3 )
                 return Math.max(firstSpaceStation-1, noOfCities-firstSpaceStation-1);
 
             else
@@ -122,18 +122,47 @@ public class FlatlandSpaceStations {
 
         int maxDistance = 0;
         int i=0;
-        for(; i<noSpaceStations-1; i++){
-            int distanceDiff =  spaceStations[i+1]-spaceStations[i];
 
-            if ( maxDistance < distanceDiff)
-                maxDistance = distanceDiff;
-        }
+//        for(; i<noSpaceStations-1; i++) {
 
-        if (spaceStations[i] < noSpaceStations) {
-            int distanceFromLast =  noOfCities-1-spaceStations[i];
+            //check if the space station are consecutive last
+//            if (spaceStations[i] == noSpaceStations-2)
+//
+//
+//            int distanceDiff =  spaceStations[i+1]-spaceStations[i];
+//
+//            if ( maxDistance < distanceDiff)
+//                maxDistance = distanceDiff;
+//        }
 
-            if (maxDistance < distanceFromLast)
-                return distanceFromLast;
+//        if (spaceStations[i] < noSpaceStations) {
+//            int distanceFromLast =  noOfCities-1-spaceStations[i];
+//
+//            if (maxDistance < distanceFromLast)
+//                return distanceFromLast;
+//        }
+
+        // lets get the distance from the first city
+        // to first space station
+        int j=0;
+        while( j < noOfCities-1 ) {
+            // if space station is ahead of city
+            if ( spaceStations[i] > j ) {
+                maxDistance = spaceStations[i] - j;
+
+                // suppose next city is next to space station
+                // it should not be a consecutive space station
+                // if it is, increment the index until next
+                // city is found.
+                j = spaceStations[i]+1;
+                for ( int k=j; k < noOfSpaceStations-1; k++ ){
+
+                    if( k != spaceStations[k]){
+                        j = k;
+                        break;
+                    }
+                }
+            } else j++;
         }
 
         return maxDistance;
@@ -168,6 +197,18 @@ class FlatlandSpaceStationsTest {
 
         Assertions.assertEquals(expectedMaxDistance,
                 FlatlandSpaceStations.flatlandSpaceStations(noOfCities, spaceStaions));
+
+        /**
+         * Assertion Fail.
+         * Expected :2
+         * Actual   :1
+         *
+         * The logic to get the maximum distance fails.
+         * As the stations are in the end, we have to
+         * get the distance from the first city to that
+         * station.
+         *
+         */
     }
 
     @Test
