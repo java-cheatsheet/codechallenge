@@ -96,10 +96,12 @@ public class FlatlandSpaceStations {
     public static int flatlandSpaceStations(int noOfCities, int[] spaceStations){
         int noSpaceStations = spaceStations.length;
 
-        if ( noOfCities == 1 && noSpaceStations == 1 ) return 0;
+        if (noOfCities == noSpaceStations) return 0;
+//        if ( noOfCities == 1 && noSpaceStations == 1 ) return 0;
         else if ( noOfCities == 2 && noSpaceStations == 1 ) return 1;
-        else if ( noOfCities == 2 && noSpaceStations == 2 ) return 0;
+//        else if ( noOfCities == 2 && noSpaceStations == 2 ) return 0;
         else if ( noOfCities == 3 && noSpaceStations == 2 ) return 1;
+
 
         if ( noSpaceStations == 1 ) {
             int firstSpaceStation = spaceStations[0];
@@ -114,12 +116,14 @@ public class FlatlandSpaceStations {
                 return Math.max(Math.abs(firstSpaceStation-1), noOfCities-firstSpaceStation);
         }
 
-        int maxDistance = 0;
         Arrays.sort(spaceStations);
-        int i=0;
+        if (spaceStations[0]==0 && spaceStations[1] == noOfCities-1)
+            return (spaceStations[1]-spaceStations[0])/2;
 
+        int maxDistance = 0;
+        int i=0;
         for(; i<noSpaceStations-1; i++){
-            int distanceDiff =  Math.abs(spaceStations[i]-spaceStations[i+1]);
+            int distanceDiff =  spaceStations[i+1]-spaceStations[i];
 
             if ( maxDistance < distanceDiff)
                 maxDistance = distanceDiff;
@@ -156,6 +160,25 @@ class FlatlandSpaceStationsTest {
 //         * The maximum distance being calculated
 //         */
 //    }
+    @Test
+    void hasFourCitiesTwoStationsAtThirdAndFourth() {
+        int noOfCities = 4, expectedMaxDistance = 2; // Distance from city four to city 2
+        int[] spaceStaions = {2,3};
+        int spaceStationsLen = spaceStaions.length;
+
+        Assertions.assertEquals(expectedMaxDistance,
+                FlatlandSpaceStations.flatlandSpaceStations(noOfCities, spaceStaions));
+    }
+
+    @Test
+    void hasFourCitiesTwoStationsAtSecondAndThird() {
+        int noOfCities = 4, expectedMaxDistance = 1; // Distance from city four to city 2
+        int[] spaceStaions = {1, 2};
+        int spaceStationsLen = spaceStaions.length;
+
+        Assertions.assertEquals(expectedMaxDistance,
+                FlatlandSpaceStations.flatlandSpaceStations(noOfCities, spaceStaions));
+    }
 
     @Test
     void hasFourCitiesTwoStationsAtFirstAndLast() {
