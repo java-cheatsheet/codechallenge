@@ -139,6 +139,7 @@ public class FlatlandSpaceStations {
         // If first city is not a space station
         if (spaceStations[0] != 0) {
             maxDistance = spaceStations[0];
+
         } else if ( spaceStations[0] == 0 ) {
             maxDistance = (spaceStations[1]-spaceStations[0])/2;
         }
@@ -165,6 +166,7 @@ public class FlatlandSpaceStations {
     /**
      * The space stations are consecutive last,
      * i.e. They are the last ones.
+     *
      * Given 5 cities with 2 space stations that
      * are in the end. i.e. Cities 3 and 4 are
      * the space stations.
@@ -175,8 +177,7 @@ public class FlatlandSpaceStations {
      *
      * Get the first station spaceStations[0]
      *
-     * How to confirm that space stations are
-     * consecutive last?
+     * Confirm that space stations are consecutive last
      *
      */
     public static boolean areSpaceStationsConsecutiveLast(
@@ -190,10 +191,10 @@ public class FlatlandSpaceStations {
             return false;
 
         int firstSpaceStation =  spaceStations[0];
-        int isLast = (lastSpaceStation - firstSpaceStation) -
+        int consecutiveLast = (lastSpaceStation - firstSpaceStation) -
                 (numberOfSpaceStations - 1);
 
-        return ( isLast == 0 ) ? true : false;
+        return ( consecutiveLast == 0 ) ? true : false;
     }
 }
 
