@@ -1,10 +1,10 @@
 package hackerrank.FlatlandSpaceStations;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Flatland Space Stations
@@ -46,156 +46,159 @@ import java.util.Arrays;
  *
  * Problem: https://www.hackerrank.com/challenges/flatland-space-stations/problem
  *
- * # Solution
- * The maximum distance any city is from a space station.
- *
- * Example 1
- * 5 2    n = 5, c[] size m = 2
- * 0 4    space stations
- *
- * There are five cities, c0,c1,c2,c3,c4.
- * c0 and c4 has space stations.
- * c2 has the maximum distance either to c0 or c4.
- * So maximum distance is 2.
- *
- * We only need to find the distances from those
- * cities which do not have the space station.
- *
- * Example 2
- * 6 6 n=6, m=6
- * 0 1 2 4 3 5
- * As all the cities have stations, maximum
- * distance from any city to a space station
- * is 0.
- *
- *
- *
- * Pseudocode
- * maxDistance = 0
- * We have to calculate the distance for each
- * city to another, so we need two loops.
- *
- * for i=0;i<cities.length;i++
- *  for j=i+1;j<
- *
- * I think we just need to find maximum distance
- * between two stations, i.e. from a city to a
- * station between the stations.
- *
- * The distance from one (minimum) end point to
- * a space station.
- *
- * If there is only space station, calculate the
- * max distance from both ends.
- *
- * If there is only space station which is at
- * the either ends, get the distance from the
- * number of cities-1.
  */
 public class FlatlandSpaceStations {
-    public static int flatlandSpaceStations(
-            int noOfCities,
-            int[] spaceStations) {
-        int noOfSpaceStations = spaceStations.length;
 
-        if (noOfCities == noOfSpaceStations)
+    public static int flatlandSpaceStations(
+            int numOfCities,
+            int[] spaceStations) {
+        int numOfSpaceStations = spaceStations.length;
+
+        if ( isCitySpaceStation(numOfCities,
+                numOfSpaceStations))
             return 0;
 
-        else if (noOfCities == 2 && noOfSpaceStations == 1)
-            return 1;
+        if (isCitySpaceStation(numOfSpaceStations, 1)) {
 
-        else if (noOfCities == 3 && noOfSpaceStations == 2)
-            return 1;
-
-        else if (noOfSpaceStations == 1) {
-
-            // if the space station is at first or last
-            if (spaceStations[0] == 0 ||
-                    spaceStations[0] == noOfCities - 1)
-                return noOfCities - 1;
-
-            else {
-                return Math.max(spaceStations[0],
-                        noOfCities - 1 - spaceStations[0]);
-
-            }
+            return getMaxDistanceWithOneSpaceStation(
+                    numOfCities, spaceStations);
         }
 
         Arrays.sort(spaceStations);
 
-        // First and last cities are the space station.
-        if (spaceStations[0] == 0 &&
-                spaceStations[1] == noOfCities - 1)
-            return (spaceStations[1] - spaceStations[0]) / 2;
-
-        if (areSpaceStationsConsecutiveLast(
+        if ( areSpaceStationsConsecutiveLast(
                 spaceStations,
-                noOfSpaceStations,
-                noOfCities))
+                numOfSpaceStations,
+                numOfCities))
             return spaceStations[0];
 
         int maxDistance = 0;
 
-        // If first city is not a space station
-        if (spaceStations[0] != 0) {
-            maxDistance = spaceStations[0];
+        maxDistance = setMaxDistanceBasedOnFirstSpaceStation(
+                spaceStations);
 
-        } else if ( spaceStations[0] == 0 ) {
-            maxDistance = (spaceStations[1]-spaceStations[0])/2;
-        }
+        maxDistance = getMaxDistance(spaceStations,
+                numOfSpaceStations, maxDistance);
 
-        for (int i = 1; i < noOfSpaceStations-1; i++)  {
-            int distance = (spaceStations[i+1] - spaceStations[i])/2;
+        if ( lastCityIsNotLastSpaceStation(numOfCities,
+                spaceStations, numOfSpaceStations)) {
 
-            if ( distance > maxDistance )
-                maxDistance = distance;
-        }
-
-        // If last space station is not the last city
-        if ( spaceStations[noOfSpaceStations-1] != noOfCities -1 ) {
-            int lastSpaceStationDistance = noOfCities - 1 -
-                    spaceStations[noOfSpaceStations-1] ;
-
-            return maxDistance > lastSpaceStationDistance ?
-                    maxDistance : lastSpaceStationDistance;
+            return distanceFromLastCityToLastStation(
+                    numOfCities, spaceStations,
+                    numOfSpaceStations, maxDistance);
         }
 
         return maxDistance;
     }
 
-    /**
-     * The space stations are consecutive last,
-     * i.e. They are the last ones.
-     *
-     * Given 5 cities with 2 space stations that
-     * are in the end. i.e. Cities 3 and 4 are
-     * the space stations.
-     *
-     * Get the last station
-     * Check if the last city is the last station,
-     * spaceStations[noOfSpaceStations-1] == noOfCities-1
-     *
-     * Get the first station spaceStations[0]
-     *
-     * Confirm that space stations are consecutive last
-     *
-     */
+    private static boolean lastCityIsNotLastSpaceStation(
+            int numOfCities, int[] spaceStations,
+            int numOfSpaceStations) {
+
+        return spaceStations[numOfSpaceStations - 1]
+                != numOfCities - 1;
+    }
+
+    private static int setMaxDistanceBasedOnFirstSpaceStation(
+            int[] spaceStations) {
+
+        if (isCitySpaceStation(spaceStations[0], 0))
+            return (spaceStations[1] - spaceStations[0])/2;
+
+        return spaceStations[0];
+    }
+
+    private static boolean isCitySpaceStation(
+            int spaceStation, int city) {
+
+        return city == spaceStation;
+    }
+
+
+    private static int getMaxDistanceWithOneSpaceStation(
+            int numOfCities, int[] spaceStations) {
+
+        // The space station is at first or last
+        if ( isCitySpaceStation(spaceStations[0], 0)
+                || isCitySpaceStation( spaceStations[0],
+                numOfCities - 1))
+            return numOfCities - 1;
+
+        // The space station is in the middle
+        return Math.max(spaceStations[0],
+                numOfCities - 1 - spaceStations[0]);
+    }
+
+    private static int getMaxDistance(
+            int[] spaceStations,
+            int numOfSpaceStations,
+            int maxDistance) {
+
+        for ( int i = 1; i < numOfSpaceStations -1; i++)  {
+            int distance = ( spaceStations[i+1] -
+                    spaceStations[i] ) / 2;
+
+            if ( distance > maxDistance)
+                maxDistance = distance;
+        }
+
+        return maxDistance;
+    }
+
+    private static int distanceFromLastCityToLastStation(int numOfCities, int[] spaceStations, int numOfSpaceStations, int maxDistance) {
+        int lastSpaceStationDistance = numOfCities - 1 -
+                spaceStations[numOfSpaceStations -1] ;
+
+        return Math.max(maxDistance, lastSpaceStationDistance);
+    }
+
     public static boolean areSpaceStationsConsecutiveLast(
             int[] spaceStations,
             int numberOfSpaceStations,
             int numberOfCities) {
 
         int lastSpaceStation = spaceStations[numberOfSpaceStations - 1];
+        int lastCity = numberOfCities-1;
 
-        if ( lastSpaceStation != numberOfCities-1 )
+        if ( lastSpaceStation !=  lastCity)
             return false;
 
         int firstSpaceStation =  spaceStations[0];
-        int consecutiveLast = (lastSpaceStation - firstSpaceStation) -
-                (numberOfSpaceStations - 1);
 
-        return ( consecutiveLast == 0 ) ? true : false;
+        return numberOfSpaceStations >
+                lastSpaceStation - firstSpaceStation;
+
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(
+                new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String[] nm = scanner.nextLine().split(" ");
+
+        int n = Integer.parseInt(nm[0]);
+
+        int m = Integer.parseInt(nm[1]);
+
+        int[] c = new int[m];
+
+        String[] cItems = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int i = 0; i < m; i++) {
+            int cItem = Integer.parseInt(cItems[i]);
+            c[i] = cItem;
+        }
+
+        int result = flatlandSpaceStations(n, c);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+
+        scanner.close();
     }
 }
-
-

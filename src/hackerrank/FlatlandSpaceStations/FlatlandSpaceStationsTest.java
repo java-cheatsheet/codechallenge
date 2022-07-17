@@ -120,7 +120,7 @@ class FlatlandSpaceStationsTest {
     }
 
     @Test
-    void hasFourCitiesTwoStationsAtThirdAndFourth() {
+    void givenFourCitiesTwoStationsAtThirdAndFourth() {
         int numOfCities = 4;
         int[] spaceStations = {2,3};
 
@@ -231,7 +231,7 @@ class FlatlandSpaceStationsTest {
     }
 
     @Test
-    void hasThreeCitiesAndOneStationAtThird() {
+    void givenThreeCitiesAndOneStationAtThird() {
         int numOfCities = 3;
         int[] spaceStations={3};
 
@@ -242,7 +242,7 @@ class FlatlandSpaceStationsTest {
     }
 
     @Test
-    void hasThreeCitiesAndOneStationAtSecond() {
+    void givenThreeCitiesAndOneStationAtSecond() {
         int numOfCities = 3;
         int[] spaceStations={1};
 
@@ -253,7 +253,7 @@ class FlatlandSpaceStationsTest {
     }
 
     @Test
-    void hasThreeCitiesAndOneStationAtFirst() {
+    void givenThreeCitiesAndOneStationAtFirst() {
         int numOfCities = 3;
         int[] spaceStations={0};
 
@@ -264,7 +264,7 @@ class FlatlandSpaceStationsTest {
     }
 
     @Test
-    void hasTwoCity() {
+    void givenTwoCity() {
         int numOfCities = 2;
         int[] spaceStations={0};
 
@@ -275,7 +275,7 @@ class FlatlandSpaceStationsTest {
     }
 
     @Test
-    void hasOneCity() {
+    void givenOneCity() {
         int numOfCities = 1;
         int[] spaceStations={0};
 
@@ -288,6 +288,66 @@ class FlatlandSpaceStationsTest {
 }
 
 class ConsecutiveLastSpaceStationTest {
+    @Test
+    void givenFiveCities3SpaceStationSecondThirdAndFourth() {
+        int[] spaceStations = {2, 3, 4};
+        int numberOfSpaceStations = spaceStations.length;
+        int numberOfCities = 5;
+
+        boolean isConsecutive = FlatlandSpaceStations.
+                areSpaceStationsConsecutiveLast(
+                        spaceStations,
+                        numberOfSpaceStations,
+                        numberOfCities);
+
+        Assertions.assertTrue(isConsecutive);
+    }
+
+    @Test
+    void givenFiveCities3SpaceStationFirstThirdAndFourth() {
+        int[] spaceStations = {0, 2, 3};
+        int numberOfSpaceStations = spaceStations.length;
+        int numberOfCities = 5;
+
+        boolean isConsecutive = FlatlandSpaceStations.
+                areSpaceStationsConsecutiveLast(
+                        spaceStations,
+                        numberOfSpaceStations,
+                        numberOfCities);
+
+        Assertions.assertFalse(isConsecutive);
+    }
+
+    @Test
+    void givenFourCities2SpaceStationThirdAndFourth() {
+        int[] spaceStations = {2, 3};
+        int numberOfSpaceStations = spaceStations.length;
+        int numberOfCities = 4;
+
+        boolean isConsecutive = FlatlandSpaceStations.
+                areSpaceStationsConsecutiveLast(
+                        spaceStations,
+                        numberOfSpaceStations,
+                        numberOfCities);
+
+        Assertions.assertTrue(isConsecutive);
+    }
+
+    @Test
+    void givenFourCities2SpaceStationFirstAndSecond() {
+        int[] spaceStations = {0,1};
+        int numberOfSpaceStations = spaceStations.length;
+        int numberOfCities =  4;
+
+        boolean isConsecutive = FlatlandSpaceStations.
+                areSpaceStationsConsecutiveLast(
+                        spaceStations,
+                        numberOfSpaceStations,
+                        numberOfCities);
+
+        Assertions.assertFalse(isConsecutive);
+    }
+
     @Test
     void givenSpaceStations45() {
         int[] spaceStations = {4,5};
