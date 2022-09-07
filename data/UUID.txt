@@ -1,3 +1,0 @@
-6a2f41a3-c54c-fce8-32d2-0324e1c32e22
-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
