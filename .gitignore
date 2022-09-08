@@ -1,3 +1,10 @@
 out/
 target/
 .idea/
+/bin/
+.classpath/
+.project/
+.settings/
+
+
+
