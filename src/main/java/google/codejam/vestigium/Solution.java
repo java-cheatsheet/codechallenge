@@ -1,5 +1,4 @@
-//package google.codejam2020.vestigium;
-
+package google.codejam.vestigium;
 import java.util.*;
 import java.io.*;
 

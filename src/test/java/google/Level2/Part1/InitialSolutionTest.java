@@ -1,7 +1,7 @@
 package google.Level2.Part1;
 
-import org.junit.Test;
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 import static java.util.Arrays.sort;
 
 public class InitialSolutionTest {
@@ -42,8 +42,8 @@ public class InitialSolutionTest {
         int[] A = {1,7};
         int want = 0;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
-//        Assert.assertEquals(0, 88765431%3);
+        Assertions.assertEquals(want, got);
+//        Assertions.assertEquals(0, 88765431%3);
     }
 
     @Test
@@ -51,8 +51,8 @@ public class InitialSolutionTest {
         String sortedInt = "2147483647";
         boolean want = true;
         boolean got = InitialSolution.isNumMoreThanIntMax(sortedInt);
-        Assert.assertEquals(want, got);
-//        Assert.assertEquals(0, 88765431%3);
+        Assertions.assertEquals(want, got);
+//        Assertions.assertEquals(0, 88765431%3);
     }
 
     @Test
@@ -61,8 +61,8 @@ public class InitialSolutionTest {
         int[] A = {1,2,3,4,5,6,7,8,8};
         int want = 88765431;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
-//        Assert.assertEquals(0, 88765431%3);
+        Assertions.assertEquals(want, got);
+//        Assertions.assertEquals(0, 88765431%3);
     }
 
     @Test
@@ -71,8 +71,8 @@ public class InitialSolutionTest {
         int[] A = {0,0,0,0,1,1,1,1};
         int want = 1110000;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
-//        Assert.assertEquals(0, 1110000%3);
+        Assertions.assertEquals(want, got);
+//        Assertions.assertEquals(0, 1110000%3);
     }
 
     @Test
@@ -80,7 +80,7 @@ public class InitialSolutionTest {
         for (int i=1; i<100; i++ ) {
             int want = i%3==0?i:0;
             int got = InitialSolution.solution(new int[]{i});
-            Assert.assertEquals(want, got);
+            Assertions.assertEquals(want, got);
         }
     }
 
@@ -89,7 +89,7 @@ public class InitialSolutionTest {
         int[] A = {1};
         int want = 0;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -97,7 +97,7 @@ public class InitialSolutionTest {
         int[] A = {9,9,9,9,9,9,9,9,9,9};
         int want = 0;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -105,7 +105,7 @@ public class InitialSolutionTest {
         int[] A = {0,0,0,0,0};
         int want = 0;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -113,7 +113,7 @@ public class InitialSolutionTest {
         int[] A = {};
         int want = 0;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -121,7 +121,7 @@ public class InitialSolutionTest {
         int[] A = {1,2,3,4,5,6,7,8,9};
         int want = 987654321;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -129,7 +129,7 @@ public class InitialSolutionTest {
         int[] A = {2,2,2,2,2,2,2};
         int want = 222222;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -137,7 +137,7 @@ public class InitialSolutionTest {
         int[] A = {4,4,4,4,4,4,4,4};
         int want = 444444;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -145,7 +145,7 @@ public class InitialSolutionTest {
         int[] A = {4};
         int want = 0;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -153,7 +153,7 @@ public class InitialSolutionTest {
         int[] A = {3};
         int want = 3;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -161,7 +161,7 @@ public class InitialSolutionTest {
         int[] A = {3, 7, 7};
         int want = 3;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -169,7 +169,7 @@ public class InitialSolutionTest {
         int[] A = {6, 8};
         int want = 6;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -177,7 +177,7 @@ public class InitialSolutionTest {
         int[] A = {3, 1, 4, 1};
         int want = 4311;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -185,12 +185,12 @@ public class InitialSolutionTest {
         int[] A = {3, 1, 4, 1, 5, 9};
         int want = 94311;
         int got = InitialSolution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     void main() {
 //        String actual = CaesarCipher.solution(result);
-//        Assert.assertEquals(expected, actual);
+//        Assertions.assertEquals(expected, actual);
 
 //        System.out.println(4311%3);
 
@@ -223,7 +223,7 @@ public class InitialSolutionTest {
 //        int result = numbers
 //                .stream()
 //                .reduce(0, (subtotal, element) -> subtotal + element);
-//        Assert.assertEquals(result, 21);
+//        Assertions.assertEquals(result, 21);
 
     }
 }

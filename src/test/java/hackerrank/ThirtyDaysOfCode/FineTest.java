@@ -1,7 +1,7 @@
 package hackerrank.ThirtyDaysOfCode;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,7 +13,7 @@ public class FineTest {
         Date returnDate = sdf.parse("1 1 2010");
         Date dueDate = sdf.parse("31 12 2009");
 
-        Assert.assertEquals(10000, DayThirty.fine(returnDate, dueDate));
+        Assertions.assertEquals(10000, DayThirty.fine(returnDate, dueDate));
     }
 
     @Test
@@ -22,7 +22,7 @@ public class FineTest {
         Date returnDate = sdf.parse("7 6 2015");
         Date dueDate = sdf.parse("6 6 2015");
 
-        Assert.assertEquals(15, DayThirty.fine(returnDate, dueDate));
+        Assertions.assertEquals(15, DayThirty.fine(returnDate, dueDate));
     }
 
     @Test
@@ -39,7 +39,7 @@ public class FineTest {
         Date returnDate = sdf.parse("9 6 2015");
         Date dueDate = sdf.parse("6 6 2015");
 
-        Assert.assertEquals(45, DayThirty.fine(returnDate, dueDate));
+        Assertions.assertEquals(45, DayThirty.fine(returnDate, dueDate));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class FineTest {
         Date returnDate = sdf.parse("20 7 2020");
         Date dueDate = sdf.parse("10 7 2020");
 
-        Assert.assertEquals(150, DayThirty.fine(returnDate, dueDate));
+        Assertions.assertEquals(150, DayThirty.fine(returnDate, dueDate));
     }
 
     @Test
@@ -57,7 +57,7 @@ public class FineTest {
         Date returnDate = sdf.parse("20 07 2020");
         Date dueDate = sdf.parse("10 05 2020");
 
-        Assert.assertEquals(500 * 2, DayThirty.fine(returnDate, dueDate));
+        Assertions.assertEquals(500 * 2, DayThirty.fine(returnDate, dueDate));
     }
 
     @Test
@@ -66,7 +66,7 @@ public class FineTest {
         Date returnDate = sdf.parse("20 7 2021");
         Date dueDate = sdf.parse("10 1 2020");
 
-        Assert.assertEquals(10000, DayThirty.fine(returnDate, dueDate));
+        Assertions.assertEquals(10000, DayThirty.fine(returnDate, dueDate));
     }
 
     @Test
@@ -78,7 +78,7 @@ public class FineTest {
         SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
         Date returnDate = sdf.parse("10 7 2020");
         Date dueDate = sdf.parse("20 7 2020");
-        Assert.assertEquals(0, DayThirty.fine(returnDate, dueDate));
+        Assertions.assertEquals(0, DayThirty.fine(returnDate, dueDate));
     }
 
     @Test
@@ -90,7 +90,7 @@ public class FineTest {
         SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
         Date returnDate = sdf.parse("20 7 2020");
         Date dueDate = sdf.parse("20 7 2020");
-        Assert.assertEquals(0, DayThirty.fine(returnDate, dueDate));
+        Assertions.assertEquals(0, DayThirty.fine(returnDate, dueDate));
     }
 
 }

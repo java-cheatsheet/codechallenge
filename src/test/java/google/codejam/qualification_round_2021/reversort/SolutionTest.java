@@ -1,7 +1,8 @@
 package google.codejam.qualification_round_2021.reversort;
 
 import google.codejam.FileInputTest.FileInputTest;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.io.*;
 import java.nio.file.Paths;

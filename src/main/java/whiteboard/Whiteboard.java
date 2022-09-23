@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Whiteborad {
+public class Whiteboard {
 
     public static int tiktok(){
         int pairsCount=0;
@@ -42,7 +42,7 @@ public class Whiteborad {
 
     }
     public static void main(String[] args) {
-        new Whiteborad().tiktok();
+        new Whiteboard().tiktok();
     }
 
     public int factorialRecursive(int n) {

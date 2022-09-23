@@ -1,14 +1,15 @@
-package test.java;
+package whiteboardtest;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 import java.util.*;
 
-import whiteboard.Whiteborad;
+import whiteboard.Whiteboard;
 
-public class WhiteboradTest {
-    Whiteborad whiteborad;
-
+public class WhiteboardTest {
+	Whiteboard whiteboard = new Whiteboard();
+	
     @Test
     public void main() {
         int N = 5;
@@ -51,33 +52,34 @@ public class WhiteboradTest {
      * Concat the two Strings.
      *
      */
-    @Test
-    public void breakString() {
-        Scanner sc = new Scanner(System.in);
-        int wordsCount = sc.nextInt();
+//    @Test
+//    public void breakString() {
+//        Scanner sc = new Scanner(System.in);
+//        int wordsCount = sc.nextInt();
+//
+//        for (int j=0; j < wordsCount; j++) {
+//            String s = sc.nextLine();
+////        String s = "Hello";
+//            StringBuilder oddS = new StringBuilder();
+//            StringBuilder evenS = new StringBuilder();
+//            evenS.append(s.charAt(0));
+//
+//            for(int i=1; i< s.length(); i++) {
+//
+//                if (i%2 == 0) evenS.append(s.charAt(i));
+//                else oddS.append(s.charAt(i));
+//            }
+//
+//            System.out.println(evenS.toString() + " " + oddS.toString());
+//        }
+//    }
 
-        for (int j=0; j < wordsCount; j++) {
-            String s = sc.nextLine();
-//        String s = "Hello";
-            StringBuilder oddS = new StringBuilder();
-            StringBuilder evenS = new StringBuilder();
-            evenS.append(s.charAt(0));
-
-            for(int i=1; i< s.length(); i++) {
-
-                if (i%2 == 0) evenS.append(s.charAt(i));
-                else oddS.append(s.charAt(i));
-            }
-
-            System.out.println(evenS.toString() + " " + oddS.toString());
-        }
-    }
-
-    @Test
+    
     /**
      * A = [1,2,3,4,5]
      * Print 4 3 2 1. Each integer is separated by one space.
      */
+    
     public void reversePrintWithSpace() {
         List<Integer> arr = Arrays.asList(1, 2, 3, 4);
 
@@ -92,27 +94,27 @@ public class WhiteboradTest {
     }
 
     @Test
-    public void checkFactorial(){
-        Assert.assertNotEquals(-1, whiteborad.factorialRecursive(3));
-        Assert.assertEquals(6, whiteborad.factorialRecursive(3));
-        Assert.assertEquals(24, whiteborad.factorialRecursive(4));
-        Assert.assertEquals(0, whiteborad.factorialRecursive(0));
-        Assert.assertEquals(0, whiteborad.factorialRecursive(-3));
+    public void checkFactorial(){    
+        Assertions.assertNotEquals(-1, whiteboard.factorialRecursive(3));
+        Assertions.assertEquals(6, whiteboard.factorialRecursive(3));
+        Assertions.assertEquals(24, whiteboard.factorialRecursive(4));
+        Assertions.assertEquals(0, whiteboard.factorialRecursive(0));
+        Assertions.assertEquals(0, whiteboard.factorialRecursive(-3));
     }
 
     @Test
     public void checkConsecutiveOnes(){
-        Assert.assertEquals(0, whiteborad.findConsecutiveOnes(1));
-        Assert.assertEquals(1, whiteborad.findConsecutiveOnes(5));
-        Assert.assertEquals(2, whiteborad.findConsecutiveOnes(13));
-        Assert.assertEquals(1, whiteborad.findConsecutiveOnes(2));
-        Assert.assertEquals(5, whiteborad.findConsecutiveOnes(125));
-        Assert.assertEquals(3, whiteborad.findConsecutiveOnes(7));
+        Assertions.assertEquals(0, whiteboard.findConsecutiveOnes(1));
+        Assertions.assertEquals(1, whiteboard.findConsecutiveOnes(5));
+        Assertions.assertEquals(2, whiteboard.findConsecutiveOnes(13));
+        Assertions.assertEquals(1, whiteboard.findConsecutiveOnes(2));
+        Assertions.assertEquals(5, whiteboard.findConsecutiveOnes(125));
+        Assertions.assertEquals(3, whiteboard.findConsecutiveOnes(7));
     }
 
     @Test
     public void checkTestScores(){
-        Assert.assertEquals( 'D', whiteborad.calculateAvg(new int[]{41, 42, 43, 44, 45, 46, 48}));
+        Assertions.assertEquals( 'D', whiteboard.calculateAvg(new int[]{41, 42, 43, 44, 45, 46, 48}));
     }
 
     @Test
@@ -124,6 +126,6 @@ public class WhiteboradTest {
             if(num%i == 0) sum+=i;
         }
 
-        Assert.assertEquals(12, sum);
+        Assertions.assertEquals(12, sum);
     }
 }

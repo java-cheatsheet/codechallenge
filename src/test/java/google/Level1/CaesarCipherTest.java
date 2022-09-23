@@ -1,7 +1,7 @@
 package google.Level1;
 
-import org.junit.Test;
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 public class CaesarCipherTest {
 
@@ -11,13 +11,13 @@ public class CaesarCipherTest {
     @Test
     void solution() {
         String actual = CaesarCipher.solution(result);
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     void submittedSolution() {
         String actual = CaesarCipher.submittedSolution(result);
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -25,23 +25,23 @@ public class CaesarCipherTest {
         String expected = "wrw blf hvv ozhg mrtsg'h vkrhlwv?";
         String plainText = "did you see last night's episode?";
         result = CaesarCipher.encrypt(plainText);
-        Assert.assertEquals(expected, result);
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
     void solnWithArray() {
-        Assert.assertEquals( expected, CaesarCipher.solnWithArray(result) );
+        Assertions.assertEquals( expected, CaesarCipher.solnWithArray(result) );
     }
 
     @Test
     void solnWithStrBuilder() {
-        Assert.assertEquals(expected, CaesarCipher.solnWithArray(result) );
+        Assertions.assertEquals(expected, CaesarCipher.solnWithArray(result) );
     }
 
     @Test
     void decrypt() {
         char expected = 'z';
         char result= 'a';
-        Assert.assertEquals( expected , CaesarCipher.decrypt(result) );
+        Assertions.assertEquals( expected , CaesarCipher.decrypt(result) );
     }
 }

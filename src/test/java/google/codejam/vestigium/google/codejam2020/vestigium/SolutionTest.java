@@ -1,6 +1,7 @@
 package google.codejam.vestigium.google.codejam2020.vestigium;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -2,8 +2,8 @@ package google.Level3.Part3;
 
 import google.Level3.Part3.Solution;
 
-import org.junit.Test;
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -36,7 +36,7 @@ public class SolutionTest {
             System.out.println("Key = " + entry.getKey() +
                     ", Value = " + entry.getValue());
 
-//            Assert.assertEquals(entry.getValue(),
+//            Assertions.assertEquals(entry.getValue(),
 //                    Solution.solution(entry.getKey()));
         }
     }

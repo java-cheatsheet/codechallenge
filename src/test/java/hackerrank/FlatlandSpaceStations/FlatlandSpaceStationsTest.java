@@ -1,7 +1,7 @@
 package hackerrank.FlatlandSpaceStations;
 
-import org.junit.Test;
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 public class FlatlandSpaceStationsTest {
     @Test
@@ -24,7 +24,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numberOfCities, spaceStations);
 
-        Assert.assertEquals(expectedMaxDistance, maxDistance);
+        Assertions.assertEquals(expectedMaxDistance, maxDistance);
     }
 
     @Test
@@ -39,7 +39,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numberOfCities, spaceStations);
 
-        Assert.assertEquals(expectedMaxDistance, maxDistance);
+        Assertions.assertEquals(expectedMaxDistance, maxDistance);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numberOfCities, spaceStations);
 
-        Assert.assertEquals(expectedMaxDistance, maxDistance);
+        Assertions.assertEquals(expectedMaxDistance, maxDistance);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numberOfCities, spaceStations);
 
-        Assert.assertEquals(6, maxDistance);
+        Assertions.assertEquals(6, maxDistance);
     }
 
     @Test
@@ -73,7 +73,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(1, maxDistance);
+        Assertions.assertEquals(1, maxDistance);
     }
 
     @Test
@@ -84,7 +84,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(3, maxDistance);
+        Assertions.assertEquals(3, maxDistance);
     }
 
     @Test
@@ -95,7 +95,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(3, maxDistance);
+        Assertions.assertEquals(3, maxDistance);
     }
     @Test
     void givenFourCitiesOneStationsAtSecond() {
@@ -105,7 +105,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(2, maxDistance);
+        Assertions.assertEquals(2, maxDistance);
     }
 
     @Test
@@ -116,7 +116,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(1, maxDistance);
+        Assertions.assertEquals(1, maxDistance);
     }
 
     @Test
@@ -127,7 +127,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(2, maxDistance);
+        Assertions.assertEquals(2, maxDistance);
     }
 
     @Test
@@ -138,7 +138,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(1, maxDistance);
+        Assertions.assertEquals(1, maxDistance);
     }
 
     @Test
@@ -149,7 +149,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(1, maxDistance);
+        Assertions.assertEquals(1, maxDistance);
     }
 
     @Test
@@ -160,7 +160,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(1, maxDistance);
+        Assertions.assertEquals(1, maxDistance);
     }
 
     @Test
@@ -171,7 +171,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(2, maxDistance);
+        Assertions.assertEquals(2, maxDistance);
     }
 
     @Test
@@ -182,7 +182,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(1, maxDistance);
+        Assertions.assertEquals(1, maxDistance);
     }
 
     @Test
@@ -193,7 +193,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(1, maxDistance);
+        Assertions.assertEquals(1, maxDistance);
     }
 
     @Test
@@ -204,7 +204,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(0, maxDistance);
+        Assertions.assertEquals(0, maxDistance);
 
     }
 
@@ -216,7 +216,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(3, maxDistance);
+        Assertions.assertEquals(3, maxDistance);
     }
 
     @Test
@@ -227,7 +227,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(2, maxDistance);
+        Assertions.assertEquals(2, maxDistance);
     }
 
     @Test
@@ -238,7 +238,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(3, maxDistance);
+        Assertions.assertEquals(3, maxDistance);
     }
 
     @Test
@@ -249,7 +249,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(1, maxDistance);
+        Assertions.assertEquals(1, maxDistance);
     }
 
     @Test
@@ -260,7 +260,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(2, maxDistance);
+        Assertions.assertEquals(2, maxDistance);
     }
 
     @Test
@@ -271,7 +271,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(1, maxDistance);
+        Assertions.assertEquals(1, maxDistance);
     }
 
     @Test
@@ -282,7 +282,7 @@ public class FlatlandSpaceStationsTest {
         int maxDistance = FlatlandSpaceStations.flatlandSpaceStations(
                 numOfCities, spaceStations);
 
-        Assert.assertEquals(0, maxDistance);
+        Assertions.assertEquals(0, maxDistance);
     }
 
 }
@@ -300,7 +300,7 @@ class ConsecutiveLastSpaceStationTest {
                         numberOfSpaceStations,
                         numberOfCities);
 
-        Assert.assertTrue(isConsecutive);
+        Assertions.assertTrue(isConsecutive);
     }
 
     @Test
@@ -315,7 +315,7 @@ class ConsecutiveLastSpaceStationTest {
                         numberOfSpaceStations,
                         numberOfCities);
 
-        Assert.assertFalse(isConsecutive);
+        Assertions.assertFalse(isConsecutive);
     }
 
     @Test
@@ -330,7 +330,7 @@ class ConsecutiveLastSpaceStationTest {
                         numberOfSpaceStations,
                         numberOfCities);
 
-        Assert.assertTrue(isConsecutive);
+        Assertions.assertTrue(isConsecutive);
     }
 
     @Test
@@ -345,7 +345,7 @@ class ConsecutiveLastSpaceStationTest {
                         numberOfSpaceStations,
                         numberOfCities);
 
-        Assert.assertFalse(isConsecutive);
+        Assertions.assertFalse(isConsecutive);
     }
 
     @Test
@@ -360,7 +360,7 @@ class ConsecutiveLastSpaceStationTest {
                         numberOfSpaceStations,
                         numberOfCities);
 
-        Assert.assertTrue(isConsecutive);
+        Assertions.assertTrue(isConsecutive);
     }
 
     @Test
@@ -375,7 +375,7 @@ class ConsecutiveLastSpaceStationTest {
                         numberOfSpaceStations,
                         numberOfCities);
 
-        Assert.assertTrue(isConsecutive);
+        Assertions.assertTrue(isConsecutive);
     }
 
     @Test
@@ -390,7 +390,7 @@ class ConsecutiveLastSpaceStationTest {
                         numberOfSpaceStations,
                         numberOfCities);
 
-        Assert.assertTrue(isConsecutive);
+        Assertions.assertTrue(isConsecutive);
     }
 
     @Test
@@ -405,7 +405,7 @@ class ConsecutiveLastSpaceStationTest {
                         numberOfSpaceStations,
                         numberOfCities);
 
-        Assert.assertFalse(isConsecutive);
+        Assertions.assertFalse(isConsecutive);
     }
 
     @Test
@@ -420,7 +420,7 @@ class ConsecutiveLastSpaceStationTest {
                 numberOfSpaceStations,
                 numberOfCities);
 
-        Assert.assertTrue(isConsecutive);
+        Assertions.assertTrue(isConsecutive);
     }
 
 }

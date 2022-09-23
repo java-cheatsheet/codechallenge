@@ -1,20 +1,20 @@
 package talabat.pairprogramming;
 
-import org.junit.Test;
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 public class SolutionTest {
     @Test
     void shouldFailWithNullOrEmpty() {
         Solution sol = new Solution();
-        Assert.assertNotNull(sol.currentPosition());
+        Assertions.assertNotNull(sol.currentPosition());
     }
 
     @Test
     void shouldFailForStartingPoint() {
         Solution sol = new Solution();
         String initpos = "00N";
-        Assert.assertEquals(initpos, sol.currentPosition());
+        Assertions.assertEquals(initpos, sol.currentPosition());
     }
 
 

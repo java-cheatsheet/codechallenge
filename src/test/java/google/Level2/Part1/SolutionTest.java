@@ -1,7 +1,7 @@
 package google.Level2.Part1;
 
-import org.junit.Test;
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 public class SolutionTest {
 
@@ -10,7 +10,7 @@ public class SolutionTest {
         int[] A = {0, 3, 1, 4, 1,0,0};
         int want = 4311000;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -18,7 +18,7 @@ public class SolutionTest {
         int[] A = {3, 1, 4, 1, 5, 9};//191443=22%3=1
         int want = 94311;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -26,7 +26,7 @@ public class SolutionTest {
         int[] A = {3, 1, 4, 1, 0};
         int want = 43110;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -34,7 +34,7 @@ public class SolutionTest {
         int[] A = {0, 3, 1, 4, 1, 0};
         int want = 431100;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class SolutionTest {
         int[] A = {3, 7, 7};
         int want = 3;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class SolutionTest {
         int[] A = {6, 8};
         int want = 6;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -58,7 +58,7 @@ public class SolutionTest {
         int[] A = {1,2,3,0,0,0,0,0,0};
         int want = 321000000;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -66,7 +66,7 @@ public class SolutionTest {
         int[] A = {1,2,3,4,5,6,7,8,9};
         int want = 987654321;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -74,7 +74,7 @@ public class SolutionTest {
         int[] A = {2,2,2,2,2,2,2};
         int want = 222222;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -82,7 +82,7 @@ public class SolutionTest {
         int[] A = {1,1,1,1,1,1,1};
         int want = 111111;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -90,7 +90,7 @@ public class SolutionTest {
         int[] A = {1,9};
         int want = 9;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -98,7 +98,7 @@ public class SolutionTest {
         int[] A = {5,5};
         int want = 0;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -106,7 +106,7 @@ public class SolutionTest {
         int[] A = {5,5,5,5};
         int want = 555;
         int got = Thirdparty.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     // No need to check for this case.
@@ -115,7 +115,7 @@ public class SolutionTest {
         int[] A = {2,0,4,7,4,8,3,6,4,7};
         int want = 0;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     // No need to check for this case.
@@ -124,7 +124,7 @@ public class SolutionTest {
         int[] A = {9,9,9,9,9,9,9,9,9,9,9,9};
         int want = 555;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -132,7 +132,7 @@ public class SolutionTest {
         int[] A = {1,0,0,};
         int want = 0;
         int got = Solution.solution(A);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 
     @Test
@@ -178,8 +178,8 @@ class CountModTest {
         int[] A = {3, 1, 4, 1};
         int[] want = {0,2,0,1,1,0,0,0,0,0,0};
         int[] got = SecondSolution.countMod(A);
-        Assert.assertEquals(want[10], got[10]);
-        Assert.assertEquals(want[1], got[1]);
+        Assertions.assertEquals(want[10], got[10]);
+        Assertions.assertEquals(want[1], got[1]);
     }
 }
 
@@ -189,7 +189,7 @@ class BuildNum {
         int[] A = {1,2,3};
         int want = 321;
         int got = Solution.buildNum(A, -1, -1);
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 }
 
@@ -199,7 +199,7 @@ class BuildLargeNum {
         int[] A = {3, 1, 4, 1};
         int want = 4311;
         int got = SecondSolution.buildLargeNum(SecondSolution.countMod(A));
-        Assert.assertEquals(want, got);
+        Assertions.assertEquals(want, got);
     }
 }
 
@@ -210,7 +210,7 @@ class UpdateCount {
         int[]countMod = SecondSolution.countMod(A);
         boolean want = true;
         boolean got = SecondSolution.updateCount(countMod);
-        Assert.assertEquals(want, got);
-        Assert.assertEquals(0, countMod[1]);
+        Assertions.assertEquals(want, got);
+        Assertions.assertEquals(0, countMod[1]);
     }
 }

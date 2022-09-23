@@ -1,7 +1,7 @@
 package talabat.route;
 
-import org.junit.Test;
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 class SolutionTest {
 
@@ -15,7 +15,7 @@ class SolutionTest {
                 {"UAE", "JPN"}
         };
         String expected = "USA, BRA, UAE, JPN, CAI";
-        Assert.assertEquals(expected, solution.trackRoute(itineraries));
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 
     @Test
@@ -29,7 +29,7 @@ class SolutionTest {
                 {"CAI", "KAT"}
         };
         String expected = "USA, BRA, UAE, JPN, CAI, KAT";
-        Assert.assertEquals(expected, solution.trackRoute(itineraries));
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 
     @Test
@@ -44,7 +44,7 @@ class SolutionTest {
                 {"Winnipeg", "Seattle"}
         };
         String expected = "Halifax, Montreal, Toronto, Chicago, Winnipeg, Seattle";
-        Assert.assertEquals(expected, solution.trackRoute(itineraries));
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 
     @Test
@@ -59,7 +59,7 @@ class SolutionTest {
                 {"Winnipeg", "Seattle"}
         };
         String expected = "Halifax, Montreal, Toronto, Chicago, Winnipeg, Seattle";
-        Assert.assertEquals(expected, solution.trackRoute(itineraries));
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 
     @Test
@@ -69,7 +69,7 @@ class SolutionTest {
                 {"USA", "BRA"}
         };
         String expected = "USA, BRA";
-        Assert.assertEquals(expected, solution.trackRoute(itineraries));
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 
     @Test
@@ -85,6 +85,6 @@ class SolutionTest {
                 {"Seattle", "Boston"}
         };
         String expected = "Halifax, Montreal, Toronto, Chicago, Winnipeg, Seattle, Boston";
-        Assert.assertEquals(expected, solution.trackRoute(itineraries));
+        Assertions.assertEquals(expected, solution.trackRoute(itineraries));
     }
 }
