@@ -2,7 +2,7 @@ package codility.fibobacci.ladder;
 
 import java.lang.Math;
 
-class Solution {
+public class Solution {
     public static int[] solution(int[] A, int[] B) {
         int[] fib = new int[A.length];
         int a = 0;

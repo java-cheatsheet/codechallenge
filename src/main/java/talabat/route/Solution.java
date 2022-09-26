@@ -2,7 +2,7 @@ package talabat.route;
 
 import java.util.HashMap;
 
-class Solution {
+public class Solution {
 
     public String trackRoute(String[][] itineraries) {
         String route = "";

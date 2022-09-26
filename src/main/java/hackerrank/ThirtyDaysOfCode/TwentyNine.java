@@ -18,7 +18,7 @@ public class TwentyNine {
 
                 int lim = Integer.parseInt(firstMultipleInput[1]);
 
-                int res = Result.bitwiseAnd(count, lim);
+                int res = bitwiseAnd(count, lim);
 
                 bufferedWriter.write(String.valueOf(res));
                 bufferedWriter.newLine();
@@ -30,9 +30,6 @@ public class TwentyNine {
         bufferedReader.close();
         bufferedWriter.close();
     }
-}
-
-class Result {
 
     /*
      * Complete the 'bitwiseAnd' function below.

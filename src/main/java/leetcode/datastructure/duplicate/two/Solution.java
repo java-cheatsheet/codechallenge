@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 import static java.lang.Math.abs;
 
-class Solution {
+public class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         int[] numsClone = nums.clone();
         Arrays.sort(numsClone);

@@ -3,7 +3,7 @@ package google.Level2.Part1;
 
 import java.util.Arrays;
 
-class Solution {
+public class Solution {
 
     /**
      * solution Build largest number that can be made from
@@ -12,7 +12,7 @@ class Solution {
      * @param arr int[]
      * @return int
      */
-    static int solution(int arr[]) {
+    public static int solution(int arr[]) {
         Arrays.sort(arr);
 
         int sum = getSum(arr);
@@ -47,7 +47,7 @@ class Solution {
      * @param skipSecond Skip index of array arr
      * @return int Largest number divisible by 3.
      */
-    static int buildNum(int arr[], int skipFirst, int skipSecond) {
+    public static int buildNum(int arr[], int skipFirst, int skipSecond) {
         StringBuilder strBuilder = new StringBuilder();
 
         for (int i = arr.length - 1; i >= 0; i--) {

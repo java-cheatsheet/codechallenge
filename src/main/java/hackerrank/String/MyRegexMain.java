@@ -76,4 +76,5 @@ class MyRegex {
     public List<String> getTestLines(){
         return List.of("11331.111.144411.111", "asdafasd.asdasd.dasd..", "001.0.01.1", "255.255.255.255");
     }
+
 }

@@ -2,7 +2,7 @@ package talabat.pairprogramming;
 
 import java.util.HashMap;
 
-class Solution {
+public class Solution {
     int x, y;
     char direction;
 

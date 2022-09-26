@@ -6,7 +6,7 @@ import java.util.*;
 // array and is divisible by 3
 //https://www.geeksforgeeks.org/find-largest-multiple-3-array-digits-set-2-time-o1-space/
 
-class Thirdparty
+public class Thirdparty
 {
 //    // Number of digits
 //    static int MAX_SIZE = 10;
@@ -63,7 +63,7 @@ class Thirdparty
         return sum;
     }
 
-    static int solution( int arr[] ) {
+    public static int solution( int arr[] ) {
         int n = arr.length;
         Arrays.sort(arr);
 

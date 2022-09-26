@@ -1,15 +1,73 @@
 package whiteboardtest;
 
+//import whiteboard.Whiteboard;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import java.util.*;
 
-import whiteboard.Whiteboard;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class WhiteboardTest {
-	Whiteboard whiteboard = new Whiteboard();
-	
+
+    public boolean isOdd(int number) {
+        return number % 2 != 0;
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {1, 3, 5, -3, 15, Integer.MAX_VALUE}) // six numbers
+    public void shouldReturnTrueForOddNumbers(int number) {
+        Assertions.assertTrue(isOdd(number));
+    }
+
+    /**
+     * Given String s, find the lexicographically
+     * smallest and largest substrings of length k.
+     *
+     * Parameters:
+     *     string s: a string
+     *     int k: the length of the substrings to find
+     *
+     * Returns
+     *     string: the string ' + "\n" + ' where and are the two substrings
+     */
+    public String[] getSmallestAndLargestArray(String s, int k) {
+        String smallest = "", largest = "";
+
+//        Make a substring of lenght k.
+//        Sort the String array
+//        smallest = array[0]
+//        largest = array[len-1]
+
+        int i, j;
+        int stringLength = s.length();
+        ArrayList<String> subStringList
+                = new ArrayList<String>();
+
+        for (i = 0; i < s.length()-2  ; i++) {
+            subStringList.add(s.substring(i, k+i));
+        }
+
+        Collections.sort(subStringList);
+        smallest = subStringList.get(0);
+        largest = subStringList.get(subStringList.size()-1);
+
+        return new String[]{smallest, largest};
+    }
+
+    @Test
+    public void shouldReturnSmallestAndLargestSubstring() {
+        String s  =  "welcometojava";
+
+        int k =  3;
+        String[] actual = getSmallestAndLargestArray(s, k);
+        String [] expected = new String[]{"ava", "wel"};
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
     @Test
     public void main() {
         int N = 5;
@@ -93,29 +151,38 @@ public class WhiteboardTest {
 //        }
     }
 
-    @Test
-    public void checkFactorial(){    
-        Assertions.assertNotEquals(-1, whiteboard.factorialRecursive(3));
-        Assertions.assertEquals(6, whiteboard.factorialRecursive(3));
-        Assertions.assertEquals(24, whiteboard.factorialRecursive(4));
-        Assertions.assertEquals(0, whiteboard.factorialRecursive(0));
-        Assertions.assertEquals(0, whiteboard.factorialRecursive(-3));
-    }
-
-    @Test
-    public void checkConsecutiveOnes(){
-        Assertions.assertEquals(0, whiteboard.findConsecutiveOnes(1));
-        Assertions.assertEquals(1, whiteboard.findConsecutiveOnes(5));
-        Assertions.assertEquals(2, whiteboard.findConsecutiveOnes(13));
-        Assertions.assertEquals(1, whiteboard.findConsecutiveOnes(2));
-        Assertions.assertEquals(5, whiteboard.findConsecutiveOnes(125));
-        Assertions.assertEquals(3, whiteboard.findConsecutiveOnes(7));
-    }
-
-    @Test
-    public void checkTestScores(){
-        Assertions.assertEquals( 'D', whiteboard.calculateAvg(new int[]{41, 42, 43, 44, 45, 46, 48}));
-    }
+//    @Test
+//    public void checkFactorial(){
+//        Whiteboard whiteboardObj = new Whiteboard();
+//
+//        Assertions.assertNotEquals(-1, whiteboardObj.factorialRecursive(3));
+//        Assertions.assertEquals(6, whiteboardObj.factorialRecursive(3));
+//        Assertions.assertEquals(24, whiteboardObj.factorialRecursive(4));
+//        Assertions.assertEquals(0, whiteboardObj.factorialRecursive(0));
+//        Assertions.assertEquals(0, whiteboardObj.factorialRecursive(-3));
+//    }
+//
+//    @Test
+//    public void checkConsecutiveOnes(){
+//        Whiteboard whiteboardObj = new Whiteboard();
+//
+//        Assertions.assertEquals(0, whiteboardObj.findConsecutiveOnes(1));
+//        Assertions.assertEquals(1, whiteboardObj.findConsecutiveOnes(5));
+//        Assertions.assertEquals(2, whiteboardObj.findConsecutiveOnes(13));
+//        Assertions.assertEquals(1, whiteboardObj.findConsecutiveOnes(2));
+//        Assertions.assertEquals(5, whiteboardObj.findConsecutiveOnes(125));
+//        Assertions.assertEquals(3, whiteboardObj.findConsecutiveOnes(7));
+//    }
+//
+//    @Test
+//    public void checkTestScores(){
+//        Whiteboard whiteboardObj = new Whiteboard();
+//
+//        Assertions.assertEquals( 'D',
+//                whiteboardObj.calculateAvg(
+//                        new int[]{41, 42, 43, 44, 45,
+//                                46, 48}));
+//    }
 
     @Test
     public void divisorSum() {
