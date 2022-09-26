@@ -21,52 +21,9 @@ public class WhiteboardTest {
         Assertions.assertTrue(isOdd(number));
     }
 
-    /**
-     * Given String s, find the lexicographically
-     * smallest and largest substrings of length k.
-     *
-     * Parameters:
-     *     string s: a string
-     *     int k: the length of the substrings to find
-     *
-     * Returns
-     *     string: the string ' + "\n" + ' where and are the two substrings
-     */
-    public String[] getSmallestAndLargestArray(String s, int k) {
-        String smallest = "", largest = "";
 
-//        Make a substring of lenght k.
-//        Sort the String array
-//        smallest = array[0]
-//        largest = array[len-1]
 
-        int i, j;
-        int stringLength = s.length();
-        ArrayList<String> subStringList
-                = new ArrayList<String>();
 
-        for (i = 0; i < s.length()-2  ; i++) {
-            subStringList.add(s.substring(i, k+i));
-        }
-
-        Collections.sort(subStringList);
-        smallest = subStringList.get(0);
-        largest = subStringList.get(subStringList.size()-1);
-
-        return new String[]{smallest, largest};
-    }
-
-    @Test
-    public void shouldReturnSmallestAndLargestSubstring() {
-        String s  =  "welcometojava";
-
-        int k =  3;
-        String[] actual = getSmallestAndLargestArray(s, k);
-        String [] expected = new String[]{"ava", "wel"};
-
-        Assertions.assertArrayEquals(expected, actual);
-
-    }
 
     @Test
     public void main() {
