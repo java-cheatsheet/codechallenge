@@ -2,7 +2,7 @@ package datastructures;
 
 public class KadaneAlgorithm {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int[] arr = {-1, 3, -5, 4, 6, -1, 2, -7, 13, -3};
         int expected = 17;
 

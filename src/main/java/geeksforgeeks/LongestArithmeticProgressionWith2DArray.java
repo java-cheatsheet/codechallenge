@@ -3,7 +3,7 @@ package geeksforgeeks;
 public class LongestArithmeticProgressionWith2DArray {
     // Returns length of the longest
     // AP subset in a given set
-    static int lenghtOfLongestAP(int set[], int n)
+    static int lenghtOfLongestAP(int[] set, int n)
     {
         if (n <= 2) return n;
 
@@ -12,7 +12,7 @@ public class LongestArithmeticProgressionWith2DArray {
         // LLAP with set[i] and set[j] as first two
         // elements of AP. Only valid entries are
         // the entries where j>i
-        int L[][] = new int[n][n];
+        int[][] L = new int[n][n];
 
         // Initialize the result
         int llap = 2;
@@ -75,7 +75,7 @@ public class LongestArithmeticProgressionWith2DArray {
     // Driver program
     public static void main (String[] args)
     {
-        int set1[] = {1, 7, 10, 13, 14, 19};
+        int[] set1 = {1, 7, 10, 13, 14, 19};
         int n1 = set1.length;
         System.out.println ( lenghtOfLongestAP(set1, n1));
 

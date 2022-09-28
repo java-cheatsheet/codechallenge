@@ -17,9 +17,11 @@ class Node {
 }
 
 class LRUCache {
-    private HashMap<Integer, Node> map;
-    private int capacity, count;
-    private Node head, tail;
+    private final HashMap<Integer, Node> map;
+    private final int capacity;
+    private int count;
+    private final Node head;
+    private final Node tail;
 
     public LRUCache(int capacity)
     {

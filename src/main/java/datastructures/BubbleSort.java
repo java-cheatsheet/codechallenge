@@ -86,7 +86,7 @@ class BubbleSort {
 //        bubbleSortV2(a);
 //        System.out.println(Arrays.toString(a));
 
-        List<Integer> arrayList = new ArrayList<Integer>();;
+        List<Integer> arrayList = new ArrayList<Integer>();
         arrayList.addAll(list);
         arrayList.get(0);
         arrayList.add(0, 12);

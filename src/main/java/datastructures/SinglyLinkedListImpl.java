@@ -144,7 +144,7 @@ public class SinglyLinkedListImpl<T> {
         }
     }
 
-    public static void main(String a[]){
+    public static void main(String[] a){
         SinglyLinkedListImpl<Integer> sl = new SinglyLinkedListImpl<Integer>();
         sl.add(3);
         sl.add(32);

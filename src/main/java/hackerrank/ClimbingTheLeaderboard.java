@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class ClimbingTheLeaderboard {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 //        anotherVersion();
         //Test case 2
 //        int[] scores = {100, 100, 50, 40, 40, 20, 10};//

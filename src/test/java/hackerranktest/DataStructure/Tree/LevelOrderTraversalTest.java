@@ -36,7 +36,7 @@ public class LevelOrderTraversalTest {
             root = Solution.insert(root, nodes[i]);
         }
 
-        StringBuilder s = new StringBuilder("");
+        StringBuilder s = new StringBuilder();
         Solution.printPostorder(root, s);
 
 //        Assertions.assertEquals(sb.toString().trim(), s.reverse().toString().trim());
@@ -71,7 +71,7 @@ public class LevelOrderTraversalTest {
             root = Solution.insert(root, nodes[i]);
         }
 
-        StringBuilder s = new StringBuilder("");
+        StringBuilder s = new StringBuilder();
         Solution.printPostorder(root, s);
 //        Assertions.assertEquals(sb.toString().trim(), s.reverse().toString().trim());
 //        Assertion fails
@@ -146,7 +146,7 @@ public class LevelOrderTraversalTest {
         for (int i = 1; i < numbers.size() && stk.isEmpty(); i++) {
 
             if ( numbers.get(i-1) < numbers.get(i) ) {
-                Long x = (Long) stk.pop()+ numbers.get(i-1);
+                Long x = stk.pop() + numbers.get(i-1);
                 stk.push(x);
             }
         }

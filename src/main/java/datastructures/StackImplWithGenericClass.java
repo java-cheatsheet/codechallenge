@@ -10,7 +10,7 @@ class Stack<E> {
 
     private class Element<E> {
         // The data value of the element
-        private E data;
+        private final E data;
         // The next element in the stack
         private Element<E> next;
 

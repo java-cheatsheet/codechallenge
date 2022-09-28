@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GradingStudents {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         shouldRound73To75();
         shouldNotRoud67();
     }

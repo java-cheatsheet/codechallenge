@@ -1,6 +1,6 @@
 package hackerranktest.FlatlandSpaceStations;
 
-import hackerrank.FlatlandSpaceStations.FlatlandSpaceStations;
+import hackerrank.flatlandspacestations.FlatlandSpaceStations;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 

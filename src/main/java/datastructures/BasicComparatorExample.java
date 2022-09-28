@@ -266,9 +266,9 @@ class Student {
  * iterable.
  */
 class Employee implements Comparable<Employee> {
-    private int id;
-    private String name;
-    private String address;
+    private final int id;
+    private final String name;
+    private final String address;
 
     public Employee(int id, String name, String address) {
         this.id = id;
@@ -297,8 +297,8 @@ class Employee implements Comparable<Employee> {
      */
     public static Comparator<Employee> COMPARE_BY_NAME = new Comparator<Employee>() {
         public int compare(Employee o1, Employee o2) {
-            Employee e1 = (Employee)o1;
-            Employee e2 = (Employee)o2;
+            Employee e1 = o1;
+            Employee e2 = o2;
 
             int nameCmp = e1.name.compareTo(e2.name);
             if ( nameCmp != 0 )

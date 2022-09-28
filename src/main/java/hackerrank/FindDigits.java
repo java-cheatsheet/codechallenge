@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class FindDigits {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         validTestCase1();
     }
 

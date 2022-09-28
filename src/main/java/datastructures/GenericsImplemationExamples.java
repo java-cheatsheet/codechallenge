@@ -9,7 +9,7 @@ package datastructures;
  */
 public class GenericsImplemationExamples {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
     }
 

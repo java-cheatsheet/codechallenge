@@ -15,7 +15,7 @@ public class UglyNumbers {
     /* Function to get the nth ugly number*/
     int getNthUglyNo(int n)
     {
-        int ugly[] = new int[n];  // To store ugly numbers
+        int[] ugly = new int[n];  // To store ugly numbers
         int i2 = 0, i3 = 0, i5 = 0;
         int next_multiple_of_2 = 2;
         int next_multiple_of_3 = 3;
@@ -51,7 +51,7 @@ public class UglyNumbers {
     }
 
     /* Driver program to test above functions */
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         int n = 10;
         UglyNumbers obj = new UglyNumbers();

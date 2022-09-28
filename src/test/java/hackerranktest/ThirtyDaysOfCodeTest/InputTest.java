@@ -21,8 +21,8 @@ public class InputTest {
         Date expectedDueDate = sdf.parse("16 06 2020 ");
 
         Assertions.assertNotNull(DayThirty.getDateList(input));
-        Assertions.assertTrue(expectedReturnDate.compareTo(actualDate.get(0)) == 0);
-        Assertions.assertTrue(expectedDueDate.compareTo(actualDate.get(1)) == 0);
+        Assertions.assertEquals(0, expectedReturnDate.compareTo(actualDate.get(0)));
+        Assertions.assertEquals(0, expectedDueDate.compareTo(actualDate.get(1)));
 
         System.out.println(expectedReturnDate);
     }

@@ -6,7 +6,7 @@ public class CountingValleysWarmupPractice {
 
     static int countValleyWalk = 0;
 
-    public static void main (String g[]) {
+    public static void main (String[] g) {
         findPairsOfNumber();
     }
 

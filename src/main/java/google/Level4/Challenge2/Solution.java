@@ -82,10 +82,11 @@ abstract class NetworkFlowBase {
   /**
    * Adjacent matrix of a graph.
    */
-  private int[][] path;
+  private final int[][] path;
 
   // Adjacent nodes from source and sink, respectively.
-  private int[] entrances, exits;
+  private final int[] entrances;
+    private final int[] exits;
 
   // n = Number of nodes, s = Source, t = Sink in a graph.
   protected final int n, s, t;
@@ -228,7 +229,7 @@ abstract class NetworkFlowBase {
  */
 class Dinics extends NetworkFlowBase {
 
-  private int[] level;
+  private final int[] level;
 
   /**
    * Creates an instance of a flow network solver.

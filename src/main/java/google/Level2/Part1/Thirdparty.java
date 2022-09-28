@@ -21,7 +21,7 @@ public class Thirdparty
 //        return sum;
 //    }
 //
-    static void sortArrayUsingCounts(int arr[], int n) {
+    static void sortArrayUsingCounts(int[] arr, int n) {
         // Store count of all elements
         int[] count = new int[10];
         for (int i = 0; i < n; i++)
@@ -42,7 +42,7 @@ public class Thirdparty
     }
 
 
-    static int buildNum( int arr[], int ind1, int ind2 ) {
+    static int buildNum(int[] arr, int ind1, int ind2 ) {
         StringBuilder strBuilder = new StringBuilder();
 
         for (int i = arr.length - 1; i >= 0; i--) {
@@ -63,7 +63,7 @@ public class Thirdparty
         return sum;
     }
 
-    public static int solution( int arr[] ) {
+    public static int solution(int[] arr) {
         int n = arr.length;
         Arrays.sort(arr);
 

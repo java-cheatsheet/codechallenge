@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class PickingNumbers {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
 //        List<Integer> a = new ArrayList<>(Arrays.asList(1, 2, 2, 3, 1, 2));//5
         List<Integer> a = new ArrayList<>(Arrays.asList(4, 6, 5, 3, 3, 1, 4)); //3

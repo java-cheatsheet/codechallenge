@@ -69,14 +69,12 @@ class BinaryTreeHackerRank<T extends Comparable<T>> {
             return true;
         }
         else if(value.compareTo(data) < 0) {
-            return (left == null)
-                    ? false // Not found; there are no more BinaryTreeHackerRanks in left subtree to check
-                    : left.contains(value); // Continue searching left subtree
+            // Not found; there are no more BinaryTreeHackerRanks in left subtree to check
+            return left != null && left.contains(value); // Continue searching left subtree
         }
         else { // data.compareTo(value) > 0
-            return (right == null)
-                    ? false // Not found; there are no more BinaryTreeHackerRanks in right subrtree to check
-                    : right.contains(value); // Continue searching right subtree
+            // Not found; there are no more BinaryTreeHackerRanks in right subrtree to check
+            return right != null && right.contains(value); // Continue searching right subtree
         }
     }
 

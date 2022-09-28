@@ -5,8 +5,8 @@ import java.util.HashSet;
 
 public class ArraysLeftRotation {
 
-    public static void main(String args[]) {
-        int arr[] = { 1, 2, 3, 4, 5 };
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 5 };
 
 //        leftRotateArrayShift(arr, 4, 5);
         arr  = rotateLeftConditionalAlgorithm(arr, 3);
@@ -21,7 +21,7 @@ public class ArraysLeftRotation {
 
         if ( aLen == d ) return a;
 
-        int rotatedA[] = new int[aLen];
+        int[] rotatedA = new int[aLen];
 
         for(int i = 0; i < aLen; i++){
 
@@ -44,7 +44,7 @@ public class ArraysLeftRotation {
      * @param d
      * @param n
      */
-    static void leftRotateWithGCD(int arr[], int d, int n)
+    static void leftRotateWithGCD(int[] arr, int d, int n)
     {
         int i, j, k, temp;
         for (i = 0; i < gcd(d, n); i++) {
@@ -71,7 +71,7 @@ public class ArraysLeftRotation {
     /*UTILITY FUNCTIONS*/
 
     /* function to print an array */
-    static void printArray(int arr[], int size)
+    static void printArray(int[] arr, int size)
     {
 //        int i;
         for (int i = 0; i < size; i++)
@@ -89,13 +89,13 @@ public class ArraysLeftRotation {
 
 
     /*Function to left rotate arr[] of size n by d*/
-    static void leftRotateArrayShift(int arr[], int d, int n)
+    static void leftRotateArrayShift(int[] arr, int d, int n)
     {
         for (int i = 0; i < d; i++)
             leftRotatebyOne(arr, n);
     }
 
-    static void leftRotatebyOne(int arr[], int n)
+    static void leftRotatebyOne(int[] arr, int n)
     {
         int i, temp;
         temp = arr[0];

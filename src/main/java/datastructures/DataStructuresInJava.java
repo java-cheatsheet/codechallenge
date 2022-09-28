@@ -117,7 +117,7 @@ public class DataStructuresInJava {
         stacka.push(2);
         System.out.println(stacka.pop().toString()); // 2
         stacka.push(3);
-        System.out.println(stacka.toString()); // [1, 3]
+        System.out.println(stacka); // [1, 3]
     }
 
     public static void basicQueue() {
@@ -129,17 +129,17 @@ public class DataStructuresInJava {
         stack.push(1);
         stack.push(2);
         stack.push(3);
-        System.out.println(stack.toString()); // [1, 2, 3]
+        System.out.println(stack); // [1, 2, 3]
 
         while (!stack.isEmpty()) {
             queue.enqueue(stack.pop());
         }
-        System.out.println(queue.toString());
+        System.out.println(queue);
 
         while (!queue.isEmpty()) {
             stack.push(queue.dequeue());
         }
-        System.out.println(stack.toString()); // [3, 2, 1]
+        System.out.println(stack); // [3, 2, 1]
     }
 
     public static void basicsHashMaps() {
@@ -236,7 +236,7 @@ public class DataStructuresInJava {
 //            System.out.println(iter.next() + " ");
 //        }
 
-        System.out.println(cities_queue.toString());
+        System.out.println(cities_queue);
     }
 
     public static void maxPriorityQueue() {
@@ -367,7 +367,7 @@ public class DataStructuresInJava {
  */
 class ArrayQueue {
     private static int front, rear, capacity;
-    private static int queue[];
+    private static int[] queue;
 
     ArrayQueue(int size) {
         front = rear = 0;
@@ -379,7 +379,7 @@ class ArrayQueue {
     static void queueEnqueue(int item)  {
         // check if the queue is full
         if (capacity == rear) {
-            System.out.printf("\nQueue is full\n");
+            System.out.print("\nQueue is full\n");
             return;
         }
 
@@ -388,14 +388,13 @@ class ArrayQueue {
             queue[rear] = item;
             rear++;
         }
-        return;
     }
 
     //remove an element from the queue
     static void queueDequeue()  {
         // check if queue is empty
         if (front == rear) {
-            System.out.printf("\nQueue is empty\n");
+            System.out.print("\nQueue is empty\n");
             return;
         }
 
@@ -413,7 +412,6 @@ class ArrayQueue {
             // decrement rear
             rear--;
         }
-        return;
     }
 
     // print queue elements
@@ -421,7 +419,7 @@ class ArrayQueue {
     {
         int i;
         if (front == rear) {
-            System.out.printf("Queue is Empty\n");
+            System.out.print("Queue is Empty\n");
             return;
         }
 
@@ -429,18 +427,16 @@ class ArrayQueue {
         for (i = front; i < rear; i++) {
             System.out.printf(" %d = ", queue[i]);
         }
-        return;
     }
 
     // print front of queue
     static void queueFront()
     {
         if (front == rear) {
-            System.out.printf("Queue is Empty\n");
+            System.out.print("Queue is Empty\n");
             return;
         }
         System.out.printf("\nFront Element of the queue: %d", queue[front]);
-        return;
     }
     public static void main(String[] args) {
         // Create a queue of capacity 4
@@ -448,36 +444,36 @@ class ArrayQueue {
 
         System.out.println("Initial Queue:");
         // print Queue elements
-        q.queueDisplay();
+        queueDisplay();
 
         // inserting elements in the queue
-        q.queueEnqueue(10);
-        q.queueEnqueue(30);
-        q.queueEnqueue(50);
-        q.queueEnqueue(70);
+        queueEnqueue(10);
+        queueEnqueue(30);
+        queueEnqueue(50);
+        queueEnqueue(70);
 
         // print Queue elements
         System.out.println("Queue after Enqueue Operation:");
-        q.queueDisplay();
+        queueDisplay();
 
         // print front of the queue
-        q.queueFront();
+        queueFront();
 
         // insert element in the queue
-        q.queueEnqueue(90);
+        queueEnqueue(90);
 
         // print Queue elements
-        q.queueDisplay();
+        queueDisplay();
 
-        q.queueDequeue();
-        q.queueDequeue();
-        System.out.printf("\nQueue after two dequeue operations:");
+        queueDequeue();
+        queueDequeue();
+        System.out.print("\nQueue after two dequeue operations:");
 
         // print Queue elements
-        q.queueDisplay();
+        queueDisplay();
 
         // print front of the queue
-        q.queueFront();
+        queueFront();
     }
 
 
@@ -545,7 +541,7 @@ class LinkedListQueue
         System.out.println("Front of the queue:" + front.data
                 + " Rear of the queue:" + rear.data);
     }
-    public static void main(String a[]){
+    public static void main(String[] a){
 
         LinkedListQueue queue = new LinkedListQueue();
 

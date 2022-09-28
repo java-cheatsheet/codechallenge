@@ -12,7 +12,7 @@ public class Solution {
      * @param arr int[]
      * @return int
      */
-    public static int solution(int arr[]) {
+    public static int solution(int[] arr) {
         Arrays.sort(arr);
 
         int sum = getSum(arr);
@@ -47,12 +47,12 @@ public class Solution {
      * @param skipSecond Skip index of array arr
      * @return int Largest number divisible by 3.
      */
-    public static int buildNum(int arr[], int skipFirst, int skipSecond) {
+    public static int buildNum(int[] arr, int skipFirst, int skipSecond) {
         StringBuilder strBuilder = new StringBuilder();
 
         for (int i = arr.length - 1; i >= 0; i--) {
 
-            strBuilder.append(String.valueOf(arr[i]));
+            strBuilder.append(arr[i]);
 
             if (skipFirst == i) {
                 strBuilder.setLength(strBuilder.length() - 1);

@@ -107,7 +107,7 @@ public class DayThirty {
 
         } else {
             long days = TimeUnit.MILLISECONDS.toDays(
-                    (long) Math.abs(returned.getTime() - due.getTime()));
+                    Math.abs(returned.getTime() - due.getTime()));
             if(days > 31) {
                    long months = days/31;
                    return (int)months * 500;

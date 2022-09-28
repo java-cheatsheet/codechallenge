@@ -42,7 +42,7 @@ public class SecondSolution {
         for (int i = 9; i >= 0; i--) {
 
             for ( int j = count[i]; j > 0; j-- ) {
-                strBuilder.append(String.valueOf(i));
+                strBuilder.append(i);
             }
         }
 
@@ -100,7 +100,7 @@ public class SecondSolution {
                                     countMod[10] = 0;
                                     isUpdated = true;
                                     break search;
-                                };
+                                }
                             }
                         }
                     }

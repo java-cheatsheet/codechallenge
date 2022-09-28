@@ -27,7 +27,7 @@ public class Solution {
 //        Find starting point
         boolean foundStart = false;
         String start = "";
-        for ( int i=0; i < itineraryLen && foundStart == false; i++ ) {
+        for (int i = 0; i < itineraryLen && !foundStart; i++ ) {
             start = itineraries[i][0];
 
             if ( !itinerariesMap.containsValue(start) )
@@ -71,7 +71,7 @@ class SolutionLegacy {
         boolean startFound = false;
         int i = 0;
 
-        for (; i < itineraryLen && startFound == false; i++) {
+        for (; i < itineraryLen && !startFound; i++) {
             start = itineraries[i][0];
             int j = 0;
 
@@ -99,11 +99,11 @@ class SolutionLegacy {
 
         for (int l = 0; l < itineraryLen+1; l++) {
 
-            if ( traversedIndex.containsKey(l) == false ) {
+            if (!traversedIndex.containsKey(l)) {
                 int m = 0;
                 for (; m < itineraryLen; m++) {
 
-                    if ( traversedIndex.containsKey(m) == false
+                    if ( !traversedIndex.containsKey(m)
                             && nextStart == itineraries[m][0]) {
                         nextStart = itineraries[m][1];
                         route += ", " + itineraries[m][1];

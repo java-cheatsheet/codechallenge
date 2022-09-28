@@ -46,7 +46,7 @@ class FibonacciTabulated {
 
     int fib(int n)
     {
-        int f[] = new int[n+1];
+        int[] f = new int[n+1];
         f[0] = 0;
         f[1] = 1;
         for (int i = 2; i <= n; i++)
@@ -61,7 +61,7 @@ class FibonacciMemoized
     final int MAX = 100;
     final int NIL = -1;
 
-    int lookup[] = new int[MAX];
+    int[] lookup = new int[MAX];
 
     /* Function to initialize NIL values in lookup table */
     void _initialize()
@@ -97,7 +97,7 @@ class FibonacciRecursive {
 
 class FibonacciRecursiveWithHashMap
 {
-    private Map<Integer, Integer> map = new HashMap<>();
+    private final Map<Integer, Integer> map = new HashMap<>();
 
     public int fib(int n) {
         if (n <= 1)

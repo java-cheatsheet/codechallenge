@@ -57,17 +57,14 @@ public class InitialSolution {
 
     // check if the sortedA does not exceed Integer.MAX_VALUE
     public static boolean isNumMoreThanIntMax(String sortedA) {
-        if ( Long.parseLong( sortedA, 10 )
-                <= Long.valueOf( Integer.MAX_VALUE ) )
-            return true;
-
-        return false;
+        return Long.parseLong(sortedA, 10)
+                <= Long.valueOf(Integer.MAX_VALUE);
     }
 
     public static String arrIntToStr(Integer[] sortedArr) {
         StringBuilder strBuilder = new StringBuilder();
         for (int i = 0; i < sortedArr.length; i++) {
-            strBuilder.append(String.valueOf(sortedArr[i]));
+            strBuilder.append(sortedArr[i]);
         }
 
         return strBuilder.toString();
@@ -77,7 +74,7 @@ public class InitialSolution {
         String newStr = numStr.substring(start, skip);
 
         if ( skip < numStr.length() )
-            newStr += numStr.substring(skip+1, numStr.length());
+            newStr += numStr.substring(skip+1);
 
         return  Integer.parseInt(newStr);
     }
@@ -91,7 +88,7 @@ public class InitialSolution {
 //        System.out.println(newA[0]);
         StringBuilder strBuilder = new StringBuilder();
         for (int i = 0; i < A.length; i++) {
-            strBuilder.append(String.valueOf(sortedA[i]));
+            strBuilder.append(sortedA[i]);
         }
         String newAString = strBuilder.toString();
 //        System.out.println(newAString);

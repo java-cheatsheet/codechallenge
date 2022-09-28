@@ -19,7 +19,7 @@ import java.util.Stack;
  */
 public class PrimeNumber {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 //        checkPrimeNaive(10);
 //        checkPrimeSqrRoot(11);
 //        checkPrimeSieveApporoach(11);
@@ -31,7 +31,7 @@ public class PrimeNumber {
 
         for (int i=0; i<n;i++){
             PrimeNumber pn = new PrimeNumber();
-            pn.checkPrimeSieveApporoach(sc.nextInt());
+            checkPrimeSieveApporoach(sc.nextInt());
         }
     }
 
@@ -85,7 +85,7 @@ public class PrimeNumber {
 
         for(int i = 2; i * i <= N; ++i) {
 
-            if(isPrime[i] == true) {                    //Mark all the multiples of i as composite numbers
+            if(isPrime[i]) {                    //Mark all the multiples of i as composite numbers
                 for(int j=i*i; j<=N; j+=i)
                     isPrime[j] = false;
             }

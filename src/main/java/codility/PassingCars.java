@@ -24,7 +24,7 @@ package codility;
 
 public class PassingCars {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 //        pairs7();
         pairs5();
     }

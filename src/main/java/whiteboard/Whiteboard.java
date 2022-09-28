@@ -472,7 +472,7 @@ final class Person {
                 else oddS.append(s.charAt(i));
             }
 
-            System.out.println(evenS.toString() + " " + oddS.toString());
+            System.out.println(evenS + " " + oddS);
         }
         bufferedReader.close();
     }

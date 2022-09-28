@@ -63,7 +63,7 @@ class CircularDoublyLinkedList {
         int data;
         Node next;
         Node prev;
-    };
+    }
 
     static Node head=null;
 
@@ -109,7 +109,7 @@ class CircularDoublyLinkedList {
         System.out.printf("%d ", temp.data);
 
         //traverse in backward direction starting from last node
-        System.out.printf("\nCircular doubly linked list travesed backward: \n");
+        System.out.print("\nCircular doubly linked list travesed backward: \n");
         Node last = head.prev;
         temp = last;
         while (temp.prev != last)
@@ -148,14 +148,14 @@ class Main{
         CircularDoublyLinkedList cdl_List = new CircularDoublyLinkedList();
 
         // add nodes to the list
-        cdl_List.addNode(40);
-        cdl_List.addNode(50);
-        cdl_List.addNode(60);
-        cdl_List.addNode(70);
-        cdl_List.addNode(80);
+        CircularDoublyLinkedList.addNode(40);
+        CircularDoublyLinkedList.addNode(50);
+        CircularDoublyLinkedList.addNode(60);
+        CircularDoublyLinkedList.addNode(70);
+        CircularDoublyLinkedList.addNode(80);
 
         //print the list
-        System.out.printf("Circular doubly linked list: ");
-        cdl_List.printNodes();
+        System.out.print("Circular doubly linked list: ");
+        CircularDoublyLinkedList.printNodes();
     }
 }

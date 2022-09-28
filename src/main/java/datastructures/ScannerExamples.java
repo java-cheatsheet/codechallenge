@@ -96,7 +96,7 @@ public class ScannerExamples {
         Scanner scanner = new Scanner(System.in);
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        for(int i = 1; scanner.hasNext() == true; i++) {
+        for(int i = 1; scanner.hasNext(); i++) {
             System.out.println( i + " " + scanner.nextLine() );
         }
 

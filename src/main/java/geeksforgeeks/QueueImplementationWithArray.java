@@ -2,7 +2,11 @@ package geeksforgeeks;
 
 class Queue {
 
-    int front, rear, size, capacity, array[];
+    int front;
+    int rear;
+    int size;
+    int capacity;
+    int[] array;
 
     public Queue(int capacity) {
         this.capacity = capacity;

@@ -42,7 +42,7 @@ public class MyLists {
 
 //        bT.staircase(6);
         int[] minMax= {938071625, 256741038, 623958417, 467905213, 714532089, 938071625};//{5, 5, 5, 5, 5}; //{1, 1, 2, 3, 3};   //{1, 2, 3, 4, 5};
-        bT.miniMaxSum(minMax);
+        miniMaxSum(minMax);
 
     }
 
@@ -59,7 +59,7 @@ public class MyLists {
         int max = stat.getMax();
 
         if( min == max ) {
-            long minMaxSame = 4*min;
+            long minMaxSame = 4L *min;
             System.out.print( minMaxSame + " " + minMaxSame);
 
         } else {
@@ -140,9 +140,9 @@ public class MyLists {
         float negativeSum = (float) numOfNegativeNum/lengthOfArrayForFraction;
         float positiveSum = (float) numOfPositiveNum/lengthOfArrayForFraction;
 
-        System.out.println(String.format ("%.5f", positiveSum));
-        System.out.println(String.format ("%.5f", negativeSum));
-        System.out.println(String.format ("%.5f", zeroSum));
+        System.out.printf("%.5f%n", positiveSum);
+        System.out.printf("%.5f%n", negativeSum);
+        System.out.printf("%.5f%n", zeroSum);
     }
 
     public int diagonalDifference(int[][] arr) {

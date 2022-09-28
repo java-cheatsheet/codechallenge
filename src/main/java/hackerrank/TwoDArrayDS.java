@@ -2,7 +2,7 @@ package hackerrank;
 
 public class TwoDArrayDS {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         int[][] twoDArrays = new int[][]{
                 {1, 1, 1, 0, 0, 0},

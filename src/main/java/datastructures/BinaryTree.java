@@ -101,7 +101,7 @@ class BinaryTree{
         return max(root.right);
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args){
 //        Scanner sc=new Scanner(System.in);
 //        int T=sc.nextInt();
         int[] nodes = {3, 5, 2, 1, 4, 6, 7};

@@ -19,7 +19,7 @@ import java.util.Arrays;
 
 public class Pairs {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         validSwapCountEquals5();
         validSwapCountEquals3();
     }

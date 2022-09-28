@@ -20,7 +20,7 @@ public class Solution {
 
                 if ( duplicateCount > 0 ) {
 
-                    if ( this.isLessThanK(numsClone[count], duplicateCount, k, nums) == true )
+                    if (this.isLessThanK(numsClone[count], duplicateCount, k, nums))
                         return true;
                 }
 

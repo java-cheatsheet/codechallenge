@@ -178,7 +178,7 @@ public class Solution {
     }
 
     private static boolean less(int v, int w) {
-        return v < w ? true:false;
+        return v < w;
     }
 }
 

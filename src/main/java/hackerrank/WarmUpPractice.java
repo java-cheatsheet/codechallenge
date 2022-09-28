@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class WarmUpPractice {
 
 
-    public static void main (String g[]) {
+    public static void main (String[] g) {
 //        findPairsOfNumber();
 //        countHighestNumber();
 //        jumpingOnClouds();

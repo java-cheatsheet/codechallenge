@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
  */
 public class CountTriplets {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 //        whenR1();
         shouldCount4();
 
@@ -130,7 +130,7 @@ public class CountTriplets {
         long sum = 0;
 
         for ( int i = 0; i < sizeOfMap - 2; i++ ) {
-            long firstGeometricalKey = (long)Math.pow((double)r, (double)i);
+            long firstGeometricalKey = (long)Math.pow((double)r, i);
             long secondGeometricalKey = (long)Math.pow((double)r, (double)i + 1);
             long thirdGeometricalKey = (long)Math.pow((double)r, (double)i + 2);
 
@@ -147,7 +147,7 @@ public class CountTriplets {
 
     private static long getSum(int firstValue, int secondValue, int thirdValue) {
         System.out.println( firstValue + ":" + secondValue + ":" + thirdValue );
-        return ( firstValue * secondValue * thirdValue );
+        return ((long) firstValue * secondValue * thirdValue );
     }
 
     private static Map<Long, Integer> getFrequencyMapFromArray(long[] arr) {

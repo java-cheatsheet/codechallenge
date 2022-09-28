@@ -1,6 +1,6 @@
 package hackerranktest.ThirtyDaysOfCodeTest;
 
-import hackerrank.ThirtyDaysOfCode.TwentyNine;
+import hackerrank.thirtydaysofcode.TwentyNine;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

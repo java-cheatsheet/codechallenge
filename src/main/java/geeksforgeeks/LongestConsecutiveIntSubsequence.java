@@ -4,7 +4,7 @@ import java.util.*;
 public class LongestConsecutiveIntSubsequence {
 
     // Returns length of the longest consecutive subsequence
-    static int findLongestConseqSubseq(int arr[],int n)
+    static int findLongestConseqSubseq(int[] arr, int n)
     {
         HashSet<Integer> S = new HashSet<Integer>();
         int ans = 0;
@@ -37,10 +37,10 @@ public class LongestConsecutiveIntSubsequence {
     }
 
     // Testing program
-    public static void main(String args[])
+    public static void main(String[] args)
     {
 //        int arr[] =  {1, 9, 3, 10, 4, 20, 2};
-        int arr[] =  {1, 9, 3, 10, 4, 20, 2, 7, 8, 11};
+        int[] arr =  {1, 9, 3, 10, 4, 20, 2, 7, 8, 11};
 
         int n = arr.length;
         System.out.println("Length of the Longest consecutive subsequence is " +

@@ -22,9 +22,7 @@ public class FordFulkersonImplThirdparty {
         int[][] newNetwork = new int[newLength][newLength];
 
         for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length; j++) {
-                newNetwork[i + 1][j + 1] = network[i][j];
-            }
+            System.arraycopy(network[i], 0, newNetwork[i + 1], 1, length);
         }
 
         for (int entrance : sources) {
@@ -45,7 +43,7 @@ public class FordFulkersonImplThirdparty {
         Queue<Integer> queue = new ArrayDeque<>();
         queue.add(0);
         int u;
-        for (; !queue.isEmpty() && parents[parents.length - 1] == -1; ) {
+        while (!queue.isEmpty() && parents[parents.length - 1] == -1) {
             u = queue.remove();
             for (int v = 0; v < parents.length; v++) {
                 if (residual_network[u][v] > 0 && parents[v] == -1) {

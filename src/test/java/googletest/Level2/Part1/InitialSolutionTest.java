@@ -203,7 +203,7 @@ public class InitialSolutionTest {
 //        String[] strArr = {1", "2", "3"};
         StringBuilder strBuilder = new StringBuilder();
         for (int i = 0; i < A.length; i++) {
-            strBuilder.append(String.valueOf(A[i]));
+            strBuilder.append(A[i]);
         }
         String newString = strBuilder.toString();
         System.out.println(newString);

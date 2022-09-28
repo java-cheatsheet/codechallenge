@@ -130,7 +130,7 @@ public class MagicSquare_UNRESOLVED
     static int[] intArr = new int[9];
     static HashMap<Integer, Integer> mapLineEnds = new HashMap<>();
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         mapLineEnds.put(0, 8);
         mapLineEnds.put(2, 6);
         mapLineEnds.put(1, 7);

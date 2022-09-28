@@ -82,8 +82,8 @@ public class Solution {
         int[] denominators = new int[uAns.length];
         int[] numerators = new int[uAns.length];
         for(int i = 0; i < uAns.length; i++){
-            denominators[i] = (int)(convertDecimalToFraction(uAns[i])[1]);
-            numerators[i] = (int)(convertDecimalToFraction(uAns[i])[0]);
+            denominators[i] = convertDecimalToFraction(uAns[i])[1];
+            numerators[i] = convertDecimalToFraction(uAns[i])[0];
         }
         int lcm = (int) lcm_of_array_elements(denominators);
         for(int i = 0; i < uAns.length; i++){
@@ -175,9 +175,8 @@ public class Solution {
     public static double[][] getRMatrix(double[][] nonTerminals, int terminalLength){
         double[][] retArr = new double[nonTerminals.length][terminalLength];
         for(int i = 0; i < retArr.length; i++){
-            for(int j = nonTerminals.length; j < nonTerminals[0].length; j++){
-                retArr[i][j-nonTerminals.length] = (nonTerminals[i][j]);
-            }
+            if (nonTerminals[0].length - nonTerminals.length >= 0)
+                System.arraycopy(nonTerminals[i], nonTerminals.length, retArr[i], nonTerminals.length - nonTerminals.length, nonTerminals[0].length - nonTerminals.length);
         }
         return retArr;
     }
@@ -212,9 +211,7 @@ public class Solution {
         int size = qArr.length;
         double[][] retArr = new double[size][size];
         for(int i = 0; i < size; i++){
-            for(int j = 0; j < size; j++){
-                retArr[i][j] = qArr[i][j];
-            }
+            System.arraycopy(qArr[i], 0, retArr[i], 0, size);
         }
         return retArr;
     }
@@ -234,11 +231,11 @@ public class Solution {
     }
 
 
-    public static double[][] invert(double a[][]) {
+    public static double[][] invert(double[][] a) {
         int n = a.length;
-        double x[][] = new double[n][n];
-        double b[][] = new double[n][n];
-        int index[] = new int[n];
+        double[][] x = new double[n][n];
+        double[][] b = new double[n][n];
+        int[] index = new int[n];
         for (int i=0; i<n; ++i)
             b[i][i] = 1;
 
@@ -272,10 +269,10 @@ public class Solution {
 // Method to carry out the partial-pivoting Gaussian
 // elimination.  Here index[] stores pivoting order.
 
-    public static void gaussian(double a[][], int index[])
+    public static void gaussian(double[][] a, int[] index)
     {
         int n = index.length;
-        double c[] = new double[n];
+        double[] c = new double[n];
 
         // Initialize the index
         for (int i=0; i<n; ++i)

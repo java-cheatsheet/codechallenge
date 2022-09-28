@@ -7,7 +7,7 @@ package datastructures;
  */
 public class BinarySearchMain {
 
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         mainIterative();
 
@@ -16,7 +16,7 @@ public class BinarySearchMain {
     static void mainRecursive()
     {
         BinarySearchRecursive ob = new BinarySearchRecursive();
-        int arr[] = { 2, 3, 4, 10, 40 };
+        int[] arr = { 2, 3, 4, 10, 40 };
         int n = arr.length;
         int x = 10;
         int result = ob.binarySearch(arr, 0, n - 1, x);
@@ -29,7 +29,7 @@ public class BinarySearchMain {
     static void mainIterative()
     {
         BinarySearchIterative ob = new BinarySearchIterative();
-        int arr[] = { 2, 3, 4, 10, 40 };
+        int[] arr = { 2, 3, 4, 10, 40 };
         int n = arr.length;
         int x = 10;
         int result = ob.binarySearch(arr, x);
@@ -53,7 +53,7 @@ public class BinarySearchMain {
 class BinarySearchRecursive {
     // Returns index of x if it is present in arr[l..
     // r], else return -1
-    int binarySearch(int arr[], int l, int r, int x)
+    int binarySearch(int[] arr, int l, int r, int x)
     {
         if (r >= l) {
             int mid = l + (r - l) / 2;
@@ -89,7 +89,7 @@ class BinarySearchRecursive {
 class BinarySearchIterative {
     // Returns index of x if it is present in arr[],
     // else return -1
-    int binarySearch(int arr[], int x)
+    int binarySearch(int[] arr, int x)
     {
         int l = 0, r = arr.length - 1;
         while (l <= r) {
