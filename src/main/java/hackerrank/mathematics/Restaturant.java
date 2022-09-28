@@ -1,4 +1,4 @@
-package hackerrankmathematics;
+package hackerrank.mathematics;
 
 /**
  * Problem:

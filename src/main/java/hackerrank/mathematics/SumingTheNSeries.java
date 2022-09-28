@@ -1,6 +1,4 @@
-package hackerrankmathematics;
-
-import geeksforgeeks.dynamicprogramming.UglyNumbers;
+package hackerrank.mathematics;
 
 /**
  * Problem:
