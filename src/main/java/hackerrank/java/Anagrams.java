@@ -1,8 +1,7 @@
 package hackerrank.java;
 
-import hackerrank.java.Anagrams;
-
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Anagrams {
     String first;
@@ -15,20 +14,22 @@ public class Anagrams {
 
     public boolean isAnagram() {
 
-        if (first.length() != second.length())
+        if ( first.length() != second.length() ) {
             return false;
-
-        // sort
-        char[] firstCharArr =  first.toUpperCase().toCharArray();
-        char[] secondCharArr =  second.toUpperCase().toCharArray();
+        }
+        Locale locale = Locale.ENGLISH;
+        String firstUpper = first.toUpperCase(locale);
+        String secondUpper = second.toUpperCase(locale);
+        char[] firstCharArr =  firstUpper.toCharArray();
+        char[] secondCharArr =  secondUpper.toCharArray();
         Arrays.sort(firstCharArr);
         Arrays.sort(secondCharArr);
 
-        // compare all the characters
-        for (int i=0; i<first.length(); i++){
+        for (int i=0; i < first.length(); i++) {
 
-            if (  firstCharArr[i] != secondCharArr[i])
+            if (  firstCharArr[i] != secondCharArr[i] ) {
                 return false;
+            }
         }
 
         return true;
