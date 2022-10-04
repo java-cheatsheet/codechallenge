@@ -13,8 +13,7 @@ public class StringToken {
                 || sentence.trim().isEmpty()) {
             return new String[]{};
         }
-        String[] splitStr = sentence.trim().split("[,\\s\\'\\?\\_\\@\\!\\.]+");
 
-        return splitStr;
+        return sentence.trim().split("[,\\s\\'\\?\\_\\@\\!\\.]+");
     }
 }
