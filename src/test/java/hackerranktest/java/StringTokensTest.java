@@ -1,6 +1,6 @@
 package hackerranktest.java;
 
-import hackerrank.java.StringToken;
+import hackerrank.java.StringTokens;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +18,7 @@ public class StringTokensTest {
         String given =  "He is a very very good boy, isn't he?";
         String expected =  "Heisaveryverygoodboyisnthe";
 
-        StringToken obj = new StringToken(given);
+        StringTokens obj = new StringTokens(given);
         String[] actualArr = obj.tokenFilter();
         String actual = String.join("", actualArr);
 
@@ -31,7 +31,7 @@ public class StringTokensTest {
         String given =  "";
         String expected =  "";
 
-        StringToken obj = new StringToken(given);
+        StringTokens obj = new StringTokens(given);
         String[] actualArr = obj.tokenFilter();
         String actual = String.join("", actualArr);
 
