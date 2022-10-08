@@ -5,8 +5,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-class HttpRequests {
-
+public abstract class HttpRequests {
     public static InputStream get(String url)
             throws IOException {
         InputStream inputStream = null;

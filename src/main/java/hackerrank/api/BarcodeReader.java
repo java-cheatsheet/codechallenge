@@ -12,11 +12,10 @@ import java.util.logging.Logger;
 
 public class BarcodeReader   {
 
-    private static final String TAG = HttpHandler.class.getSimpleName();
+    private final static String TAG = HttpHandler.class.getSimpleName();
     private final static Logger logger =
             Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    private final String barcodeURI = "https://jsonmock.hackerrank.com/api/inventory?barcode=";
-    private Inventory inventory;
+    private final static String barcodeURI = "https://jsonmock.hackerrank.com/api/inventory?barcode=";
 
     public Inventory read(int barcode)
             throws BarcodeNotFoundException {
@@ -30,15 +29,22 @@ public class BarcodeReader   {
             inventories =  getInventories(inventoryJSONString);
 
         } catch (MalformedURLException e) {
-            logger.log(Level.WARNING, TAG + " MalformedURLException: " + e.getMessage());
+            if (logger.isLoggable(Level.SEVERE)) {
+                logger.log(Level.SEVERE, TAG + " MalformedURLException: " + e.getMessage());
+            }
         } catch (IOException e) {
-            logger.log(Level.WARNING, TAG + " IOException: " + e.getMessage());
+            if (logger.isLoggable(Level.SEVERE)) {
+                logger.severe(TAG + " IOException: " + e.getMessage());
+            }
         } catch (Exception e) {
-            logger.log(Level.WARNING, TAG + " Exception: " + e.getMessage());
+            if (logger.isLoggable(Level.SEVERE)) {
+                logger.severe(TAG + " Exception: " + e.getMessage());
+            }
         }
 
-        if ( inventories.length == 0 )
+        if ( inventories.length == 0 ) {
             throw new BarcodeNotFoundException("Barcode Not Found!");
+        }
 
         return inventories[0];
     }

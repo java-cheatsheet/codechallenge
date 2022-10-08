@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-class InputStreamConverter {
+public abstract class InputStreamConverter {
 
     public static String toString(InputStream is) {
 

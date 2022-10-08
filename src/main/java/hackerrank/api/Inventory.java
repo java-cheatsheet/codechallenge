@@ -1,15 +1,6 @@
 package hackerrank.api;
 
-import com.sun.net.httpserver.HttpHandler;
-
-import java.util.logging.Logger;
-
 public class Inventory {
-    private final static Logger logger =
-            Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    private static final String TAG = HttpHandler.class.getSimpleName();
-
-    private final String URL = "https://jsonmock.hackerrank.com/api/inventory?barcode=";
 
     String item;
     int price;
