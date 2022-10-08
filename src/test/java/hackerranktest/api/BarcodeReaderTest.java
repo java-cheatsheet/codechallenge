@@ -1,6 +1,5 @@
 package hackerranktest.api;
 
-import hackerrank.api.BarcodeNotFoundException;
 import hackerrank.api.BarcodeReader;
 import hackerrank.api.Inventory;
 import org.junit.jupiter.api.Assertions;
@@ -19,16 +18,12 @@ public class BarcodeReaderTest {
     }
 
     @Test
-    void barcodeEmptyException() {
-        Exception exception = Assertions.assertThrows(
-                BarcodeNotFoundException.class, () -> {
-                    BarcodeReader br = new BarcodeReader();
-                    br.read(0);
-                });
+    void givenBarcodeNotListed() {
 
-        String expectedMessage = "Barcode Not Found!";
-        String actualMessage = exception.getMessage();
+        int barcode = 0;
+        BarcodeReader obj = new BarcodeReader();
+        Inventory actualArr = obj.read(barcode);
 
-        Assertions.assertTrue(actualMessage.contains(expectedMessage));
+        Assertions.assertNull(actualArr);
     }
 }

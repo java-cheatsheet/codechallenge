@@ -10,7 +10,8 @@ import java.io.InputStreamReader;
 
 public abstract class InputStreamConverter {
 
-    public static String toString(InputStream is) {
+    public static String toString(InputStream is)
+            throws InventoryNotFoundException {
 
         StringBuilder sb = new StringBuilder();
         String jsonString = null;
@@ -25,6 +26,11 @@ public abstract class InputStreamConverter {
 
             JSONObject json = new JSONObject(sb.toString());
             JSONArray dataArray = (JSONArray) json.get("data");
+
+            if ( dataArray.isEmpty() ) {
+                throw new InventoryNotFoundException("Inventory Not Found!");
+            }
+
             jsonString = dataArray.toString();
 
         } catch (IOException e) {
