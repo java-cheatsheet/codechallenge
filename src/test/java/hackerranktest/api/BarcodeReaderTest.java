@@ -11,8 +11,8 @@ public class BarcodeReaderTest {
     void givenBarCodeListData() {
 
         int barcode = 74001755;
-        BarcodeReader obj = new BarcodeReader();
-        Inventory actualArr = obj.read(barcode);
+        BarcodeReader obj = new BarcodeReader(barcode);
+        Inventory actualArr = obj.read();
 
         Assertions.assertEquals(74001755, actualArr.getBarcode());
     }
@@ -21,9 +21,9 @@ public class BarcodeReaderTest {
     void givenBarcodeNotListed() {
 
         int barcode = 0;
-        BarcodeReader obj = new BarcodeReader();
-        Inventory actualArr = obj.read(barcode);
+        BarcodeReader obj = new BarcodeReader(barcode);
+        Inventory actualArr = obj.read();
 
-        Assertions.assertNull(actualArr);
+        Assertions.assertEquals("", actualArr.item);
     }
 }
